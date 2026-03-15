@@ -69,7 +69,7 @@ const Navbar = () => {
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
             ? 'bg-primary-red/90 backdrop-blur-xl border-2 border-white/30 shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15),0_0_0_1px_rgba(255,255,255,0.05)] py-3 px-6'
-            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-4 px-8'
+            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-2 px-8'
           }
         `}
       >
@@ -79,7 +79,7 @@ const Navbar = () => {
             <img
               src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-czerwone.png'}
               alt="Life Ratownictwo Medyczne"
-              className={`transition-all duration-500 object-contain ${scrolled ? 'h-12' : 'h-[4.5rem]'}`}
+              className={`transition-all duration-500 object-contain ${scrolled ? 'h-12' : 'h-20'}`}
             />
           </Link>
 
