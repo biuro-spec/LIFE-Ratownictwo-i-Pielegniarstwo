@@ -1,0 +1,69 @@
+import React from 'react';
+import ServiceLayout from '../components/ServiceLayout';
+import { motion } from 'framer-motion';
+import { CheckCircle2, Truck, Globe, MapPin } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
+
+const TransportMedyczny = () => {
+  useSEO({ title: 'Transport Medyczny Racibórz', description: 'Profesjonalny transport medyczny w Raciborzu i na Śląsku. Przewóz pacjentów karetkami, transport leżący i siedzący, transport międzymiastowy.' });
+  return (
+    <ServiceLayout 
+      title="Transport Medyczny Racibórz"
+      subtitle="Zapewniamy bezpieczny i profesjonalny przewóz pacjentów ambulansami przystosowanymi do ich potrzeb."
+      bgImage="/assets/images/Wypadki-komunikacyjne-1.jpg"
+    >
+      <div className="prose prose-lg max-w-none">
+        <h2 className="text-3xl font-extrabold text-navy-blue mb-6 border-b-2 border-primary-red pb-4 inline-block">Bezpieczeństwo w podróży</h2>
+        <p className="text-gray-600 mb-8 leading-relaxed text-xl">
+          Transport medyczny jest potrzebny wtedy, gdy pacjent nie może bezpiecznie podróżować zwykłym samochodem. Dotyczy to szczególnie osób po operacjach, osób z ograniczoną możliwością poruszania się oraz wymagających pomocy przy przenoszeniu.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <motion.div 
+             whileHover={{ y: -5 }}
+             className="bg-[#f4f7f6] p-8 rounded-3xl border-2 border-white shadow-sm"
+          >
+            <MapPin className="text-primary-red mb-4" size={32} />
+            <h4 className="font-bold text-navy-blue mb-4 text-xl">Region Śląska</h4>
+            <p className="text-gray-600">Działamy w <strong>Raciborzu, Rybniku, Wodzisławiu Śląskim, Rydułtowach, Kędzierzynie-Koźlu, Żorach i Jastrzębiu-Zdroju</strong>.</p>
+          </motion.div>
+          <motion.div 
+             whileHover={{ y: -5 }}
+             className="bg-[#f4f7f6] p-8 rounded-3xl border-2 border-white shadow-sm"
+          >
+            <Globe className="text-primary-red mb-4" size={32} />
+            <h4 className="font-bold text-navy-blue mb-4 text-xl">Polska i Europa</h4>
+            <p className="text-gray-600">Organizujemy transporty na terenie całego kraju oraz w krajach europejskich (powroty z leczenia za granicą).</p>
+          </motion.div>
+        </div>
+
+        <h3 className="text-2xl font-bold text-navy-blue mb-6">Kiedy zamówić transport medyczny?</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          {[
+            "Powrót pacjenta ze szpitala do domu",
+            "Transport do przychodni lub kliniki",
+            "Przewóz na dializy i rehabilitację",
+            "Badania diagnostyczne",
+            "Transport między placówkami medycznymi",
+            "Transport osób leżących i niepełnosprawnych"
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 bg-white border border-gray-100 p-4 rounded-xl shadow-sm">
+                <CheckCircle2 className="text-green-500 shrink-0" size={20} />
+                <span className="font-semibold text-gray-700">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-navy-blue text-white p-10 rounded-[40px] mb-12 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-red/20 rounded-full translate-x-10 -translate-y-10"></div>
+            <h3 className="text-2xl font-bold mb-6 text-primary-red">Bezpieczne przenoszenie</h3>
+            <p className="text-lg opacity-90 leading-relaxed italic">
+              "W wielu przypadkach pomagamy również przy bezpiecznym przeniesieniu pacjenta z łóżka do ambulansu oraz z ambulansu do mieszkania lub placówki medycznej. Każdy transport planowany jest indywidualnie."
+            </p>
+        </div>
+      </div>
+    </ServiceLayout>
+  );
+};
+
+export default TransportMedyczny;

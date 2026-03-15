@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-[#f4f7f6] text-[#1a1a1a] overflow-x-hidden;
+  }
+}
+
+.glass {
+  @apply bg-white/75 backdrop-blur-md border-b border-white/50;
+}
+
+.service-card-hover {
+  @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-blue/20;
+}
