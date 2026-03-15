@@ -1,64 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Clock, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import { blogArticles, blogCategories } from '../data/blogArticles';
+
+const formatDate = (dateStr) => {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
+};
 
 const Blog = () => {
-  useSEO({ title: 'Blog i Aktualności', description: 'Aktualności, porady i artykuły z zakresu ratownictwa medycznego, pierwszej pomocy i transportu sanitarnego.' });
-  const posts = [
-    {
-      date: "10 Kwietnia 2020",
-      title: "Pobierając, pomagamy. Walka na pierwszej linii frontu",
-      desc: "Wspomnienia z pierwszych dni pandemii i uruchomienia wymazobusów w regionie.",
-      image: "/assets/images/pobieranie-wymazow.jpg"
-    },
-    {
-      date: "7 Kwietnia 2020",
-      title: "Wielkie spotkanie w Urzędzie Wojewódzkim i strefy Drive-Thru",
-      desc: "Jak planowaliśmy i wdrażaliśmy punkty kontrolne w Raciborzu i Rybniku.",
-      image: "/assets/images/IMG_2229.jpg"
-    },
-    {
-      date: "Z archiwum",
-      title: "Otwarte Mistrzostwa Śląska w Ratownictwie Medycznym",
-      desc: "Nostalgiczny powrót do historycznych zawodów w Raciborzu w 2015 roku.",
-      image: "/assets/images/IMG_0802.jpg"
-    }
-  ];
+  useSEO({ title: 'Blog i Aktualności', description: 'Porady, aktualności i artykuły z zakresu ratownictwa medycznego, pierwszej pomocy, transportu sanitarnego i opieki pielęgniarskiej.' });
+  const [activeCategory, setActiveCategory] = useState('Wszystkie');
+
+  const filtered = activeCategory === 'Wszystkie'
+    ? blogArticles
+    : blogArticles.filter(a => a.category === activeCategory);
 
   return (
     <div className="pt-20 bg-white min-h-screen">
-      <section className="bg-[#f4f7f6] py-24">
-        <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-navy-blue mb-6">Blog i <span className="text-primary-red">Aktualności</span></h1>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto italic font-light">"Bądź na bieżąco z tym, jak zmieniamy życie pacjentów w naszym regionie."</p>
+      {/* Hero */}
+      <section className="bg-navy-blue py-24 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-red/10 skew-x-12 translate-x-1/4"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-7xl font-black mb-6">Blog i <span className="text-primary-red">Aktualności</span></h1>
+          <p className="text-xl opacity-80 max-w-2xl mx-auto font-light">
+            Porady od czynnych ratowników medycznych, aktualności prawne i praktyczna wiedza z zakresu pierwszej pomocy.
+          </p>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid grid-cols-1 gap-16">
-                {posts.map((post, i) => (
-                    <motion.article 
-                        key={i}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="flex flex-col md:flex-row gap-8 items-center group cursor-pointer"
-                    >
-                        <div className="md:w-1/2 overflow-hidden rounded-[40px] shadow-2xl">
-                            <img src={post.image} alt={post.title} className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110" />
-                        </div>
-                        <div className="md:w-1/2">
-                            <span className="text-primary-red font-bold text-sm uppercase tracking-widest">{post.date}</span>
-                            <h2 className="text-3xl font-black text-navy-blue mt-4 mb-6 leading-tight group-hover:text-primary-red transition-colors">{post.title}</h2>
-                            <p className="text-gray-500 text-lg leading-relaxed mb-8">{post.desc}</p>
-                            <button className="flex items-center gap-2 font-black text-navy-blue hover:gap-4 transition-all">
-                                CZYTAJ WIĘCEJ <ChevronRight className="text-primary-red" />
-                            </button>
-                        </div>
-                    </motion.article>
-                ))}
+      {/* Categories */}
+      <section className="bg-[#f4f7f6] border-b border-gray-200">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {blogCategories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2 rounded-full font-bold text-sm transition-all ${
+                  activeCategory === cat
+                    ? 'bg-primary-red text-white shadow-lg shadow-primary-red/20'
+                    : 'bg-white text-gray-600 hover:text-navy-blue hover:shadow-md'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Articles Grid */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {filtered.map((article, i) => (
+              <motion.article
+                key={article.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <Link to={`/blog/${article.slug}`} className="group block">
+                  <div className="overflow-hidden rounded-3xl shadow-lg mb-6">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-[240px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="bg-primary-red/10 text-primary-red font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                      {article.category}
+                    </span>
+                    <span className="flex items-center gap-1 text-gray-400 text-xs">
+                      <Clock size={12} /> {article.readTime}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-extrabold text-navy-blue mb-3 leading-tight group-hover:text-primary-red transition-colors">
+                    {article.title}
+                  </h2>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-1 text-gray-400 text-xs">
+                      <Calendar size={12} /> {formatDate(article.date)}
+                    </span>
+                    <span className="flex items-center gap-1 font-bold text-navy-blue text-sm group-hover:text-primary-red group-hover:gap-2 transition-all">
+                      Czytaj <ChevronRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
+          </div>
+
+          {filtered.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-gray-400 text-lg">Brak artykułów w tej kategorii.</p>
             </div>
+          )}
         </div>
       </section>
     </div>

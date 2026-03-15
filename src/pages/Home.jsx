@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, HeartPulse, Home as HomeIcon, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Truck, ShieldCheck, HeartPulse, Home as HomeIcon, ChevronRight, CheckCircle2, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import { blogArticles } from '../data/blogArticles';
 
 const Home = () => {
   useSEO();
@@ -155,6 +156,46 @@ const Home = () => {
             </div>
             <Link to="/o-nas" className="text-navy-blue font-black flex items-center gap-2 group">
               POZNAJ NASZĄ HISTORIĘ <ChevronRight className="text-primary-red transition-transform group-hover:translate-x-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* Blog Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-blue mb-6">Z naszego <span className="text-primary-red">bloga</span></h2>
+            <div className="h-1.5 w-20 bg-primary-red mx-auto rounded-full mb-6"></div>
+            <p className="text-gray-500 text-lg">Porady od czynnych ratowników medycznych i aktualności ze świata ratownictwa.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            {blogArticles.slice(0, 3).map((article, i) => (
+              <motion.div
+                key={article.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Link to={`/blog/${article.slug}`} className="group block">
+                  <div className="overflow-hidden rounded-3xl shadow-lg mb-5">
+                    <img src={article.image} alt={article.title} className="w-full h-[200px] object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="bg-primary-red/10 text-primary-red font-bold text-xs px-3 py-1 rounded-full">{article.category}</span>
+                    <span className="flex items-center gap-1 text-gray-400 text-xs"><Clock size={12} /> {article.readTime}</span>
+                  </div>
+                  <h3 className="text-lg font-extrabold text-navy-blue leading-tight group-hover:text-primary-red transition-colors mb-2">{article.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{article.excerpt}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/blog" className="inline-flex items-center gap-2 bg-navy-blue text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">
+              Wszystkie artykuły <ChevronRight size={18} />
             </Link>
           </div>
         </div>

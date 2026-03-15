@@ -8,6 +8,7 @@ import TransportMedyczny from './pages/TransportMedyczny';
 import ZabezpieczeniaMedyczne from './pages/ZabezpieczeniaMedyczne';
 import Szkolenia from './pages/Szkolenia';
 import Pielegniarstwo from './pages/Pielegniarstwo';
+import BlogArticle from './pages/BlogArticle';
 import NotFound from './pages/NotFound';
 import CookieConsent from './components/CookieConsent';
 import { HeartPulse, Phone, Mail, MapPin } from 'lucide-react';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/o-nas" element={<ONas />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogArticle />} />
             <Route path="/transport-medyczny" element={<TransportMedyczny />} />
             <Route path="/zabezpieczenia-medyczne" element={<ZabezpieczeniaMedyczne />} />
             <Route path="/szkolenia-pierwsza-pomoc" element={<Szkolenia />} />
