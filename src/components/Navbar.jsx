@@ -75,11 +75,11 @@ const Navbar = () => {
       >
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
           {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0">
+          <Link to="/" className="flex items-center shrink-0 ml-4">
             <img
               src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-czerwone.png'}
               alt="Life Ratownictwo Medyczne"
-              className={`transition-all duration-500 object-contain ${scrolled ? 'h-10' : 'h-14'}`}
+              className={`transition-all duration-500 object-contain ${scrolled ? 'h-12' : 'h-[4.5rem]'}`}
             />
           </Link>
 
