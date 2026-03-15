@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, HeartPulse, Mail, ChevronDown } from 'lucide-react';
+import { Phone, Mail, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -75,12 +75,12 @@ const Navbar = () => {
       >
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <HeartPulse className={`transition-all duration-500 ${scrolled ? 'w-6 h-6 text-white' : 'w-8 h-8 text-primary-red'}`} />
-            <span className={`font-extrabold tracking-tighter transition-all duration-500 ${scrolled ? 'text-lg' : 'text-xl'}`}>
-              <span className={`transition-colors duration-500 ${scrolled ? 'text-white' : 'text-navy-blue'}`}>LIFE</span>
-              <span className={`transition-colors duration-500 ${scrolled ? 'text-white/80' : 'text-primary-red'}`}>-RATOWNICTWO</span>
-            </span>
+          <Link to="/" className="flex items-center shrink-0">
+            <img
+              src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-czerwone.png'}
+              alt="Life Ratownictwo Medyczne"
+              className={`transition-all duration-500 object-contain ${scrolled ? 'h-8' : 'h-10'}`}
+            />
           </Link>
 
           {/* Spacer */}

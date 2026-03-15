@@ -2,7 +2,7 @@ import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ScrollToTopButton from './components/ScrollToTopButton';
-import { HeartPulse, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Lazy-loaded pages for route-level code splitting
@@ -58,8 +58,8 @@ function App() {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
                     <div className="col-span-1 lg:col-span-1">
-                        <div className="text-white font-black text-2xl mb-6 flex items-center gap-3 tracking-tighter">
-                            <HeartPulse className="text-primary-red w-8 h-8" /> LIFE-RATOWNICTWO
+                        <div className="mb-6">
+                            <img src="/assets/images/life-logo-biale.png" alt="Life Ratownictwo Medyczne" className="h-12 object-contain" />
                         </div>
                         <p className="text-base leading-relaxed mb-6">
                             Profesjonalna opieka medyczna i transport sanitarny. Działamy z misją i pasją od 2012 roku.
