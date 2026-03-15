@@ -13,7 +13,7 @@ const ONas = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-28">
       <section className="bg-navy-blue py-32 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-red/10 border-l border-white/5 skew-x-12 translate-x-1/4"></div>
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">

@@ -31,69 +31,57 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
-        {/* Background image */}
+      <section className="relative min-h-[90vh] flex items-center pt-28">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/assets/images/Life-Ratownictwo-Medyczne-i-Pielegniarstwo.jpg')",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-blue via-navy-blue/85 to-navy-blue/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-red/5 skew-x-[-8deg] translate-x-20 z-[1]"></div>
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-[1]"></div>
-
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-2xl"
             >
-              <span className="bg-white/10 backdrop-blur-sm text-white font-bold px-5 py-2 rounded-full text-sm inline-flex items-center gap-2 mb-6 border border-white/20">
+              <span className="bg-primary-red/10 text-primary-red font-bold px-5 py-2 rounded-full text-sm inline-flex items-center gap-2 mb-6">
                 <span className="w-2 h-2 bg-primary-red rounded-full animate-pulse"></span>
-                Racibórz &bull; Rybnik &bull; Śląsk
+                Racibórz &bull; Rybnik &bull; całe woj. śląskie
               </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8">
-                Profesjonalne<br />
-                <span className="text-primary-red">Ratownictwo</span><br />
-                Medyczne
+              <h1 className="text-5xl md:text-7xl font-extrabold text-navy-blue leading-tight mb-8">
+                Profesjonalne <span className="text-primary-red">Ratownictwo</span> i Transport
               </h1>
-              <p className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-xl">
-                Transport medyczny, zabezpieczenia imprez i szkolenia z pierwszej pomocy. Działamy od 2012 roku — tam, gdzie pacjent czuje się u siebie.
+              <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
+                <strong>Life-Ratownictwo Medyczne</strong> — transport medyczny, zabezpieczenia imprez i szkolenia z pierwszej pomocy. Działamy od 2012 roku — tam, gdzie pacjent czuje się u siebie.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/transport-medyczny" className="bg-primary-red text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary-red/30 flex items-center gap-2 hover:bg-[#ba1e17] transition-all hover:scale-105">
+                <Link to="/transport-medyczny" className="bg-primary-red text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary-red/20 flex items-center gap-2 hover:bg-[#ba1e17] transition-all hover:scale-105">
                   Zamów Transport <ChevronRight size={20} />
                 </Link>
-                <a href="#services" className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border border-white/20 hover:bg-white/20 transition-all hover:scale-105">
+                <a href="#services" className="bg-navy-blue text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-navy-blue/20 hover:bg-navy-blue-light transition-all hover:scale-105">
                   Nasza Oferta
                 </a>
               </div>
-            </motion.div>
 
-            {/* Stats / trust signals */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="hidden lg:grid grid-cols-2 gap-5"
-            >
-              {[
-                { value: '12+', label: 'Lat doświadczenia', sub: 'od 2012 roku' },
-                { value: '24/7', label: 'Dostępność', sub: 'transport medyczny' },
-                { value: '500+', label: 'Zrealizowanych', sub: 'transportów rocznie' },
-                { value: '100+', label: 'Zabezpieczonych', sub: 'imprez i wydarzeń' },
-              ].map((stat, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center hover:bg-white/10 transition-all">
-                  <div className="text-3xl font-black text-primary-red mb-1">{stat.value}</div>
-                  <div className="text-white font-bold text-sm">{stat.label}</div>
-                  <div className="text-white/40 text-xs mt-1">{stat.sub}</div>
-                </div>
-              ))}
+              {/* Stats row */}
+              <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-gray-200">
+                {[
+                  { value: '12+', label: 'Lat doświadczenia' },
+                  { value: '24/7', label: 'Dostępność' },
+                  { value: '500+', label: 'Transportów rocznie' },
+                  { value: '100+', label: 'Imprez zabezpieczonych' },
+                ].map((stat, i) => (
+                  <div key={i} className="text-center">
+                    <div className="text-2xl font-black text-primary-red">{stat.value}</div>
+                    <div className="text-gray-500 text-xs font-semibold mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>

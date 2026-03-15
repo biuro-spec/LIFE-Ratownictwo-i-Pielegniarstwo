@@ -15,10 +15,16 @@ const Blog = () => {
     : blogArticles.filter(a => a.category === activeCategory);
 
   return (
-    <div className="pt-20 bg-white min-h-screen">
+    <div className="pt-28 bg-white min-h-screen">
       {/* Hero */}
-      <section className="bg-navy-blue py-24 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-red/10 skew-x-12 translate-x-1/4"></div>
+      <section className="relative py-32 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage: "linear-gradient(to right, rgba(15,43,70,0.92), rgba(15,43,70,0.75)), url('/assets/images/Life-Ratownictwo-Medyczne-i-Pielegniarstwo.jpg')",
+          }}
+        />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-red/10 skew-x-12 translate-x-1/4 z-[1]"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-black mb-6">Blog i <span className="text-primary-red">Aktualności</span></h1>
           <p className="text-xl opacity-80 max-w-2xl mx-auto font-light">

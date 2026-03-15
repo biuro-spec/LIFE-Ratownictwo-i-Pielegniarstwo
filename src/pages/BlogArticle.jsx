@@ -24,7 +24,7 @@ const BlogArticle = () => {
     : [...related, ...blogArticles.filter(a => a.id !== article.id && a.category !== article.category).slice(0, 3 - related.length)];
 
   return (
-    <div className="pt-20 bg-white min-h-screen">
+    <div className="pt-28 bg-white min-h-screen">
       {/* Hero */}
       <section className="relative h-[400px] md:h-[500px]">
         <div
