@@ -46,8 +46,8 @@ const Navbar = () => {
         className={`
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
-            ? 'bg-primary-red/90 backdrop-blur-xl border-2 border-white/30 shadow-[0_10px_40px_rgba(218,37,29,0.35)] py-3 px-6'
-            : 'bg-white/80 backdrop-blur-xl border-2 border-primary-red/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] py-4 px-8'
+            ? 'bg-primary-red/90 backdrop-blur-xl border-2 border-white/30 shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15),0_0_0_1px_rgba(255,255,255,0.05)] py-3 px-6'
+            : 'bg-white/80 backdrop-blur-xl border-2 border-primary-red/15 shadow-[0_4px_6px_rgba(218,37,29,0.04),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(218,37,29,0.08),0_0_0_1px_rgba(218,37,29,0.03)] py-4 px-8'
           }
         `}
       >
@@ -135,8 +135,8 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className={`mt-3 backdrop-blur-xl rounded-3xl p-8 md:hidden flex flex-col gap-5
               ${scrolled
-                ? 'bg-primary-red/95 border-2 border-white/20 shadow-[0_20px_40px_rgba(218,37,29,0.3)]'
-                : 'bg-white/95 border-2 border-primary-red/15 shadow-[0_20px_40px_rgba(0,0,0,0.1)]'
+                ? 'bg-primary-red/95 border-2 border-white/20 shadow-[0_4px_8px_rgba(218,37,29,0.1),0_16px_32px_rgba(218,37,29,0.2),0_32px_64px_rgba(218,37,29,0.12)]'
+                : 'bg-white/95 border-2 border-primary-red/15 shadow-[0_4px_8px_rgba(218,37,29,0.03),0_16px_32px_rgba(0,0,0,0.06),0_32px_64px_rgba(218,37,29,0.06)]'
               }
             `}
           >
