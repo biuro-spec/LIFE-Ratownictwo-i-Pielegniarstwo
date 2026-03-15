@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const defaults = {
   title: 'Life-Ratownictwo | Profesjonalna Pomoc Medyczna Racibórz',
-  description: 'Life-Ratownictwo Medyczne i Pielęgniarstwo - profesjonalny transport medyczny, zabezpieczenia imprez, szkolenia z pierwszej pomocy i usługi pielęgniarskie w Raciborzu i na Śląsku.',
+  description: 'Life-Ratownictwo Medyczne — profesjonalny transport medyczny, zabezpieczenia imprez i szkolenia z pierwszej pomocy w Raciborzu i na Śląsku.',
 };
 
 const useSEO = ({ title, description } = {}) => {

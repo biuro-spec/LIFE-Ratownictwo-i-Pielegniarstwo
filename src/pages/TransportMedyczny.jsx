@@ -75,8 +75,7 @@ const TransportMedyczny = () => {
           </div>
 
           <h3 className="text-2xl font-bold text-navy-blue mb-6">Zobacz też nasze usługi</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link to="/uslugi-pielegniarskie" className="bg-navy-blue text-white p-5 rounded-2xl font-bold text-center hover:bg-navy-blue-light transition-all">Usługi pielęgniarskie</Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link to="/zabezpieczenia-medyczne" className="bg-navy-blue text-white p-5 rounded-2xl font-bold text-center hover:bg-navy-blue-light transition-all">Zabezpieczenia medyczne</Link>
             <Link to="/szkolenia-pierwsza-pomoc" className="bg-navy-blue text-white p-5 rounded-2xl font-bold text-center hover:bg-navy-blue-light transition-all">Szkolenia z pierwszej pomocy</Link>
           </div>

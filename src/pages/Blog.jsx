@@ -7,7 +7,7 @@ import { blogArticles, blogCategories } from '../data/blogArticles';
 import { formatDate } from '../utils/formatDate';
 
 const Blog = () => {
-  useSEO({ title: 'Blog i Aktualności', description: 'Porady, aktualności i artykuły z zakresu ratownictwa medycznego, pierwszej pomocy, transportu sanitarnego i opieki pielęgniarskiej.' });
+  useSEO({ title: 'Blog i Aktualności', description: 'Porady, aktualności i artykuły z zakresu ratownictwa medycznego, pierwszej pomocy, transportu sanitarnego i zabezpieczeń medycznych.' });
   const [activeCategory, setActiveCategory] = useState('Wszystkie');
 
   const filtered = activeCategory === 'Wszystkie'

@@ -1,4 +1,4 @@
-export const blogCategories = ['Wszystkie', 'Transport Medyczny', 'Pierwsza Pomoc', 'Zabezpieczenia', 'Pielęgniarstwo', 'Prawo'];
+export const blogCategories = ['Wszystkie', 'Transport Medyczny', 'Pierwsza Pomoc', 'Zabezpieczenia', 'Prawo'];
 
 export const blogArticles = [
   {
@@ -379,43 +379,6 @@ export const blogArticles = [
       { type: 'heading', text: 'Jak zamówić zabezpieczenie medyczne?' },
       { type: 'paragraph', text: 'Skontaktuj się z nami telefonicznie lub mailowo, podając datę, miejsce, przewidywaną liczbę uczestników i rodzaj wydarzenia. Przygotujemy ofertę w ciągu 24 godzin. Działamy na terenie Raciborza, Rybnika i całego województwa śląskiego.' },
       { type: 'cta', text: 'Uzyskaj bezpłatną wycenę: +48 602 622 840', link: 'tel:+48602622840' },
-    ]
-  },
-  {
-    id: 12,
-    slug: 'opieka-pielegniarska-w-domu-kiedy-warto-skorzystac',
-    title: 'Opieka pielęgniarska w domu — kiedy warto skorzystać?',
-    category: 'Pielęgniarstwo',
-    date: '2025-12-01',
-    readTime: '6 min',
-    image: '/assets/images/Uslugi-pielegniarskie.jpg',
-    excerpt: 'Zastrzyki, kroplówki, pobranie krwi — bez wychodzenia z domu. Dowiedz się, kiedy opieka pielęgniarska domowa jest najlepszym rozwiązaniem.',
-    keywords: ['pielęgniarka do domu', 'opieka pielęgniarska domowa', 'zastrzyki w domu Racibórz'],
-    content: [
-      { type: 'paragraph', text: 'Nie każdy pacjent może lub chce jeździć do przychodni na każdy zastrzyk czy zmianę opatrunku. Opieka pielęgniarska w domu to wygodne i bezpieczne rozwiązanie, szczególnie dla osób starszych, po operacjach i z ograniczoną mobilnością.' },
-      { type: 'heading', text: 'Kiedy warto zamówić pielęgniarkę do domu?' },
-      { type: 'list', items: [
-        'Regularne zastrzyki (antybiotyki, heparyna, insulina) — codziennie dojeżdżanie do przychodni jest uciążliwe',
-        'Kroplówki nawadniające lub lecznicze — wygodniej w domu niż na izbie przyjęć',
-        'Pobranie krwi do badań — szczególnie dla osób starszych i niepełnosprawnych',
-        'Zmiana opatrunku po operacji — profesjonalne zaopatrzenie rany',
-        'Opieka nad osobą leżącą — pielęgnacja, profilaktyka odleżyn, toaleta',
-        'Kontrola parametrów — ciśnienie, cukier, temperatura, saturacja',
-      ]},
-      { type: 'heading', text: 'Jak wygląda wizyta pielęgniarki?' },
-      { type: 'paragraph', text: 'Pielęgniarka przyjeżdża do domu pacjenta z pełnym wyposażeniem. Wizyta trwa od 15 do 60 minut, w zależności od rodzaju zabiegu. Przed pierwszą wizytą ustalamy zakres opieki, potrzeby pacjenta i harmonogram wizyt.' },
-      { type: 'heading', text: 'Kto korzysta z naszych usług?' },
-      { type: 'list', items: [
-        'Osoby starsze, które trudno dojeżdżają do przychodni',
-        'Pacjenci po operacjach — wymagający regularnej zmiany opatrunków',
-        'Osoby z chorobami przewlekłymi — cukrzyca, nadciśnienie',
-        'Pacjenci unieruchomieni — po urazach, udarach',
-        'Rodziny opiekujące się osobą leżącą — potrzebujące wsparcia fachowca',
-      ]},
-      { type: 'heading', text: 'Nasz zespół pielęgniarski' },
-      { type: 'paragraph', text: 'Nasz zespół tworzą doświadczone pielęgniarki z wieloletnim stażem na oddziałach szpitalnych — zabiegowych i internistycznych. Gwarantujemy najwyższe standardy higieny, rzetelność i empatyczne podejście do każdego pacjenta.' },
-      { type: 'paragraph', text: 'Działamy na terenie Raciborza i okolic. Wizyty umawiamy telefonicznie, zwykle z wyprzedzeniem 1-2 dni. W nagłych przypadkach staramy się dojechać tego samego dnia.' },
-      { type: 'cta', text: 'Umów wizytę pielęgniarki: +48 602 622 840', link: 'tel:+48602622840' },
     ]
   },
 ];

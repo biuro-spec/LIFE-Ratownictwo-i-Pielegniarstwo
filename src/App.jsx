@@ -11,7 +11,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const TransportMedyczny = lazy(() => import('./pages/TransportMedyczny'));
 const ZabezpieczeniaMedyczne = lazy(() => import('./pages/ZabezpieczeniaMedyczne'));
 const Szkolenia = lazy(() => import('./pages/Szkolenia'));
-const Pielegniarstwo = lazy(() => import('./pages/Pielegniarstwo'));
+
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
@@ -41,7 +41,7 @@ function App() {
               <Route path="/transport-medyczny" element={<TransportMedyczny />} />
               <Route path="/zabezpieczenia-medyczne" element={<ZabezpieczeniaMedyczne />} />
               <Route path="/szkolenia-pierwsza-pomoc" element={<Szkolenia />} />
-              <Route path="/uslugi-pielegniarskie" element={<Pielegniarstwo />} />
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
@@ -68,7 +68,6 @@ function App() {
                             <li><Link to="/transport-medyczny" className="hover:text-primary-red transition-colors text-sm">Transport Medyczny</Link></li>
                             <li><Link to="/zabezpieczenia-medyczne" className="hover:text-primary-red transition-colors text-sm">Zabezpieczenia Imprez</Link></li>
                             <li><Link to="/szkolenia-pierwsza-pomoc" className="hover:text-primary-red transition-colors text-sm">Szkolenia Pierwszej Pomocy</Link></li>
-                            <li><Link to="/uslugi-pielegniarskie" className="hover:text-primary-red transition-colors text-sm">Opieka Pielęgniarska</Link></li>
                         </ul>
                     </div>
 
