@@ -79,7 +79,7 @@ const Navbar = () => {
             <img
               src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-czerwone.png'}
               alt="Life Ratownictwo Medyczne"
-              className={`transition-all duration-500 object-contain ${scrolled ? 'h-8' : 'h-10'}`}
+              className={`transition-all duration-500 object-contain ${scrolled ? 'h-10' : 'h-14'}`}
             />
           </Link>
 
