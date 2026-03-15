@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center pt-28">
+      <section className="relative min-h-[100vh] flex items-center">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
@@ -41,8 +41,8 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 relative z-10 pt-32 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -67,21 +67,27 @@ const Home = () => {
                   Nasza Oferta
                 </a>
               </div>
+            </motion.div>
 
-              {/* Stats row */}
-              <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-gray-200">
-                {[
-                  { value: '12+', label: 'Lat doświadczenia' },
-                  { value: '24/7', label: 'Dostępność' },
-                  { value: '500+', label: 'Transportów rocznie' },
-                  { value: '100+', label: 'Imprez zabezpieczonych' },
-                ].map((stat, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl font-black text-primary-red">{stat.value}</div>
-                    <div className="text-gray-500 text-xs font-semibold mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+            {/* Stats tiles */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="hidden lg:grid grid-cols-2 gap-5"
+            >
+              {[
+                { value: '12+', label: 'Lat doświadczenia', sub: 'od 2012 roku' },
+                { value: '24/7', label: 'Dostępność', sub: 'transport medyczny' },
+                { value: '500+', label: 'Zrealizowanych', sub: 'transportów rocznie' },
+                { value: '100+', label: 'Zabezpieczonych', sub: 'imprez i wydarzeń' },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white/60 backdrop-blur-sm border-2 border-white rounded-3xl p-7 text-center shadow-lg shadow-navy-blue/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <div className="text-3xl font-black text-primary-red mb-1">{stat.value}</div>
+                  <div className="text-navy-blue font-bold text-sm">{stat.label}</div>
+                  <div className="text-gray-400 text-xs mt-1">{stat.sub}</div>
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>

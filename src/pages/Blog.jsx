@@ -15,9 +15,9 @@ const Blog = () => {
     : blogArticles.filter(a => a.category === activeCategory);
 
   return (
-    <div className="pt-28 bg-white min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="relative py-32 text-white overflow-hidden">
+      <section className="relative pt-40 pb-20 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{

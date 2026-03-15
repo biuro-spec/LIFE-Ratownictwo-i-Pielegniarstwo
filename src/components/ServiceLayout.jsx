@@ -4,9 +4,9 @@ import { Phone, Mail } from 'lucide-react';
 
 const ServiceLayout = ({ title, subtitle, bgImage, children }) => {
   return (
-    <div className="pt-28">
+    <div>
       {/* Hero */}
-      <section className="relative h-[450px] flex items-center justify-center text-center text-white">
+      <section className="relative h-[550px] flex items-center justify-center text-center text-white">
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
