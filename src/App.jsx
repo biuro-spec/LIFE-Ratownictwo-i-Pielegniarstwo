@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import ONas from './pages/ONas';
-import Blog from './pages/Blog';
-import TransportMedyczny from './pages/TransportMedyczny';
-import ZabezpieczeniaMedyczne from './pages/ZabezpieczeniaMedyczne';
-import Szkolenia from './pages/Szkolenia';
-import Pielegniarstwo from './pages/Pielegniarstwo';
-import BlogArticle from './pages/BlogArticle';
-import NotFound from './pages/NotFound';
-import CookieConsent from './components/CookieConsent';
 import { HeartPulse, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+// Lazy-loaded pages for route-level code splitting
+const Home = lazy(() => import('./pages/Home'));
+const ONas = lazy(() => import('./pages/ONas'));
+const Blog = lazy(() => import('./pages/Blog'));
+const TransportMedyczny = lazy(() => import('./pages/TransportMedyczny'));
+const ZabezpieczeniaMedyczne = lazy(() => import('./pages/ZabezpieczeniaMedyczne'));
+const Szkolenia = lazy(() => import('./pages/Szkolenia'));
+const Pielegniarstwo = lazy(() => import('./pages/Pielegniarstwo'));
+const BlogArticle = lazy(() => import('./pages/BlogArticle'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const CookieConsent = lazy(() => import('./components/CookieConsent'));
 
 // ScrollToTop component to fix SPA scroll position issue
 const ScrollToTop = () => {
@@ -30,17 +32,19 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/o-nas" element={<ONas />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogArticle />} />
-            <Route path="/transport-medyczny" element={<TransportMedyczny />} />
-            <Route path="/zabezpieczenia-medyczne" element={<ZabezpieczeniaMedyczne />} />
-            <Route path="/szkolenia-pierwsza-pomoc" element={<Szkolenia />} />
-            <Route path="/uslugi-pielegniarskie" element={<Pielegniarstwo />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-10 h-10 border-4 border-primary-red border-t-transparent rounded-full animate-spin"></div></div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/o-nas" element={<ONas />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogArticle />} />
+              <Route path="/transport-medyczny" element={<TransportMedyczny />} />
+              <Route path="/zabezpieczenia-medyczne" element={<ZabezpieczeniaMedyczne />} />
+              <Route path="/szkolenia-pierwsza-pomoc" element={<Szkolenia />} />
+              <Route path="/uslugi-pielegniarskie" element={<Pielegniarstwo />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </main>
         
         <footer className="bg-[#081525] text-white/40 py-20 border-t border-white/5">

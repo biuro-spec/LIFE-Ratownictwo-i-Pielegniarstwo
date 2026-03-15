@@ -127,7 +127,8 @@ const Home = () => {
             <div className="absolute -top-4 -left-4 w-full h-full border-4 border-primary-red rounded-3xl translate-x-4 translate-y-4"></div>
             <img 
               src="/assets/images/IMG_0802.jpg" 
-              alt="Personel medyczny" 
+              alt="Personel medyczny"
+              loading="lazy"
               className="rounded-3xl shadow-2xl relative z-10 w-full object-cover h-[500px]"
             />
           </motion.div>
@@ -180,7 +181,7 @@ const Home = () => {
               >
                 <Link to={`/blog/${article.slug}`} className="group block">
                   <div className="overflow-hidden rounded-3xl shadow-lg mb-5">
-                    <img src={article.image} alt={article.title} className="w-full h-[200px] object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={article.image} alt={article.title} loading="lazy" className="w-full h-[200px] object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="flex items-center gap-3 mb-3">
                     <span className="bg-primary-red/10 text-primary-red font-bold text-xs px-3 py-1 rounded-full">{article.category}</span>

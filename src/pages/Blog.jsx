@@ -4,11 +4,7 @@ import { ChevronRight, Clock, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { blogArticles, blogCategories } from '../data/blogArticles';
-
-const formatDate = (dateStr) => {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
-};
+import { formatDate } from '../utils/formatDate';
 
 const Blog = () => {
   useSEO({ title: 'Blog i Aktualności', description: 'Porady, aktualności i artykuły z zakresu ratownictwa medycznego, pierwszej pomocy, transportu sanitarnego i opieki pielęgniarskiej.' });
@@ -69,6 +65,7 @@ const Blog = () => {
                     <img
                       src={article.image}
                       alt={article.title}
+                      loading="lazy"
                       className="w-full h-[240px] object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>

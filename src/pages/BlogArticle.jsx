@@ -4,11 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, ChevronRight, Phone } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 import { blogArticles } from '../data/blogArticles';
-
-const formatDate = (dateStr) => {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
-};
+import { formatDate } from '../utils/formatDate';
 
 const BlogArticle = () => {
   const { slug } = useParams();
@@ -150,7 +146,7 @@ const BlogArticle = () => {
                     {relatedArticles.map(ra => (
                       <Link key={ra.id} to={`/blog/${ra.slug}`} className="group block">
                         <div className="flex gap-4 items-start">
-                          <img src={ra.image} alt={ra.title} className="w-16 h-16 rounded-xl object-cover shrink-0" />
+                          <img src={ra.image} alt={ra.title} loading="lazy" className="w-16 h-16 rounded-xl object-cover shrink-0" />
                           <div>
                             <h4 className="font-bold text-navy-blue text-sm leading-snug group-hover:text-primary-red transition-colors">
                               {ra.title}
