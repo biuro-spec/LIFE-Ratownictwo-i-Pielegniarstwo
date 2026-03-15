@@ -62,8 +62,30 @@ const TransportMedyczny = () => {
               "W wielu przypadkach pomagamy również przy bezpiecznym przeniesieniu pacjenta z łóżka do ambulansu oraz z ambulansu do mieszkania lub placówki medycznej. Każdy transport planowany jest indywidualnie."
             </p>
         </div>
-        {/* Cross-sell & Blog links */}
+        {/* Landing pages */}
         <div className="mt-16 pt-12 border-t border-gray-200">
+          <h3 className="text-2xl font-bold text-navy-blue mb-6">Szczegóły naszych usług transportowych</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+            <Link to="/transport-nfz" className="group bg-green-50 border-2 border-green-100 p-6 rounded-2xl hover:shadow-xl transition-all">
+              <div className="text-green-600 font-black text-sm uppercase tracking-wider mb-2">NFZ / POZ</div>
+              <h4 className="font-extrabold text-navy-blue text-lg mb-2 group-hover:text-primary-red transition-colors">Transport Sanitarny NFZ</h4>
+              <p className="text-gray-500 text-sm mb-3">Bezpłatny transport na zlecenie lekarza POZ. Dializy, rehabilitacja, chemioterapia.</p>
+              <span className="text-primary-red font-bold text-sm flex items-center gap-1">Sprawdź szczegóły <ChevronRight size={14} /></span>
+            </Link>
+            <Link to="/transport-prywatny" className="group bg-red-50 border-2 border-red-100 p-6 rounded-2xl hover:shadow-xl transition-all">
+              <div className="text-primary-red font-black text-sm uppercase tracking-wider mb-2">Prywatny</div>
+              <h4 className="font-extrabold text-navy-blue text-lg mb-2 group-hover:text-primary-red transition-colors">Transport Prywatny</h4>
+              <p className="text-gray-500 text-sm mb-3">Bez skierowania, bez kolejek. Ambulans z ratownikiem 24/7. Cennik od 4 zł/km.</p>
+              <span className="text-primary-red font-bold text-sm flex items-center gap-1">Sprawdź szczegóły <ChevronRight size={14} /></span>
+            </Link>
+            <Link to="/transport-miedzynarodowy" className="group bg-blue-50 border-2 border-blue-100 p-6 rounded-2xl hover:shadow-xl transition-all">
+              <div className="text-blue-600 font-black text-sm uppercase tracking-wider mb-2">Międzynarodowy</div>
+              <h4 className="font-extrabold text-navy-blue text-lg mb-2 group-hover:text-primary-red transition-colors">Polska–Niemcy</h4>
+              <p className="text-gray-500 text-sm mb-3">Repatriacja medyczna, współpraca z Krankenkassen. 25 km od granicy.</p>
+              <span className="text-primary-red font-bold text-sm flex items-center gap-1">Sprawdź szczegóły <ChevronRight size={14} /></span>
+            </Link>
+          </div>
+
           <h3 className="text-2xl font-bold text-navy-blue mb-6">Przeczytaj też na blogu</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             <Link to="/blog/ile-kosztuje-prywatny-transport-medyczny-cennik-2026" className="flex items-center gap-3 bg-[#f4f7f6] p-5 rounded-2xl font-semibold text-navy-blue hover:text-primary-red hover:shadow-md transition-all">

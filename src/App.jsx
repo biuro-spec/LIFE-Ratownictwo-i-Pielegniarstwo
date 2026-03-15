@@ -12,6 +12,9 @@ const Blog = lazy(() => import('./pages/Blog'));
 const TransportMedyczny = lazy(() => import('./pages/TransportMedyczny'));
 const ZabezpieczeniaMedyczne = lazy(() => import('./pages/ZabezpieczeniaMedyczne'));
 const Szkolenia = lazy(() => import('./pages/Szkolenia'));
+const TransportNFZ = lazy(() => import('./pages/TransportNFZ'));
+const TransportPrywatny = lazy(() => import('./pages/TransportPrywatny'));
+const TransportMiedzynarodowy = lazy(() => import('./pages/TransportMiedzynarodowy'));
 
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -42,6 +45,9 @@ function App() {
               <Route path="/transport-medyczny" element={<TransportMedyczny />} />
               <Route path="/zabezpieczenia-medyczne" element={<ZabezpieczeniaMedyczne />} />
               <Route path="/szkolenia-pierwsza-pomoc" element={<Szkolenia />} />
+              <Route path="/transport-nfz" element={<TransportNFZ />} />
+              <Route path="/transport-prywatny" element={<TransportPrywatny />} />
+              <Route path="/transport-miedzynarodowy" element={<TransportMiedzynarodowy />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>
