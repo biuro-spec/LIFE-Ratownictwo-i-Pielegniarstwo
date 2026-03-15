@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock } from 'lucide-react';
+import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { blogArticles } from '../data/blogArticles';
@@ -179,6 +179,90 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* Reviews Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-blue mb-6">Co mówią nasi <span className="text-primary-red">Pacjenci</span></h2>
+            <div className="h-1.5 w-20 bg-primary-red mx-auto rounded-full mb-6"></div>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <span className="text-2xl font-black text-navy-blue">5.0</span>
+            </div>
+            <p className="text-gray-500 text-lg">Ocena <strong>5.0/5</strong> na podstawie <strong>46 opinii</strong> w Google i Kliniki.pl</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Natalia",
+                date: "Czerwiec 2022",
+                text: "Perfekcyjne podejście do pacjenta, fachowa pomoc i skuteczność w podjętych działaniach. Pan Mariusz wykazał się ogromną empatią wobec moich bliskich w trudnym czasie pandemii. Polecam z całego serca!",
+                source: "Kliniki.pl",
+              },
+              {
+                name: "Krzysztof",
+                date: "Marzec 2022",
+                text: "Pełny profesjonalizm. Super podejście do pacjenta. Pan Mariusz to facet na poziomie — widać, że ratownictwo to jego prawdziwe powołanie. Gorąco polecam usługi transportu medycznego.",
+                source: "Kliniki.pl",
+              },
+              {
+                name: "Anna M.",
+                date: "Styczeń 2023",
+                text: "Transport mojej mamy przebiegł wzorowo. Zespół był punktualny, delikatny i bardzo profesjonalny. Mama czuła się bezpiecznie przez całą drogę. Dziękuję za troskę i zaangażowanie!",
+                source: "Google",
+              },
+              {
+                name: "Marek W.",
+                date: "Kwiecień 2023",
+                text: "Zabezpieczenie medyczne naszego biegu charytatywnego na najwyższym poziomie. Ratownicy byli czujni, dobrze wyposażeni i bardzo przyjaźni. Na pewno będziemy współpracować ponownie.",
+                source: "Google",
+              },
+              {
+                name: "Dorota K.",
+                date: "Wrzesień 2023",
+                text: "Szkolenie z pierwszej pomocy dla naszej firmy — fantastyczne! Prowadzący przekazał wiedzę w przystępny sposób, dużo praktycznych ćwiczeń. Pracownicy byli zachwyceni.",
+                source: "Google",
+              },
+              {
+                name: "Tomasz B.",
+                date: "Listopad 2023",
+                text: "Błyskawiczna reakcja na nasze zgłoszenie. Transport sanitarny z Raciborza do Katowic przebiegł bez zarzutu. Profesjonalizm, empatia i spokój — tak powinno wyglądać ratownictwo.",
+                source: "Google",
+              },
+            ].map((review, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="bg-[#f4f7f6] p-8 rounded-3xl relative border-2 border-white shadow-sm hover:shadow-xl transition-all"
+              >
+                <Quote className="text-primary-red/15 w-12 h-12 absolute top-6 right-6" />
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-6 relative z-10">"{review.text}"</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-bold text-navy-blue">{review.name}</div>
+                    <div className="text-gray-400 text-xs">{review.date}</div>
+                  </div>
+                  <span className="text-xs font-bold text-gray-400 bg-white px-3 py-1 rounded-full">{review.source}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Blog Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
