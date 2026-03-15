@@ -8,9 +8,6 @@
   }
 }
 
-.glass {
-  @apply bg-white/75 backdrop-blur-md border-b border-white/50;
-}
 
 .service-card-hover {
   @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-blue/20;
