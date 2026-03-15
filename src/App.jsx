@@ -1,6 +1,7 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import { HeartPulse, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -102,6 +103,7 @@ function App() {
             </div>
         </footer>
       </div>
+      <ScrollToTopButton />
       <CookieConsent />
     </Router>
   );

@@ -38,7 +38,7 @@ const Home = () => {
             backgroundImage: "url('/assets/images/Life-Ratownictwo-Medyczne-i-Pielegniarstwo.jpg')",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.92) 25%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.2) 60%, transparent 75%)' }}></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-32 pb-16">
