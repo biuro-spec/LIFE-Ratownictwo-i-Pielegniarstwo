@@ -1,9 +1,145 @@
-import React from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck } from 'lucide-react';
+import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { blogArticles } from '../data/blogArticles';
+
+const ReviewsCarousel = ({ reviews }) => {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const timerRef = useRef(null);
+  const total = reviews.length;
+
+  const next = useCallback(() => setActive(p => (p + 1) % total), [total]);
+  const prev = useCallback(() => setActive(p => (p - 1 + total) % total), [total]);
+
+  useEffect(() => {
+    if (paused) return;
+    timerRef.current = setInterval(next, 5000);
+    return () => clearInterval(timerRef.current);
+  }, [paused, next]);
+
+  // Show 3 on desktop, 1 on mobile
+  const getVisible = () => {
+    const items = [];
+    for (let offset = -1; offset <= 1; offset++) {
+      items.push((active + offset + total) % total);
+    }
+    return items;
+  };
+  const visible = getVisible();
+
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Opinie pacjent&oacute;w</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-navy-blue mb-6">Co m&oacute;wią o nas <span className="text-primary-red">pacjenci?</span></h2>
+          <div className="h-1.5 w-20 bg-primary-red mx-auto rounded-full mb-6"></div>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
+              ))}
+            </div>
+            <span className="text-2xl font-black text-navy-blue">5.0</span>
+          </div>
+          <p className="text-gray-500 text-lg">44 opinie na Google &mdash; wszystkie na 5 gwiazdek.</p>
+        </div>
+
+        <div
+          className="relative"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Navigation arrows */}
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 bg-white rounded-full shadow-lg shadow-navy-blue/10 flex items-center justify-center text-navy-blue hover:bg-primary-red hover:text-white transition-all hover:scale-110"
+          >
+            <ChevronLeft size={22} />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 bg-white rounded-full shadow-lg shadow-navy-blue/10 flex items-center justify-center text-navy-blue hover:bg-primary-red hover:text-white transition-all hover:scale-110"
+          >
+            <ChevronRight size={22} />
+          </button>
+
+          {/* Cards container */}
+          <div className="mx-8 md:mx-14">
+            {/* Mobile: single card */}
+            <div className="md:hidden">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -60 }}
+                transition={{ duration: 0.4 }}
+                className="bg-[#f4f7f6] p-8 rounded-3xl relative border-2 border-white shadow-sm"
+              >
+                <Quote className="text-primary-red/15 w-12 h-12 absolute top-6 right-6" />
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-6 relative z-10">&ldquo;{reviews[active].text}&rdquo;</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-bold text-navy-blue">{reviews[active].name}</div>
+                    <div className="text-gray-400 text-xs">{reviews[active].category}</div>
+                  </div>
+                  <span className="text-xs font-bold text-gray-400 bg-white px-3 py-1 rounded-full">{reviews[active].source}</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Desktop: 3 cards */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6">
+              {visible.map((idx, pos) => (
+                <motion.div
+                  key={`${active}-${idx}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: pos * 0.08 }}
+                  className={`bg-[#f4f7f6] p-8 rounded-3xl relative border-2 border-white shadow-sm transition-all ${pos === 1 ? 'scale-105 shadow-xl ring-2 ring-primary-red/10' : 'opacity-80 hover:opacity-100'}`}
+                >
+                  <Quote className="text-primary-red/15 w-12 h-12 absolute top-6 right-6" />
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 leading-relaxed mb-6 relative z-10 line-clamp-4">&ldquo;{reviews[idx].text}&rdquo;</p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-bold text-navy-blue">{reviews[idx].name}</div>
+                      <div className="text-gray-400 text-xs">{reviews[idx].category}</div>
+                    </div>
+                    <span className="text-xs font-bold text-gray-400 bg-white px-3 py-1 rounded-full">{reviews[idx].source}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`rounded-full transition-all ${i === active ? 'w-8 h-3 bg-primary-red' : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Home = () => {
   useSEO({
@@ -342,53 +478,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Opinie pacjent&oacute;w</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-blue mb-6">Co m&oacute;wią o nas <span className="text-primary-red">pacjenci?</span></h2>
-            <div className="h-1.5 w-20 bg-primary-red mx-auto rounded-full mb-6"></div>
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <span className="text-2xl font-black text-navy-blue">5.0</span>
-            </div>
-            <p className="text-gray-500 text-lg">44 opinie na Google &mdash; wszystkie na 5 gwiazdek. Ich słowa znaczą dla nas najwięcej.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reviews.map((review, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
-                viewport={{ once: true }}
-                className="bg-[#f4f7f6] p-8 rounded-3xl relative border-2 border-white shadow-sm hover:shadow-xl transition-all"
-              >
-                <Quote className="text-primary-red/15 w-12 h-12 absolute top-6 right-6" />
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-6 relative z-10">&ldquo;{review.text}&rdquo;</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-bold text-navy-blue">{review.name}</div>
-                    <div className="text-gray-400 text-xs">{review.category}</div>
-                  </div>
-                  <span className="text-xs font-bold text-gray-400 bg-white px-3 py-1 rounded-full">{review.source}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Reviews Carousel */}
+      <ReviewsCarousel reviews={reviews} />
 
       {/* Legal / Podmiot Leczniczy */}
       <section className="py-24 bg-navy-blue text-white relative overflow-hidden">
