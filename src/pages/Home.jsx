@@ -53,45 +53,60 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative min-h-[100vh] flex items-center">
+      <section className="relative min-h-screen flex items-center">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/assets/images/Life-Ratownictwo-Medyczne-i-Pielegniarstwo.jpg')",
           }}
         >
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.92) 25%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.35) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.2) 100%)' }}></div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="max-w-2xl"
             >
-              <span className="bg-primary-red/10 text-primary-red font-bold px-5 py-2 rounded-full text-sm inline-flex items-center gap-2 mb-6">
+              <span className="bg-primary-red/10 text-primary-red font-bold px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm inline-flex items-center gap-2 mb-4 sm:mb-6">
                 <MapPin size={14} />
                 Racib&oacute;rz &bull; Rybnik &bull; całe woj. śląskie
               </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-navy-blue leading-tight mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">
                 Profesjonalne <span className="text-primary-red">Ratownictwo</span> i Transport
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 <strong>LIFE-Ratownictwo Medyczne</strong> &mdash; podmiot leczniczy zajmujący się transportem medycznym i sanitarnym, zabezpieczeniami medycznymi oraz szkoleniami z pierwszej pomocy. Działamy od 2012 roku z pasją i powołaniem na terenie Raciborza, Rybnika i całego wojew&oacute;dztwa śląskiego.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="tel:602622840" className="bg-primary-red text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary-red/20 flex items-center gap-2 hover:bg-[#ba1e17] transition-all hover:scale-105">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="tel:602622840" className="bg-primary-red text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-primary-red/20 flex items-center justify-center gap-2 hover:bg-[#ba1e17] transition-all hover:scale-105">
                   <Phone size={20} /> Zam&oacute;w transport
                 </a>
-                <a href="#uslugi" className="bg-navy-blue text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-navy-blue/20 hover:bg-navy-blue-light transition-all hover:scale-105">
+                <a href="#uslugi" className="bg-navy-blue text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-navy-blue/20 flex items-center justify-center hover:bg-navy-blue-light transition-all hover:scale-105">
                   Nasza Oferta
                 </a>
               </div>
+
+              {/* Mobile stats - visible on smaller screens */}
+              <div className="grid grid-cols-2 gap-3 mt-8 lg:hidden">
+                {[
+                  { value: '12+', label: 'Lat doświadczenia' },
+                  { value: '24/7', label: 'Dostępność' },
+                  { value: '500+', label: 'Transportów rocznie' },
+                  { value: '100+', label: 'Zabezpieczonych imprez' },
+                ].map((stat, i) => (
+                  <div key={i} className="bg-white/70 backdrop-blur-sm border border-white/80 rounded-2xl p-4 text-center shadow-md">
+                    <div className="text-2xl font-black text-primary-red">{stat.value}</div>
+                    <div className="text-navy-blue font-semibold text-xs">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
-            {/* Stats tiles */}
+            {/* Stats tiles - desktop */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,10 +114,10 @@ const Home = () => {
               className="hidden lg:grid grid-cols-2 gap-5"
             >
               {[
-                { value: '12+', label: 'Lat do\u015Bwiadczenia', sub: 'od 2012 roku' },
-                { value: '24/7', label: 'Dost\u0119pno\u015B\u0107', sub: 'transport medyczny' },
-                { value: '500+', label: 'Zrealizowanych', sub: 'transport\u00F3w rocznie' },
-                { value: '100+', label: 'Zabezpieczonych', sub: 'imprez i wydarze\u0144' },
+                { value: '12+', label: 'Lat doświadczenia', sub: 'od 2012 roku' },
+                { value: '24/7', label: 'Dostępność', sub: 'transport medyczny' },
+                { value: '500+', label: 'Zrealizowanych', sub: 'transportów rocznie' },
+                { value: '100+', label: 'Zabezpieczonych', sub: 'imprez i wydarzeń' },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/60 backdrop-blur-sm border-2 border-white rounded-3xl p-7 text-center shadow-lg shadow-navy-blue/5 hover:shadow-xl hover:-translate-y-1 transition-all">
                   <div className="text-3xl font-black text-primary-red mb-1">{stat.value}</div>

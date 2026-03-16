@@ -110,7 +110,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Us\u0142ugi dropdown */}
+            {/* Usługi dropdown */}
             <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setServicesOpen(prev => !prev)}
@@ -125,7 +125,7 @@ const Navbar = () => {
                   }
                 `}
               >
-                Us\u0142ugi
+                Usługi
                 <ChevronDown size={14} className={`transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
@@ -241,9 +241,9 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Us\u0142ugi w mobile */}
+            {/* Usługi w mobile */}
             <div className={`text-sm font-bold uppercase tracking-wider mt-2 ${scrolled ? 'text-white/50' : 'text-navy-blue/40'}`}>
-              Nasze Us\u0142ugi
+              Nasze Usługi
             </div>
             {serviceLinks.map((link) => (
               <Link
