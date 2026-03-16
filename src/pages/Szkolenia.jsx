@@ -315,9 +315,9 @@ const Szkolenia = () => {
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <div className="bg-primary-red/5 border-2 border-primary-red/20 rounded-2xl p-6 sm:p-8 mb-8 not-prose">
-            <h3 className="text-xl font-bold text-primary-red mb-3">Darmowy przyjazd do dzieci</h3>
+            <h3 className="text-xl font-bold text-primary-red mb-3">Darmowy przyjazd do dzieci &mdash; w prezencie do szkolenia nauczycieli</h3>
             <p className="text-gray-700 leading-relaxed">
-              Każda szkoła lub przedszkole, kt&oacute;re zam&oacute;wi u nas szkolenie, otrzymuje w prezencie <strong>bezpłatny 2-godzinny przyjazd ratownika medycznego z karetką do dzieci</strong>. Pokazujemy ambulans od środka, wyposażenie ratownicze, rozstawiamy namiot &mdash; bez dodatkowych koszt&oacute;w.
+              Każda szkoła lub przedszkole, kt&oacute;re zam&oacute;wi u nas <strong>szkolenie z pierwszej pomocy dla nauczycieli</strong>, otrzymuje w prezencie <strong>bezpłatny 2-godzinny przyjazd ratownika medycznego z karetką do dzieci</strong>. Podczas gdy kadra pedagogiczna szkoli się z pierwszej pomocy, nasz ratownik prowadzi zajęcia dla uczni&oacute;w &mdash; pokazuje ambulans od środka, wyposażenie ratownicze, rozstawia namiot ratowniczy. Dzieci uczą się wzywać pomoc i poznają podstawy reagowania. Wszystko bez dodatkowych koszt&oacute;w.
             </p>
           </div>
         </motion.div>
