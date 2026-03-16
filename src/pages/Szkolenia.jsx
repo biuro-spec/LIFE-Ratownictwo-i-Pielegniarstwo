@@ -118,8 +118,8 @@ const Szkolenia = () => {
       text: "Każdy uczestnik samodzielnie ćwiczy obsługę AED \u2014 przyklejanie elektrod, analizę rytmu, wykonanie defibrylacji. Urządzenie szkoleniowe jest identyczne w obsłudze jak prawdziwy defibrylator.",
     },
     {
-      title: "Kamizelki do udrażniania dr\u00F3g oddechowych",
-      text: "Specjalistyczny sprzęt do nauki technik udrażniania \u2014 odchylenia głowy, uniesienia żuchwy i manewr\u00F3w stosowanych przy zadławieniu i utracie przytomności.",
+      title: "Kamizelka ACT FAST \u2014 nauka udrażniania dr\u00F3g oddechowych",
+      text: "Profesjonalna kamizelka treningowa ACT FAST umożliwia realistyczne \u0107wiczenie technik ratowania osoby zadławionej \u2014 uderze\u0144 w plecy i uchwytu Heimlicha. Uczestnicy ucz\u0105 si\u0119 prawid\u0142owej techniki i odpowiedniej si\u0142y naci\u015Bni\u0119cia, kt\u00F3ra jest niezb\u0119dna do uratowania \u017Cycia.",
     },
   ];
 
