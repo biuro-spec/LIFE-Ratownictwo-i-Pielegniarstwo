@@ -8,10 +8,17 @@ import useSEO from '../hooks/useSEO';
 const ZabezpieczeniaMedyczne = () => {
   useSEO({ title: 'Zabezpieczenia Medyczne Imprez', description: 'Profesjonalne zabezpieczenie medyczne imprez i wydarzeń na Śląsku. Karetki, ratownicy medyczni, punkt pomocy medycznej.' });
   return (
-    <ServiceLayout 
-      title="Ratownictwo Śląsk"
+    <ServiceLayout
+      title="Zabezpieczenia"
+      titleAccent="Medyczne"
       subtitle="Zapewniamy profesjonalne zabezpieczenie medyczne imprez oraz wydarzeń publicznych zgodnie z przepisami."
       bgImage="/assets/images/Life-Ratownictwo-Medyczne-i-Pielegniarstwo.jpg"
+      tiles={[
+        { value: "100+", label: "Zabezpieczonych", sub: "imprez i wydarzeń" },
+        { value: "PRM", label: "Ratownicy medyczni", sub: "na każdym evencie" },
+        { value: "3", label: "Ambulanse", sub: "w gotowości" },
+        { value: "24/7", label: "Dostępność", sub: "cały rok" },
+      ]}
     >
       <div className="prose prose-lg max-w-none">
         <h2 className="text-3xl font-extrabold text-navy-blue mb-6">Bezpieczeństwo wydarzeń</h2>

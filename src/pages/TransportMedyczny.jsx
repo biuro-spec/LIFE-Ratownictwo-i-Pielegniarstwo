@@ -8,10 +8,17 @@ import useSEO from '../hooks/useSEO';
 const TransportMedyczny = () => {
   useSEO({ title: 'Transport Medyczny Racibórz', description: 'Profesjonalny transport medyczny w Raciborzu i na Śląsku. Przewóz pacjentów karetkami, transport leżący i siedzący, transport międzymiastowy.' });
   return (
-    <ServiceLayout 
-      title="Transport Medyczny Racibórz"
+    <ServiceLayout
+      title="Transport"
+      titleAccent="Medyczny"
       subtitle="Zapewniamy bezpieczny i profesjonalny przewóz pacjentów ambulansami przystosowanymi do ich potrzeb."
       bgImage="/assets/images/Wypadki-komunikacyjne-1.jpg"
+      tiles={[
+        { value: "24/7", label: "Dostępność", sub: "weekendy i święta" },
+        { value: "3", label: "Ambulanse", sub: "w gotowości" },
+        { value: "500+", label: "Transportów", sub: "rocznie" },
+        { value: "PRM", label: "Ratownicy medyczni", sub: "w każdym zespole" },
+      ]}
     >
       <div className="prose prose-lg max-w-none">
         <h2 className="text-3xl font-extrabold text-navy-blue mb-6 border-b-2 border-primary-red pb-4 inline-block">Bezpieczeństwo w podróży</h2>

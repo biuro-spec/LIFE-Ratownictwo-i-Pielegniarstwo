@@ -116,9 +116,16 @@ const Szkolenia = () => {
 
   return (
     <ServiceLayout
-      title="Szkolenia z Pierwszej Pomocy"
-      subtitle="Ucz się od tych, kt\u00F3rzy robią to na co dzień"
+      title="Szkolenia z"
+      titleAccent="Pierwszej Pomocy"
+      subtitle="Ucz się od tych, którzy robią to na co dzień"
       bgImage="/assets/images/Szkolenia-z-pierwszej-pomocy-dla-dzieci.jpg"
+      tiles={[
+        { value: "Firmy", label: "Zakłady pracy", sub: "obowiązek BHP" },
+        { value: "Szkoły", label: "Podstawowe i średnie", sub: "programy wg wieku" },
+        { value: "Przedszkola", label: "Dla najmłodszych", sub: "z karetką i namiotem" },
+        { value: "Uczelnie", label: "Studenci i kadra", sub: "zaawansowany program" },
+      ]}
     >
       <div className="prose prose-lg max-w-none">
 
