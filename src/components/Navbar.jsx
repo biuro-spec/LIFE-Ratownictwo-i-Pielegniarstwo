@@ -69,18 +69,22 @@ const Navbar = () => {
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
             ? 'bg-primary-red/90 backdrop-blur-xl border-2 border-white/30 shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15),0_0_0_1px_rgba(255,255,255,0.05)] py-3 px-6'
-            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-2 px-8'
+            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-3 px-8'
           }
         `}
       >
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
           {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0 ml-4">
+          <Link to="/" className="flex items-center gap-3 shrink-0 ml-4">
             <img
-              src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-czerwone.png'}
+              src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-kolo.png'}
               alt="Life Ratownictwo Medyczne"
-              className={`transition-all duration-500 object-contain ${scrolled ? 'h-12' : 'h-20'}`}
+              className={`transition-all duration-500 object-contain rounded-full ${scrolled ? 'h-10' : 'h-14'}`}
             />
+            <span className={`font-extrabold tracking-tighter transition-all duration-500 hidden sm:block ${scrolled ? 'text-base' : 'text-lg'}`}>
+              <span className={`transition-colors duration-500 ${scrolled ? 'text-white' : 'text-navy-blue'}`}>LIFE</span>
+              <span className={`transition-colors duration-500 ${scrolled ? 'text-white/80' : 'text-primary-red'}`}>-RATOWNICTWO</span>
+            </span>
           </Link>
 
           {/* Spacer */}
