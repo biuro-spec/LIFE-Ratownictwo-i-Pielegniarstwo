@@ -62,7 +62,7 @@ const Navbar = () => {
       className="fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
       style={{
         top: scrolled ? '12px' : '24px',
-        width: scrolled ? 'min(92%, 1050px)' : 'min(95%, 1380px)',
+        width: scrolled ? 'min(90%, 960px)' : 'min(92%, 1200px)',
       }}
     >
       <nav
