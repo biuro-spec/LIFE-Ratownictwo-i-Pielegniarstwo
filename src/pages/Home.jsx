@@ -13,40 +13,58 @@ const Home = () => {
 
   const reviews = [
     {
-      name: "Maria K.",
-      text: "Perfekcyjne podej\u015Bcie do pacjenta i fachowa pomoc. Pan Mariusz to ciep\u0142y, empatyczny cz\u0142owiek. Profesjonalista w swoim fachu \u2014 gor\u0105co polecam!",
+      name: "AGNIESZKA Kici\u0144ska-Pilz",
+      text: "Szkolenie, kt\u00F3re zosta\u0142o przeprowadzone przez Pana Mariusza, uwa\u017Cam za fantastyczne. Profesjonalizm, talent do przekazywania wiedzy w spos\u00F3b przyst\u0119pny, zrozumia\u0142y dla ka\u017Cdego, niezwykle interesuj\u0105cy. To szkolenie, na kt\u00F3rym nie wieje nud\u0105, a czas p\u0142ynie za szybko. Oby wi\u0119cej takich.",
+      source: "Google",
+      category: "Szkolenia",
+    },
+    {
+      name: "Micha\u0142 Bartela",
+      text: "Transportowali\u015Bmy wsp\u00F3lnie moj\u0105 niespe\u0142na 90 letni\u0105 babci\u0119 z dosy\u0107 daleka. Byli\u015Bmy pe\u0142ni strachu jak b\u0119dzie...ale by\u0142o perfekcyjnie i bezproblemowo. Ekipa Life to ludzie pe\u0142ni empatii, u\u015Bmiechu i profesjonalizmu. Polecam z ca\u0142ego serca!",
       source: "Google",
       category: "Transport medyczny",
     },
     {
-      name: "Tomasz P.",
-      text: "Pe\u0142ny profesjonalizm. Super podej\u015Bcie do pacjenta. Szczerze polecam t\u0119 firm\u0119 ka\u017Cdemu, kto potrzebuje transportu medycznego na \u015Al\u0105sku.",
+      name: "Monika Wa\u0142aszek",
+      text: "Pe\u0142en profesjonalizm w przeprowadzaniu szkole\u0144, ciekawe wyk\u0142ady podparte wiedz\u0105 praktyczn\u0105. Wida\u0107, \u017Ce s\u0105 to ludzie z pasj\u0105, kt\u00F3rzy kochaj\u0105 swoj\u0105 prac\u0119 :)",
       source: "Google",
-      category: "Transport sanitarny",
+      category: "Szkolenia",
     },
     {
-      name: "Anna W.",
-      text: "Pan Mariusz by\u0142 z nami podczas najtrudniejszych chwil. Dobre s\u0142owo i otucha s\u0105 r\u00F3wnie wa\u017Cne co pomoc medyczna. Dzi\u0119kujemy z ca\u0142ego serca!",
+      name: "Monika Niedzbala",
+      text: "Korzysta\u0142am z transportu mi\u0119dzynarodowego z Life-Ratownictwo Medyczne. Firma profeska. Panowie ratownicy zabezpieczyli dziecko od szpitala, w kt\u00F3rym si\u0119 znajdowali\u015Bmy, a\u017C do samego oddzia\u0142u. Ca\u0142y czas pozostawali w kontakcie z rodzicem.",
       source: "Google",
-      category: "Opieka piel\u0119gniarska",
+      category: "Transport mi\u0119dzynarodowy",
     },
     {
-      name: "Firma / Zak\u0142ad",
-      text: "Przeprowadzili szkolenie z pierwszej pomocy dla naszego zespo\u0142u. Szkolenie by\u0142o praktyczne, anga\u017Cuj\u0105ce i pe\u0142ne inicjatywy. Gor\u0105co polecamy!",
+      name: "Ewa Kmoch",
+      text: "Wida\u0107, \u017Ce ich pasj\u0105 jest praca z lud\u017Ami, kt\u00F3rzy potrzebuj\u0105 pomocy. Swoj\u0105 prac\u0119 wykonuj\u0105 z pe\u0142nym zaanga\u017Cowaniem, po\u015Bwi\u0119ceniem i co wa\u017Cne \u2014 profesjonalnie. S\u0105 przyjazne nastawieni do ludzi. Znaj\u0105 si\u0119 w 100 procentach na tym co robi\u0105.",
       source: "Google",
-      category: "Szkolenia KPP",
+      category: "Opieka medyczna",
     },
     {
-      name: "Janusz S.",
-      text: "Zabezpieczenie medyczne naszego festiwalu przebieg\u0142o bez zarzutu. Profesjonalna obs\u0142uga, zawsze na miejscu, pe\u0142ne wyposa\u017Cenie. Skorzystamy ponownie!",
+      name: "Katarzyna W\u0142odarczyk",
+      text: "Jestem \u015Bwie\u017Co po szkoleniu przeprowadzonym przez Life. Pe\u0142en profesjonalizm; ciekawie, konkretnie i praktycznie przedstawiona tematyka ratownictwa, a do tego w mi\u0142ej atmosferze. Bardzo polecam.",
       source: "Google",
-      category: "Zabezpieczenie imprez",
+      category: "Szkolenia",
     },
     {
-      name: "Katarzyna R.",
-      text: "Terminowo\u015B\u0107, profesjonalizm i serdeczno\u015B\u0107 \u2014 rzadko spotykane po\u0142\u0105czenie. Transport mojej mamy do domu w Katowicach przebiega\u0142 spokojnie i bezpiecznie.",
+      name: "Wioletta Walter",
+      text: "Pan Mariusz, prowadz\u0105cy szkolenie z udzielania pierwszej pomocy, jest osob\u0105 wspaniale przekazuj\u0105c\u0105 zagadnienia. Czas sp\u0119dzony na szkoleniu mija bardzo szybko, a uzyskana wiedza teoretyczna i praktyczna pozostanie na bardzo d\u0142ugo.",
       source: "Google",
-      category: "Transport do domu",
+      category: "Szkolenia",
+    },
+    {
+      name: "El\u017Cbieta To\u015B",
+      text: "To ju\u017C m\u00F3j kolejny kontakt z t\u0105 grup\u0105. Panowie bardzo profesjonalnie przeprowadzili szkolenie z udzielania pierwszej pomocy dzieciom z ZSU Rybnik. Bardzo polecam!",
+      source: "Google",
+      category: "Szkolenia dzieci",
+    },
+    {
+      name: "Adam Ek",
+      text: "Niesamowicie obszerna wiedza, profesjonalizm, a zarazem przyjazny spos\u00F3b bycia Pana Mariusza, to z pewno\u015Bci\u0105 du\u017Ce atuty szkolenia. Pozdrawiam serdecznie.",
+      source: "Google",
+      category: "Szkolenia",
     },
   ];
 
@@ -339,10 +357,10 @@ const Home = () => {
               </div>
               <span className="text-2xl font-black text-navy-blue">5.0</span>
             </div>
-            <p className="text-gray-500 text-lg">Setki zadowolonych pacjent&oacute;w i rodzin, kt&oacute;re nam zaufały &mdash; ich słowa znaczą dla nas najwięcej.</p>
+            <p className="text-gray-500 text-lg">44 opinie na Google &mdash; wszystkie na 5 gwiazdek. Ich słowa znaczą dla nas najwięcej.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
               <motion.div
                 key={i}
