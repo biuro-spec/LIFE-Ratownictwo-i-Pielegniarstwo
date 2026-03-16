@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ServiceLayout from '../components/ServiceLayout';
-import { motion } from 'framer-motion';
-import { GraduationCap, Heart, CheckCircle2, Users, ChevronRight, Phone, Mail, ShieldCheck, Truck, Stethoscope, Baby, Zap, Flame, Bone, Brain, HeartPulse, Activity, Star, Building2, School, BadgeCheck, Clock, MapPin, FileCheck } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { GraduationCap, Heart, CheckCircle2, Users, ChevronRight, Phone, Mail, ShieldCheck, Truck, Stethoscope, Baby, Zap, Flame, Bone, Brain, HeartPulse, Activity, Star, Building2, School, BadgeCheck, Clock, MapPin, FileCheck, X, ChevronLeft, ChevronRight as ChevronRightIcon, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
@@ -10,7 +10,26 @@ const fadeUp = {
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }),
 };
 
+const galleryPhotos = [
+  { src: "/assets/images/szkolenia/szkolenia-dzieci.jpg", alt: "Szkolenia z pierwszej pomocy dla dzieci" },
+  { src: "/assets/images/szkolenia/szkolenia-firmy.jpg", alt: "Szkolenia z pierwszej pomocy dla firm" },
+  { src: "/assets/images/szkolenia/szkolenia-1.jpg", alt: "Ćwiczenia praktyczne na szkoleniu" },
+  { src: "/assets/images/szkolenia/szkolenia-2.jpg", alt: "Szkolenie z ratownikiem medycznym" },
+  { src: "/assets/images/szkolenia/szkolenia-3.jpg", alt: "Nauka resuscytacji na fantomie" },
+  { src: "/assets/images/szkolenia/szkolenia-4.jpg", alt: "Szkolenie z pierwszej pomocy" },
+  { src: "/assets/images/szkolenia/szkolenia-5.jpg", alt: "Ćwiczenia z AED" },
+  { src: "/assets/images/szkolenia/szkolenia-6.jpg", alt: "Praktyka na szkoleniu" },
+  { src: "/assets/images/szkolenia/szkolenia-7.jpg", alt: "Szkolenie dla grupy" },
+  { src: "/assets/images/szkolenia/szkolenia-8.jpg", alt: "Szkolenie w terenie" },
+  { src: "/assets/images/szkolenia/szkolenia-9.jpg", alt: "Zajęcia z pierwszej pomocy" },
+  { src: "/assets/images/szkolenia/szkolenia-10.jpg", alt: "Ratownictwo medyczne szkolenie" },
+  { src: "/assets/images/szkolenia/szkolenia-11.jpg", alt: "Szkolenie z karetką" },
+  { src: "/assets/images/szkolenia/szkolenia-12.jpg", alt: "Ćwiczenia praktyczne" },
+];
+
 const Szkolenia = () => {
+  const [lightbox, setLightbox] = useState(null);
+
   useSEO({
     title: "Szkolenia z Pierwszej Pomocy Racib\u00F3rz \u2013 Firmy, Szkoły, Przedszkola | LIFE-Ratownictwo",
     description: "Szkolenia z pierwszej pomocy prowadzone przez ratownik\u00F3w medycznych PRM. Dla firm, szk\u00F3ł i przedszkoli. Przyjeżdżamy z karetką i namiotem ratowniczym. Fantomy Laerdal QCPR, AED. Tel. 602 622 840."
@@ -190,6 +209,84 @@ const Szkolenia = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Galeria zdjęć */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-blue mb-4 text-center">
+            <Camera size={32} className="inline mr-3 text-primary-red" />
+            Nasze szkolenia w obiektywie
+          </h2>
+          <p className="text-gray-600 text-lg text-center mb-10 max-w-2xl mx-auto">
+            Zobacz jak wyglądają nasze szkolenia z pierwszej pomocy &mdash; ćwiczenia praktyczne, fantomy, AED, karetka i namiot ratowniczy.
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 not-prose mb-16">
+          {galleryPhotos.map((photo, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i * 0.3}
+              variants={fadeUp}
+              className="relative group cursor-pointer overflow-hidden rounded-2xl aspect-square"
+              onClick={() => setLightbox(i)}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-navy-blue/0 group-hover:bg-navy-blue/30 transition-all duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold text-sm">Powiększ</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Lightbox */}
+        <AnimatePresence>
+          {lightbox !== null && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              onClick={() => setLightbox(null)}
+              data-lenis-prevent
+            >
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
+              >
+                <X size={32} />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightbox((lightbox - 1 + galleryPhotos.length) % galleryPhotos.length); }}
+                className="absolute left-4 sm:left-8 text-white/70 hover:text-white transition-colors z-10"
+              >
+                <ChevronLeft size={40} />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightbox((lightbox + 1) % galleryPhotos.length); }}
+                className="absolute right-4 sm:right-8 text-white/70 hover:text-white transition-colors z-10"
+              >
+                <ChevronRightIcon size={40} />
+              </button>
+              <motion.img
+                key={lightbox}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                src={galleryPhotos[lightbox].src}
+                alt={galleryPhotos[lightbox].alt}
+                className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Program szkolenia */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
