@@ -20,6 +20,7 @@ const Navbar = () => {
       setScrolled(window.scrollY > 80);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -43,7 +44,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Strona Główna', path: '/' },
+    { name: 'Strona G\u0142\u00F3wna', path: '/' },
     { name: 'O nas', path: '/o-nas' },
     { name: 'Blog', path: '/blog' },
   ];
@@ -74,17 +75,21 @@ const Navbar = () => {
         `}
       >
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 ml-4">
+          {/* Logo - overflows navbar when at top */}
+          <Link to="/" className="flex items-center shrink-0 ml-2 relative">
             <img
-              src={scrolled ? '/assets/images/life-logo-biale.png' : '/assets/images/life-logo-kolo.png'}
+              src="/assets/images/life-logo-kolo.png"
               alt="Life Ratownictwo Medyczne"
-              className={`transition-all duration-500 object-contain rounded-full ${scrolled ? 'h-10' : 'h-14'}`}
+              className="object-contain rounded-full transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+              style={{
+                height: scrolled ? '44px' : '100px',
+                marginBottom: scrolled ? '0' : '-40px',
+                filter: scrolled
+                  ? 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))'
+                  : 'drop-shadow(0 8px 24px rgba(218,37,29,0.25))',
+                border: scrolled ? 'none' : '3px solid rgba(218,37,29,0.15)',
+              }}
             />
-            <span className={`font-extrabold tracking-tighter transition-all duration-500 hidden sm:block ${scrolled ? 'text-base' : 'text-lg'}`}>
-              <span className={`transition-colors duration-500 ${scrolled ? 'text-white' : 'text-navy-blue'}`}>LIFE</span>
-              <span className={`transition-colors duration-500 ${scrolled ? 'text-white/80' : 'text-primary-red'}`}>-RATOWNICTWO</span>
-            </span>
           </Link>
 
           {/* Spacer */}
@@ -111,7 +116,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Usługi dropdown */}
+            {/* Us\u0142ugi dropdown */}
             <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setServicesOpen(prev => !prev)}
@@ -126,7 +131,7 @@ const Navbar = () => {
                   }
                 `}
               >
-                Usługi
+                Us\u0142ugi
                 <ChevronDown size={14} className={`transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
@@ -242,9 +247,9 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Usługi w mobile */}
+            {/* Us\u0142ugi w mobile */}
             <div className={`text-sm font-bold uppercase tracking-wider mt-2 ${scrolled ? 'text-white/50' : 'text-navy-blue/40'}`}>
-              Nasze Usługi
+              Nasze Us\u0142ugi
             </div>
             {serviceLinks.map((link) => (
               <Link
@@ -285,7 +290,7 @@ const Navbar = () => {
                 `}
               >
                 <Phone size={18} />
-                Zadzwoń: 602 622 840
+                Zadzwo\u0144: 602 622 840
               </a>
             </div>
           </motion.div>
