@@ -18,6 +18,11 @@ const Szkolenia = () => {
 
   const programItems = [
     {
+      icon: <ShieldCheck size={24} />,
+      title: "Bezpieczeństwo własne i miejsca zdarzenia",
+      text: "Zanim pomożesz innym, musisz zadbać o siebie. Uczymy jak ocenić zagrożenia na miejscu zdarzenia \u2014 ruch drogowy, substancje chemiczne, porażenie prądem, pożar. Jak zabezpieczyć miejsce wypadku, jak chronić siebie i poszkodowanego przed dodatkowymi obrażeniami. To fundament, od kt\u00F3rego zaczyna się każda interwencja ratownicza.",
+    },
+    {
       icon: <Activity size={24} />,
       title: "Ocena poszkodowanego i wzywanie pomocy",
       text: "Systematyczne podejście do osoby poszkodowanej \u2014 ocena przytomności, oddechu, reakcji na bodźce. Skuteczne wzywanie pomocy pod numer 112 i przekazywanie informacji dyspozytorowi.",
