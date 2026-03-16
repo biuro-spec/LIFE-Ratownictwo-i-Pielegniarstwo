@@ -59,6 +59,16 @@ const Szkolenia = () => {
       text: "R\u00F3żnice między hipoglikemią a hiperglikemią \u2014 objawy, mechanizm, postępowanie. Kiedy podać cukier, a kiedy bezwzględnie nie. Jak rozpoznać stan cukrzycowy u osoby, kt\u00F3ra nie może nam powiedzieć co jej dolega.",
     },
     {
+      icon: <Brain size={24} />,
+      title: "Udar m\u00F3zgu",
+      text: "Omawiamy mechanizm udaru niedokrwiennego i krwotocznego \u2014 dlaczego czas reakcji decyduje o życiu i sprawności pacjenta. Uczymy rozpoznawać objawy udaru metodą FAST (Face, Arms, Speech, Time) oraz co robić do przyjazdu karetki. Wyjaśniamy r\u00F3żnice między udarem a innymi stanami, kt\u00F3re mogą go naśladować.",
+    },
+    {
+      icon: <Phone size={24} />,
+      title: "Zasady wzywania Zespołu Ratownictwa Medycznego",
+      text: "Kiedy dzwonić pod 112, a kiedy pod 999. Jakie informacje przekazać dyspozytorowi, żeby zespół przyjechał jak najszybciej. Omawiamy strukturę systemu PRM, rodzaje zespoł\u00F3w (P i S), co robić gdy dyspozytor zadaje pytania, i dlaczego nie wolno rozłączać się pierwszy. Ćwiczymy prowadzenie rozmowy z dyspozytorem na realistycznych scenariuszach.",
+    },
+    {
       icon: <ShieldCheck size={24} />,
       title: "Zadławienie",
       text: "Postępowanie przy zadławieniu u dorosłego, dziecka i niemowlęcia \u2014 bo technika jest zupełnie inna dla każdej grupy wiekowej. Uderzenia w plecy, uchwyt Heimlicha, postępowanie gdy poszkodowany traci przytomność. Ćwiczenia praktyczne na fantomach i kamizelkach.",
