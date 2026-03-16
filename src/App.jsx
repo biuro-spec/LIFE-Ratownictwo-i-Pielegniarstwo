@@ -104,7 +104,7 @@ function App() {
                     </div>
                 </div>
                 <div className="pt-10 text-center text-xs opacity-50 border-t border-white/5">
-                    &copy; 2026 Life-Ratownictwo Medyczne i Pielęgniarstwo Sp. z o.o. | KRS: 0000920762 | NIP: 6392023251
+                    &copy; 2025 LIFE-Ratownictwo Medyczne i Piel&eogon;gniarstwo Sp. z o.o. | NIP: 6392023251 | KRS: 0000920762 | REGON: 389900423 &middot; Podmiot leczniczy wpisany do rejestru MZ
                 </div>
             </div>
         </footer>
