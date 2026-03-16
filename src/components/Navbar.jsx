@@ -77,19 +77,13 @@ const Navbar = () => {
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
           {/* Logo - overflows navbar when at top */}
           <Link to="/" className="flex items-center shrink-0 ml-2 relative">
-            <img
-              src="/assets/images/life-logo-kolo.png"
-              alt="Life Ratownictwo Medyczne"
-              className="object-contain rounded-full transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              style={{
-                height: scrolled ? '44px' : '100px',
-                marginBottom: scrolled ? '0' : '-40px',
-                filter: scrolled
-                  ? 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))'
-                  : 'drop-shadow(0 8px 24px rgba(218,37,29,0.25))',
-                border: scrolled ? 'none' : '3px solid rgba(218,37,29,0.15)',
-              }}
-            />
+            <span
+              className={`font-bold transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                scrolled ? 'text-white text-lg' : 'text-primary-red text-xl'
+              }`}
+            >
+              LIFE
+            </span>
           </Link>
 
           {/* Spacer */}

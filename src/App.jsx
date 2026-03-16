@@ -59,7 +59,7 @@ function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
                     <div className="col-span-1 lg:col-span-1">
                         <div className="mb-6">
-                            <img src="/assets/images/life-logo-biale.png" alt="Life Ratownictwo Medyczne" className="h-12 object-contain" />
+                            <span className="text-white font-bold text-2xl">LIFE</span>
                         </div>
                         <p className="text-base leading-relaxed mb-6">
                             Profesjonalna opieka medyczna i transport sanitarny. Działamy z misją i pasją od 2012 roku.
