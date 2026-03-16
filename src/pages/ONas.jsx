@@ -14,25 +14,21 @@ const ONas = () => {
 
   return (
     <div>
-      <section className="bg-navy-blue pt-40 pb-20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-red/10 border-l border-white/5 skew-x-12 translate-x-1/4"></div>
-        <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
-            <span className="text-primary-red font-black tracking-widest uppercase mb-4 block">Nasze Korzenie</span>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">Poznaj naszą <span className="text-primary-red">Misję</span></h1>
-            <p className="text-xl opacity-80 leading-relaxed font-light mb-8 italic">
+      <section className="relative min-h-[520px] sm:min-h-[580px] flex items-center">
+        <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/IMG_0802.jpg')" }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
+            <span className="bg-primary-red/10 text-primary-red font-bold px-5 py-2 rounded-full text-sm inline-flex items-center gap-2 mb-4 sm:mb-6">Nasze Korzenie</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">Poznaj naszą <span className="text-primary-red">Misję</span></h1>
+            <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-light mb-4 italic">
               "To my dopasowujemy się do pacjenta, a nie pacjent do nas."
             </p>
-            <p className="text-lg opacity-70 leading-relaxed mb-10">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               Life-Ratownictwo Medyczne i Pielęgniarstwo Sp. z o.o. to zespół pasjonatów i ekspertów, których liderem jest <strong>Mariusz Cichoń</strong> – czynny ratownik medyczny z raciborskiego pogotowia. Od lat udowadniamy, że pomoc medyczna może być szybka, profesjonalna i pełna empatii.
             </p>
-          </div>
-          <div className="lg:w-1/2">
-            <div className="relative">
-                <div className="absolute inset-0 bg-primary-red/20 rounded-[40px] translate-x-4 translate-y-4"></div>
-                <img src="/assets/images/IMG_0802.jpg" alt="Zespół Life-Ratownictwo" className="rounded-[40px] shadow-2xl relative z-10 w-full h-[500px] object-cover" />
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

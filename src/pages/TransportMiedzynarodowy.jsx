@@ -74,40 +74,36 @@ const TransportMiedzynarodowy = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{
-            backgroundImage: "linear-gradient(to right, rgba(15,43,70,0.95), rgba(15,43,70,0.75)), url('/assets/images/Wypadki-komunikacyjne-1.jpg')",
-          }}
-        />
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-red/10 skew-x-12 translate-x-1/4 z-[1]"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="bg-blue-500/20 text-blue-200 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2">
+      <section className="relative min-h-[520px] sm:min-h-[580px] flex items-center">
+        <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/Wypadki-komunikacyjne-1.jpg')" }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <span className="bg-blue-100 text-blue-700 font-bold px-4 py-2 rounded-full text-xs sm:text-sm flex items-center gap-2">
                 <Languages size={16} /> PL / DE
               </span>
-              <span className="bg-white/10 text-white/80 font-bold px-4 py-2 rounded-full text-sm">
+              <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-2 rounded-full text-xs sm:text-sm">
                 24/7 erreichbar
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-2 sm:mb-4">
               Transport Medyczny <span className="text-primary-red">Polska–Niemcy</span>
             </h1>
-            <p className="text-2xl font-bold opacity-70 mb-6">Krankentransport Polen–Deutschland</p>
-            <p className="text-xl opacity-85 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-xl sm:text-2xl font-bold text-gray-400 mb-4 sm:mb-6">Krankentransport Polen–Deutschland</p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-xl">
               Międzynarodowy transport pacjentów między Polską a Niemcami. Repatriacja medyczna, transport ubezpieczeniowy, współpraca z Krankenkassen. Baza w Raciborzu — 25 km od granicy.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="tel:602622840" className="bg-primary-red text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary-red/30 flex items-center gap-2 hover:scale-105 transition-all">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a href="tel:602622840" className="bg-primary-red text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-primary-red/20 flex items-center justify-center gap-2 hover:bg-[#ba1e17] transition-all hover:scale-105">
                 <Phone size={20} /> Zadzwoń / Anrufen
               </a>
-              <a href="mailto:biuro@life-ratownictwo.pl" className="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-xl font-bold text-lg border border-white/20 hover:bg-white/20 transition-all">
+              <a href="mailto:biuro@life-ratownictwo.pl" className="bg-navy-blue text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-navy-blue/20 flex items-center justify-center hover:bg-navy-blue-light transition-all hover:scale-105">
                 biuro@life-ratownictwo.pl
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

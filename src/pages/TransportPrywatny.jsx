@@ -74,47 +74,46 @@ const TransportPrywatny = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{
-            backgroundImage: "linear-gradient(to right, rgba(15,43,70,0.95), rgba(15,43,70,0.75)), url('/assets/images/Wypadki-komunikacyjne-1.jpg')",
-          }}
-        />
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-red/10 skew-x-12 translate-x-1/4 z-[1]"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <span className="bg-primary-red/20 text-red-200 font-bold px-5 py-2 rounded-full text-sm inline-flex items-center gap-2 mb-6">
-              <span className="w-2 h-2 bg-primary-red rounded-full animate-pulse"></span>
-              Dostępny 24/7
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-              Prywatny Transport <span className="text-primary-red">Medyczny</span>
-            </h1>
-            <p className="text-xl opacity-85 leading-relaxed mb-8 max-w-2xl">
-              Bezpieczny przewóz pacjentów ambulansem z opieką ratownika medycznego. Bez skierowania, bez kolejek — wystarczy zadzwonić.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="tel:602622840" className="bg-primary-red text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary-red/30 flex items-center gap-2 hover:scale-105 transition-all">
-                <Phone size={20} /> Zamów transport
-              </a>
-              <a href="#cennik" className="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-xl font-bold text-lg border border-white/20 hover:bg-white/20 transition-all">
-                <Wallet size={20} className="inline mr-2" /> Sprawdź cennik
-              </a>
-            </div>
-          </div>
-          <div className="mt-12 flex flex-wrap gap-6">
-            {[
-              { value: "24/7", label: "Dostępność", sub: "weekendy i święta" },
-              { value: "500+", label: "Transportów", sub: "rocznie" },
-              { value: "5.0", label: "Ocena Google", sub: "46 opinii", icon: <Star size={14} className="text-yellow-400 fill-yellow-400 inline" /> },
-            ].map((stat, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl px-6 py-4 text-center">
-                <div className="text-2xl font-black text-primary-red">{stat.value} {stat.icon}</div>
-                <div className="text-white font-bold text-sm">{stat.label}</div>
-                <div className="text-white/50 text-xs">{stat.sub}</div>
+      <section className="relative min-h-[520px] sm:min-h-[580px] flex items-center">
+        <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/Wypadki-komunikacyjne-1.jpg')" }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
+              <span className="bg-primary-red/10 text-primary-red font-bold px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm inline-flex items-center gap-2 mb-4 sm:mb-6">
+                <span className="w-2 h-2 bg-primary-red rounded-full animate-pulse"></span>
+                Dostępny 24/7
+              </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">
+                Prywatny Transport <span className="text-primary-red">Medyczny</span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                Bezpieczny przewóz pacjentów ambulansem z opieką ratownika medycznego. Bez skierowania, bez kolejek — wystarczy zadzwonić.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="tel:602622840" className="bg-primary-red text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-primary-red/20 flex items-center justify-center gap-2 hover:bg-[#ba1e17] transition-all hover:scale-105">
+                  <Phone size={20} /> Zamów transport
+                </a>
+                <a href="#cennik" className="bg-navy-blue text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-navy-blue/20 flex items-center justify-center gap-2 hover:bg-navy-blue-light transition-all hover:scale-105">
+                  <Wallet size={20} /> Sprawdź cennik
+                </a>
               </div>
-            ))}
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="hidden lg:grid grid-cols-2 gap-5">
+              {[
+                { value: "24/7", label: "Dostępność", sub: "weekendy i święta" },
+                { value: "500+", label: "Transportów", sub: "rocznie" },
+                { value: "3", label: "Ambulanse", sub: "w stałej gotowości" },
+                { value: "od 4 zł", label: "Za kilometr", sub: "wycena indywidualna" },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white/60 backdrop-blur-sm border-2 border-white rounded-3xl p-7 text-center shadow-lg shadow-navy-blue/5 hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <div className="text-3xl font-black text-primary-red mb-1">{stat.value}</div>
+                  <div className="text-navy-blue font-bold text-sm">{stat.label}</div>
+                  <div className="text-gray-400 text-xs mt-1">{stat.sub}</div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>

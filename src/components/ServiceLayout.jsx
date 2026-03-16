@@ -5,26 +5,29 @@ import { Phone, Mail } from 'lucide-react';
 const ServiceLayout = ({ title, subtitle, bgImage, children }) => {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative h-[550px] flex items-center justify-center text-center text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ 
-            backgroundImage: `linear-gradient(to right, rgba(15, 43, 70, 0.9), rgba(15, 43, 70, 0.7)), url(${bgImage})`,
-          }}
-        />
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative z-10 container mx-auto px-4"
+      {/* Hero — styl jak strona główna */}
+      <section className="relative min-h-[520px] sm:min-h-[580px] flex items-center">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${bgImage})` }}
         >
-          <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-            {title}
-          </h1>
-          <p className="text-xl md:text-2xl font-light opacity-90 max-w-3xl mx-auto">
-            {subtitle}
-          </p>
-        </motion.div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">
+              {title}
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+              {subtitle}
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Content */}
@@ -39,7 +42,7 @@ const ServiceLayout = ({ title, subtitle, bgImage, children }) => {
             <div className="sticky top-32 bg-[#f4f7f6] p-10 rounded-3xl shadow-xl shadow-navy-blue/5 border border-white">
               <h3 className="text-2xl font-extrabold text-navy-blue mb-6">Szybki Kontakt</h3>
               <p className="text-gray-500 mb-8 leading-relaxed">
-                Każde zgłoszenie jest inne. Zadzwoń, a nasz zespół błyskawicznie oceni sytuację i dokona darmowej wyceny.
+                Każde zgłoszenie jest inne. Zadzwoń, a nasz zesp&oacute;ł błyskawicznie oceni sytuację i dokona darmowej wyceny.
               </p>
               <div className="space-y-4">
                 <a href="tel:602622840" className="flex items-center gap-4 bg-primary-red text-white p-5 rounded-2xl font-bold shadow-lg shadow-primary-red/20 transition-all hover:scale-105">
