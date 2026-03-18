@@ -348,7 +348,7 @@ const Szkolenia = () => {
             <div className="mt-10 bg-white/10 rounded-2xl p-6 border border-white/10">
               <h4 className="text-lg font-bold text-primary-red mb-2">Dlaczego to ma znaczenie?</h4>
               <p className="text-white/70 leading-relaxed">
-                Większość szkoleń BHP odbywa się na prostych fantomach bez żadnej informacji zwrotnej &mdash; uczestnik nie wie, czy uciska za płytko, za szybko, czy w złym miejscu. My używamy fantom&oacute;w z technologią QCPR, kt&oacute;re mierzą każde uciśnięcie i każdy oddech. Dzięki temu po szkoleniu masz pewność, że naprawdę umiesz &mdash; a nie tylko {"\u201E"}byłeś na kursie{"\u201D"}.
+                Większość szkoleń z pierwszej pomocy odbywa się na prostych fantomach bez żadnej informacji zwrotnej &mdash; uczestnik nie wie, czy uciska za płytko, za szybko, czy w złym miejscu. My używamy fantom&oacute;w z technologią QCPR, kt&oacute;re mierzą każde uciśnięcie i każdy oddech. Dzięki temu po szkoleniu masz pewność, że naprawdę umiesz &mdash; a nie tylko {"\u201E"}byłeś na kursie{"\u201D"}.
               </p>
             </div>
           </div>
