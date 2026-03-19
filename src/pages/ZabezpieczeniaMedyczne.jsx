@@ -105,6 +105,19 @@ const ZabezpieczeniaMedyczne = () => {
     { src: "/gallery/zabezpieczenia/ambulans-flaga-nocna-impreza.jpg", alt: "Ambulans Life z flag\u0105 na nocnej imprezie" },
     { src: "/gallery/zabezpieczenia/ambulans-flaga-nocna-impreza-2.jpg", alt: "Flaga Life Ratownictwo Medyczne na nocnym evencie" },
     { src: "/gallery/zabezpieczenia/ambulans-raciborskie-centrum.jpg", alt: "Ambulans Life przy Raciborskim Centrum Medycznym" },
+    { src: "/gallery/zabezpieczenia/ambulans-festyn-plenerowy.jpg", alt: "Ambulans Life na festynie plenerowym" },
+    { src: "/gallery/zabezpieczenia/ambulans-zabezpieczenie-bieg.jpg", alt: "Ambulans Life zabezpieczenie biegu ulicznego" },
+    { src: "/gallery/zabezpieczenia/ratownicy-pod-namiotem.jpg", alt: "Ratownicy medyczni pod namiotem ratowniczym Life" },
+    { src: "/gallery/zabezpieczenia/namiot-ratowniczy-jarmark.jpg", alt: "Namiot ratowniczy Life na jarmarku miejskim" },
+    { src: "/gallery/zabezpieczenia/ambulans-dozynki-plenerowe.jpg", alt: "Ambulans Life na do\u017Cynkach plenerowych" },
+    { src: "/gallery/zabezpieczenia/namiot-ratowniczy-dzieci-pokaz.jpg", alt: "Namiot ratowniczy Life z pokazem dla dzieci" },
+    { src: "/gallery/zabezpieczenia/ambulans-zabezpieczenie-biegu.jpg", alt: "Ambulans Life na starcie biegu" },
+    { src: "/gallery/zabezpieczenia/ambulans-zawody-konne.jpg", alt: "Ambulans Life zabezpieczenie zawod\u00F3w konnych" },
+    { src: "/gallery/zabezpieczenia/ambulans-event-przy-palacu.jpg", alt: "Ambulans Life zabezpieczenie eventu przy pa\u0142acu" },
+    { src: "/gallery/zabezpieczenia/namiot-ambulans-piknik-rodzinny.jpg", alt: "Namiot i ambulans Life na pikniku rodzinnym" },
+    { src: "/gallery/zabezpieczenia/namiot-ratowniczy-event-firmowy.jpg", alt: "Namiot ratowniczy Life na evencie firmowym" },
+    { src: "/gallery/zabezpieczenia/ambulans-ratownicy-miasto.jpg", alt: "Ambulans i ratownicy Life w centrum miasta" },
+    { src: "/gallery/zabezpieczenia/ambulans-festyn-letni-plenerowy.jpg", alt: "Ambulans Life na letnim festynie plenerowym" },
   ];
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
