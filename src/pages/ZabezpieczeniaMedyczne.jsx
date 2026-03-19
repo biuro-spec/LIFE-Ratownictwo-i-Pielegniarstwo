@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ServiceLayout from '../components/ServiceLayout';
-import { motion } from 'framer-motion';
-import { ShieldCheck, Truck, Users, FileCheck, BadgeCheck, ChevronRight, Phone, Mail, AlertTriangle, Heart, Stethoscope, GraduationCap, Music, Trophy, TreePine, Building2, Film, Bike, Clock, MapPin, Star, Tent } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ShieldCheck, Truck, Users, FileCheck, BadgeCheck, ChevronRight, ChevronLeft, Phone, Mail, AlertTriangle, Heart, Stethoscope, GraduationCap, Music, Trophy, TreePine, Building2, Film, Bike, Clock, MapPin, Star, Tent, Camera, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
@@ -76,6 +76,58 @@ const ZabezpieczeniaMedyczne = () => {
       text: "Po imprezie wystawiamy pełną dokumentację medyczną wymaganą przez przepisy \u2014 raporty z interwencji i ewidencję udzielonych świadczeń.",
     },
   ];
+
+  const galleryImages = [
+    { src: "/gallery/zabezpieczenia/punkt-medyczny-impreza-masowa.jpg", alt: "Punkt medyczny Life na imprezie masowej z namiotem ratowniczym i ambulansem" },
+    { src: "/gallery/zabezpieczenia/ambulans-event-sportowy-redbull.jpg", alt: "Ambulans Life na evencie sportowym Red Bull" },
+    { src: "/gallery/zabezpieczenia/namiot-punkt-medyczny-ratownicy.jpg", alt: "Namiot ratowniczy Life z ratownikami medycznymi" },
+    { src: "/gallery/zabezpieczenia/ambulans-koncert-nocny-scena.jpg", alt: "Ambulans Life zabezpieczenie nocnego koncertu" },
+    { src: "/gallery/zabezpieczenia/namiot-punkt-medyczny-lato.jpg", alt: "Punkt medyczny Life na letnim evencie plenerowym" },
+    { src: "/gallery/zabezpieczenia/ambulans-zimowa-akcja-ratunkowa.jpg", alt: "Ambulans Life zimowa akcja ratunkowa w terenie" },
+    { src: "/gallery/zabezpieczenia/ratownik-zabezpieczenie-judo.jpg", alt: "Ratownik medyczny na zawodach judo" },
+    { src: "/gallery/zabezpieczenia/ambulans-bieg-mikolajow.jpg", alt: "Ambulans Life zabezpieczenie biegu miko\u0142aj\u00F3w" },
+    { src: "/gallery/zabezpieczenia/namiot-punkt-medyczny-festyn.jpg", alt: "Namiot ratowniczy Life na festynie rodzinnym" },
+    { src: "/gallery/zabezpieczenia/namiot-punkt-medyczny-dzieci.jpg", alt: "Punkt medyczny Life na imprezie z dzie\u0107mi" },
+    { src: "/gallery/zabezpieczenia/szkolenie-pierwsza-pomoc-plener.jpg", alt: "Szkolenie z pierwszej pomocy w plenerze" },
+    { src: "/gallery/zabezpieczenia/namiot-zabezpieczenie-sportowe.jpg", alt: "Namiot ratowniczy Life na evencie sportowym" },
+    { src: "/gallery/zabezpieczenia/ambulans-pokaz-zabrze.jpg", alt: "Ambulans Life pokaz ratownictwa w Zabrzu" },
+    { src: "/gallery/zabezpieczenia/namiot-ambulans-festyn-letni.jpg", alt: "Namiot i ambulans Life na letnim festynie" },
+    { src: "/gallery/zabezpieczenia/ambulans-koncert-nocny.jpg", alt: "Ambulans Life na nocnym koncercie przy scenie" },
+    { src: "/gallery/zabezpieczenia/ambulans-zabezpieczenie-dzieci-park.jpg", alt: "Ambulans Life zabezpieczenie imprezy dla dzieci w parku" },
+    { src: "/gallery/zabezpieczenia/ratownicy-praca-festiwal.jpg", alt: "Ratownicy medyczni przy pracy na festiwalu" },
+    { src: "/gallery/zabezpieczenia/namiot-punkt-medyczny-rynek.jpg", alt: "Punkt medyczny Life na rynku starego miasta" },
+    { src: "/gallery/zabezpieczenia/ambulans-festyn-dmuchance.jpg", alt: "Ambulans Life na festynie z atrakcjami dla dzieci" },
+    { src: "/gallery/zabezpieczenia/ambulans-zabezpieczenie-miejskie.jpg", alt: "Ambulans Life zabezpieczenie wydarzenia miejskiego" },
+    { src: "/gallery/zabezpieczenia/ambulans-namiot-medyczny-park.jpg", alt: "Ambulans i namiot medyczny Life w parku" },
+    { src: "/gallery/zabezpieczenia/ambulans-namiot-jesienny-park.jpg", alt: "Ambulans Life zabezpieczenie jesiennego wydarzenia w parku" },
+    { src: "/gallery/zabezpieczenia/ambulans-zabezpieczenie-nocne-namiot.jpg", alt: "Ambulans Life nocne zabezpieczenie imprezy biesiadnej" },
+    { src: "/gallery/zabezpieczenia/namiot-zabezpieczenie-rowerowe.jpg", alt: "Namiot ratowniczy Life na evencie rowerowym" },
+    { src: "/gallery/zabezpieczenia/ambulans-flaga-nocna-impreza.jpg", alt: "Ambulans Life z flag\u0105 na nocnej imprezie" },
+    { src: "/gallery/zabezpieczenia/ambulans-flaga-nocna-impreza-2.jpg", alt: "Flaga Life Ratownictwo Medyczne na nocnym evencie" },
+    { src: "/gallery/zabezpieczenia/ambulans-raciborskie-centrum.jpg", alt: "Ambulans Life przy Raciborskim Centrum Medycznym" },
+  ];
+
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleImages = showAll ? galleryImages : galleryImages.slice(0, 8);
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setLightboxOpen(false);
+      if (e.key === 'ArrowRight') setLightboxIndex((p) => (p + 1) % galleryImages.length);
+      if (e.key === 'ArrowLeft') setLightboxIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length);
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxOpen]);
 
   return (
     <ServiceLayout
@@ -369,6 +421,101 @@ const ZabezpieczeniaMedyczne = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* === SEKCJA: Galeria === */}
+      <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Galeria</span>
+        <h2 className="text-3xl font-extrabold text-navy-blue mb-4 flex items-center gap-3">
+          <Camera size={28} className="text-primary-red" /> Nasze realizacje &mdash; zabezpieczenia medyczne w akcji
+        </h2>
+        <p className="text-gray-600 mb-8 leading-relaxed">
+          Zobacz jak wygląda profesjonalne zabezpieczenie medyczne imprez &mdash; od dużych festiwali po kameralne festyny rodzinne.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        {visibleImages.map((img, i) => (
+          <motion.div
+            key={i}
+            variants={fadeUp}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative group cursor-pointer overflow-hidden rounded-2xl aspect-[4/3]"
+            onClick={() => openLightbox(showAll ? i : i)}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-navy-blue/0 group-hover:bg-navy-blue/40 transition-all duration-300 flex items-center justify-center">
+              <Camera className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={28} />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {!showAll && galleryImages.length > 8 && (
+        <div className="text-center mb-16">
+          <button
+            onClick={() => setShowAll(true)}
+            className="bg-navy-blue text-white px-8 py-3 rounded-xl font-bold hover:bg-navy-blue/90 transition-all inline-flex items-center gap-2"
+          >
+            Zobacz wszystkie zdjęcia ({galleryImages.length})
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      )}
+      {showAll && <div className="mb-16" />}
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4"
+            onClick={() => setLightboxOpen(false)}
+            data-lenis-prevent
+          >
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
+              className="absolute top-4 right-4 text-white/80 hover:text-white z-10"
+            >
+              <X size={32} />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length); }}
+              className="absolute left-4 text-white/80 hover:text-white z-10"
+            >
+              <ChevronLeft size={40} />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((p) => (p + 1) % galleryImages.length); }}
+              className="absolute right-4 text-white/80 hover:text-white z-10"
+            >
+              <ChevronRight size={40} />
+            </button>
+            <motion.img
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              src={galleryImages[lightboxIndex].src}
+              alt={galleryImages[lightboxIndex].alt}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+              {lightboxIndex + 1} / {galleryImages.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* === SEKCJA: Jak działamy === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
