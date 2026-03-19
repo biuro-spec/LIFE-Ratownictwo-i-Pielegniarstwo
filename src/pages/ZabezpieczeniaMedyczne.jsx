@@ -12,68 +12,68 @@ const fadeUp = {
 
 const ZabezpieczeniaMedyczne = () => {
   useSEO({
-    title: "Zabezpieczenie Medyczne Imprez Racib\u00F3rz i \u015Al\u0105sk \u2013 Podmiot Leczniczy | LIFE-Ratownictwo",
-    description: "Profesjonalne zabezpieczenie medyczne imprez masowych i niemasowych na \u015Al\u0105sku. Podmiot leczniczy, 3 ambulanse, ratownicy medyczni PRM. Pomagamy w formalno\u015Bciach. Tel. 602 622 840."
+    title: "Zabezpieczenie Medyczne Imprez Racib\órz i \Śl\ąsk \u2013 Podmiot Leczniczy | LIFE-Ratownictwo",
+    description: "Profesjonalne zabezpieczenie medyczne imprez masowych i niemasowych na \Śl\ąsku. Podmiot leczniczy, 3 ambulanse, ratownicy medyczni PRM. Pomagamy w formalno\ściach. Tel. 602 622 840."
   });
 
   const eventTypes = [
     {
       icon: <Music size={24} />,
       title: "Imprezy masowe artystyczno-rozrywkowe",
-      text: "Koncerty, festiwale muzyczne, widowiska plenerowe z udzia\u0142em powy\u017Cej 500 os\u00F3b w budynkach lub 1000 os\u00F3b na otwartym terenie. Pe\u0142ne zabezpieczenie zgodne z tabel\u0105 minimalnych si\u0142 i \u015Brodk\u00F3w \u2014 zespo\u0142y wyjazdowe, patrole, punkt pomocy medycznej.",
+      text: "Koncerty, festiwale muzyczne, widowiska plenerowe z udzia\łem powy\żej 500 os\ób w budynkach lub 1000 os\ób na otwartym terenie. Pe\łne zabezpieczenie zgodne z tabel\ą minimalnych si\ł i \środk\ów \u2014 zespo\ły wyjazdowe, patrole, punkt pomocy medycznej.",
     },
     {
       icon: <Trophy size={24} />,
       title: "Imprezy masowe sportowe",
-      text: "Zawody sportowe, maratony, turnieje z udzia\u0142em powy\u017Cej 300 os\u00F3b w budynkach lub 1000 os\u00F3b na stadionie lub terenie otwartym. Do\u015Bwiadczenie w zabezpieczaniu zar\u00F3wno zawodnik\u00F3w jak i widowni.",
+      text: "Zawody sportowe, maratony, turnieje z udzia\łem powy\żej 300 os\ób w budynkach lub 1000 os\ób na stadionie lub terenie otwartym. Do\świadczenie w zabezpieczaniu zar\ówno zawodnik\ów jak i widowni.",
     },
     {
       icon: <TreePine size={24} />,
-      title: "Festyny, do\u017Cynki i imprezy lokalne",
-      text: "Imprezy niemasowe \u2014 festyny gminne, do\u017Cynki, pikniki so\u0142eckie, jarmarki i inne lokalne wydarzenia. Na \u017Cyczenie rozstawiamy namiot ratowniczy z pokazowym szkoleniem z pierwszej pomocy \u2014 dodatkowa atrakcja dla uczestnik\u00F3w.",
+      title: "Festyny, do\żynki i imprezy lokalne",
+      text: "Imprezy niemasowe \u2014 festyny gminne, do\żynki, pikniki so\łeckie, jarmarki i inne lokalne wydarzenia. Na \życzenie rozstawiamy namiot ratowniczy z pokazowym szkoleniem z pierwszej pomocy \u2014 dodatkowa atrakcja dla uczestnik\ów.",
     },
     {
       icon: <Heart size={24} />,
       title: "Pikniki rodzinne i eventy plenerowe",
-      text: "Imprezy dla rodzin z dzie\u0107mi \u2014 szczeg\u00F3lnie popularna jest tu opcja namiotu ratowniczego z interaktywnymi pokazami pierwszej pomocy. Dzieci i rodzice ucz\u0105 si\u0119 razem, a ratownicy medyczni s\u0105 do dyspozycji przez ca\u0142y czas trwania imprezy.",
+      text: "Imprezy dla rodzin z dzie\ćmi \u2014 szczeg\ólnie popularna jest tu opcja namiotu ratowniczego z interaktywnymi pokazami pierwszej pomocy. Dzieci i rodzice ucz\ą si\ę razem, a ratownicy medyczni s\ą do dyspozycji przez ca\ły czas trwania imprezy.",
     },
     {
       icon: <Building2 size={24} />,
       title: "Eventy firmowe i targi",
-      text: "Konferencje, targi, dni otwarte, eventy integracyjne. Dyskretna, profesjonalna obecno\u015B\u0107 s\u0142u\u017Cb medycznych, kt\u00F3ra buduje zaufanie uczestnik\u00F3w i minimalizuje ryzyko dla organizatora.",
+      text: "Konferencje, targi, dni otwarte, eventy integracyjne. Dyskretna, profesjonalna obecno\ś\ć s\łu\żb medycznych, kt\óra buduje zaufanie uczestnik\ów i minimalizuje ryzyko dla organizatora.",
     },
     {
       icon: <Bike size={24} />,
       title: "Zawody sportowe i biegi masowe",
-      text: "Biegi uliczne, zawody kolarskie, turnieje pi\u0142karskie, zawody p\u0142ywackie. Zabezpieczenie zar\u00F3wno uczestnik\u00F3w zawod\u00F3w jak i publiczno\u015Bci \u2014 z uwzgl\u0119dnieniem specyfiki danej dyscypliny sportowej.",
+      text: "Biegi uliczne, zawody kolarskie, turnieje pi\łkarskie, zawody p\ływackie. Zabezpieczenie zar\ówno uczestnik\ów zawod\ów jak i publiczno\ści \u2014 z uwzgl\ędnieniem specyfiki danej dyscypliny sportowej.",
     },
     {
       icon: <Film size={24} />,
       title: "Produkcje filmowe i telewizyjne",
-      text: "Zabezpieczenie planu zdj\u0119ciowego wymagane przez ubezpieczycieli przy scenach kaskaderskich i zdj\u0119ciach plenerowych.",
+      text: "Zabezpieczenie planu zdj\ęciowego wymagane przez ubezpieczycieli przy scenach kaskaderskich i zdj\ęciach plenerowych.",
     },
   ];
 
   const steps = [
     {
       num: "01",
-      title: "Kontakt i wst\u0119pna wycena",
-      text: "Zadzwo\u0144 lub napisz. Powiedz nam kiedy, gdzie i jaka impreza. Tego samego dnia odpowiadamy z wst\u0119pn\u0105 wycen\u0105 i informacj\u0105 o wymaganych formalno\u015Bciach.",
+      title: "Kontakt i wst\ępna wycena",
+      text: "Zadzwo\ń lub napisz. Powiedz nam kiedy, gdzie i jaka impreza. Tego samego dnia odpowiadamy z wst\ępn\ą wycen\ą i informacj\ą o wymaganych formalno\ściach.",
     },
     {
       num: "02",
-      title: "Plan zabezpieczenia i formalno\u015Bci",
-      text: "Przygotowujemy plan zabezpieczenia medycznego i pomagamy w z\u0142o\u017Ceniu wniosku do dysponenta ZRM. Pilnujemy termin\u00F3w \u2014 Ty skupiasz si\u0119 na organizacji imprezy.",
+      title: "Plan zabezpieczenia i formalno\ści",
+      text: "Przygotowujemy plan zabezpieczenia medycznego i pomagamy w z\ło\żeniu wniosku do dysponenta ZRM. Pilnujemy termin\ów \u2014 Ty skupiasz si\ę na organizacji imprezy.",
     },
     {
       num: "03",
       title: "Zabezpieczenie imprezy",
-      text: "W dniu imprezy stawiamy si\u0119 punktualnie z ambulansem, sprz\u0119tem i zespo\u0142em. Koordynujemy \u0142\u0105czno\u015B\u0107 mi\u0119dzy ambulansem, patrolami i punktem pomocy. Na \u017Cyczenie rozstawiamy namiot z pokazami pierwszej pomocy.",
+      text: "W dniu imprezy stawiamy si\ę punktualnie z ambulansem, sprz\ętem i zespo\łem. Koordynujemy \ł\ączno\ś\ć mi\ędzy ambulansem, patrolami i punktem pomocy. Na \życzenie rozstawiamy namiot z pokazami pierwszej pomocy.",
     },
     {
       num: "04",
       title: "Dokumentacja poimprezowa",
-      text: "Po imprezie wystawiamy pe\u0142n\u0105 dokumentacj\u0119 medyczn\u0105 wymagan\u0105 przez przepisy \u2014 raporty z interwencji i ewidencj\u0119 udzielonych \u015Bwiadcze\u0144.",
+      text: "Po imprezie wystawiamy pe\łn\ą dokumentacj\ę medyczn\ą wymagan\ą przez przepisy \u2014 raporty z interwencji i ewidencj\ę udzielonych \świadcze\ń.",
     },
   ];
 
@@ -81,27 +81,27 @@ const ZabezpieczeniaMedyczne = () => {
     <ServiceLayout
       title="Zabezpieczenie"
       titleAccent="Medyczne Imprez"
-      subtitle="Organizujesz imprez\u0119 i potrzebujesz zabezpieczenia medycznego? Jako licencjonowany podmiot leczniczy z trzema ambulansami i zespo\u0142em ratownik\u00F3w medycznych zapewniamy pe\u0142ne, zgodne z prawem zabezpieczenie \u2014 od ma\u0142ego festynu po du\u017C\u0105 imprez\u0119 masow\u0105."
+      subtitle="Organizujesz imprez\ę i potrzebujesz zabezpieczenia medycznego? Jako licencjonowany podmiot leczniczy z trzema ambulansami i zespo\łem ratownik\ów medycznych zapewniamy pe\łne, zgodne z prawem zabezpieczenie \u2014 od ma\łego festynu po du\ż\ą imprez\ę masow\ą."
       bgImage="/assets/images/Life-Ratownictwo-Medyczne-i-Pielegniarstwo.jpg"
       tiles={[
-        { value: "100+", label: "Zabezpieczonych", sub: "imprez i wydarze\u0144" },
-        { value: "PRM", label: "Ratownicy medyczni", sub: "na ka\u017Cdym evencie" },
-        { value: "3", label: "Ambulanse", sub: "w gotowo\u015Bci" },
-        { value: "Podmiot", label: "Leczniczy", sub: "pe\u0142na legalno\u015B\u0107" },
+        { value: "100+", label: "Zabezpieczonych", sub: "imprez i wydarze\ń" },
+        { value: "PRM", label: "Ratownicy medyczni", sub: "na ka\żdym evencie" },
+        { value: "3", label: "Ambulanse", sub: "w gotowo\ści" },
+        { value: "Podmiot", label: "Leczniczy", sub: "pe\łna legalno\ś\ć" },
       ]}
     >
       {/* === SEKCJA: Prawo wymaga podmiotu leczniczego === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Wa\u017Cne &mdash; podstawa prawna</span>
+        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Wa\żne &mdash; podstawa prawna</span>
         <h2 className="text-3xl font-extrabold text-navy-blue mb-6">Zabezpieczenie medyczne imprezy masowej &mdash; prawo wymaga podmiotu leczniczego</h2>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          To nie jest kwestia wyboru &mdash; to wym&oacute;g prawa. Zgodnie z <strong>Ustaw\u0105 o bezpiecze\u0144stwie imprez masowych</strong> z dnia 20 marca 2009 r. oraz <strong>Rozporz\u0105dzeniem Ministra Zdrowia z dnia 6 lutego 2012 r.</strong> w sprawie minimalnych wymaga\u0144 dotycz\u0105cych zabezpieczenia pod wzgl\u0119dem medycznym imprezy masowej, pe\u0142ne zabezpieczenie medyczne &mdash; obejmuj\u0105ce udzielanie \u015Bwiadcze\u0144 zdrowotnych &mdash; mo\u017Ce realizowa\u0107 wy\u0142\u0105cznie <strong>podmiot leczniczy</strong>.
+          To nie jest kwestia wyboru &mdash; to wym&oacute;g prawa. Zgodnie z <strong>Ustaw\ą o bezpiecze\ństwie imprez masowych</strong> z dnia 20 marca 2009 r. oraz <strong>Rozporz\ądzeniem Ministra Zdrowia z dnia 6 lutego 2012 r.</strong> w sprawie minimalnych wymaga\ń dotycz\ących zabezpieczenia pod wzgl\ędem medycznym imprezy masowej, pe\łne zabezpieczenie medyczne &mdash; obejmuj\ące udzielanie \świadcze\ń zdrowotnych &mdash; mo\że realizowa\ć wy\ł\ącznie <strong>podmiot leczniczy</strong>.
         </p>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Ministerstwo Zdrowia potwierdzi\u0142o to wprost w pi\u015Bmie z dnia 8 lutego 2017 r. (sygn. SOR.450.6.2.2017.MS): organizator imprezy masowej ma obowi\u0105zek powierzy\u0107 zabezpieczenie medyczne podmiotowi leczniczemu deleguj\u0105cemu osoby wykonuj\u0105ce zaw\u00F3d medyczny.
+          Ministerstwo Zdrowia potwierdzi\ło to wprost w pi\śmie z dnia 8 lutego 2017 r. (sygn. SOR.450.6.2.2017.MS): organizator imprezy masowej ma obowi\ązek powierzy\ć zabezpieczenie medyczne podmiotowi leczniczemu deleguj\ącemu osoby wykonuj\ące zaw\ód medyczny.
         </p>
         <p className="text-gray-600 mb-8 leading-relaxed">
-          <strong>LIFE-Ratownictwo Medyczne i Piel\u0119gniarstwo Sp. z o.o.</strong> jest podmiotem leczniczym wpisanym do rejestru Ministra Zdrowia (KRS 0000920762). Wybieraj\u0105c nas, masz pewno\u015B\u0107 pe\u0142nej zgodno\u015Bci z przepisami &mdash; bez ryzyka prawnego dla organizatora.
+          <strong>LIFE-Ratownictwo Medyczne i Piel\ęgniarstwo Sp. z o.o.</strong> jest podmiotem leczniczym wpisanym do rejestru Ministra Zdrowia (KRS 0000920762). Wybieraj\ąc nas, masz pewno\ś\ć pe\łnej zgodno\ści z przepisami &mdash; bez ryzyka prawnego dla organizatora.
         </p>
 
         {/* Ramka ostrzegawcza */}
@@ -110,7 +110,7 @@ const ZabezpieczeniaMedyczne = () => {
           <div>
             <h4 className="font-bold text-navy-blue mb-2">Uwaga dla organizator&oacute;w</h4>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Firmy ochroniarskie, stowarzyszenia czy osoby po kursie KPP nieb\u0119d\u0105ce podmiotem leczniczym mog\u0105 legalnie wystawić jedynie patrole ratownicze. <strong>Nie mog\u0105 udziela\u0107 \u015Bwiadcze\u0144 zdrowotnych</strong> ani wystawi\u0107 dokumentacji wymaganej przez dysponenta ZRM. Jako organizator ponosisz za to pe\u0142n\u0105 odpowiedzialno\u015B\u0107 prawn\u0105.
+              Firmy ochroniarskie, stowarzyszenia czy osoby po kursie KPP nieb\ęd\ące podmiotem leczniczym mog\ą legalnie wystawić jedynie patrole ratownicze. <strong>Nie mog\ą udziela\ć \świadcze\ń zdrowotnych</strong> ani wystawi\ć dokumentacji wymaganej przez dysponenta ZRM. Jako organizator ponosisz za to pe\łn\ą odpowiedzialno\ś\ć prawn\ą.
             </p>
           </div>
         </div>
@@ -119,24 +119,24 @@ const ZabezpieczeniaMedyczne = () => {
       {/* === SEKCJA: Oferta dopasowana === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Oferta</span>
-        <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Zabezpieczenie dopasowane do wielko\u015Bci i charakteru imprezy</h2>
+        <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Zabezpieczenie dopasowane do wielko\ści i charakteru imprezy</h2>
         <p className="text-gray-600 mb-10 leading-relaxed">
-          Nie stosujemy jednego schematu dla wszystkich &mdash; ka\u017Cda impreza jest inna i wymaga innego podej\u015Bcia. Dobieramy sk\u0142ad zespo\u0142u i \u015Brodki do rzeczywistych potrzeb, zawsze w zgodzie z obowi\u0105zuj\u0105cymi przepisami.
+          Nie stosujemy jednego schematu dla wszystkich &mdash; ka\żda impreza jest inna i wymaga innego podej\ścia. Dobieramy sk\ład zespo\łu i \środki do rzeczywistych potrzeb, zawsze w zgodzie z obowi\ązuj\ącymi przepisami.
         </p>
       </motion.div>
 
       {/* Imprezy masowe */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-navy-blue text-white rounded-3xl p-8 md:p-10 mb-8">
-        <h3 className="text-2xl font-extrabold mb-4">Imprezy masowe &mdash; pe\u0142ne zabezpieczenie zgodne z Rozp. MZ</h3>
+        <h3 className="text-2xl font-extrabold mb-4">Imprezy masowe &mdash; pe\łne zabezpieczenie zgodne z Rozp. MZ</h3>
         <p className="text-white/70 mb-6 leading-relaxed">
-          Na imprezach masowych (powy\u017Cej 1000 uczestnik\u00F3w na otwartym terenie lub 500 w budynku) realizujemy pe\u0142ne zabezpieczenie medyczne zgodne z Rozporz\u0105dzeniem Ministra Zdrowia z dnia 6 lutego 2012 r.:
+          Na imprezach masowych (powy\żej 1000 uczestnik\ów na otwartym terenie lub 500 w budynku) realizujemy pe\łne zabezpieczenie medyczne zgodne z Rozporz\ądzeniem Ministra Zdrowia z dnia 6 lutego 2012 r.:
         </p>
         <ul className="space-y-3 mb-6">
           {[
-            "Ambulans na miejscu z obsad\u0105 ratownik\u00F3w medycznych w pe\u0142nej gotowo\u015Bci do interwencji i transportu",
-            "Punkt pomocy medycznej \u2014 stacjonarne stanowisko wyposa\u017Cone w produkty lecznicze i sprz\u0119t ratowniczy",
-            "Patrole ratownicze przemieszczaj\u0105ce si\u0119 po terenie imprezy z torbami ratunkowymi i \u0142\u0105czno\u015Bci\u0105 bezprzewodow\u0105",
-            "Dla imprez powy\u017Cej 10 000 uczestnik\u00F3w \u2014 koordynator medyczny spe\u0142niaj\u0105cy wymogi ustawowe",
+            "Ambulans na miejscu z obsad\ą ratownik\ów medycznych w pe\łnej gotowo\ści do interwencji i transportu",
+            "Punkt pomocy medycznej \u2014 stacjonarne stanowisko wyposa\żone w produkty lecznicze i sprz\ęt ratowniczy",
+            "Patrole ratownicze przemieszczaj\ące si\ę po terenie imprezy z torbami ratunkowymi i \ł\ączno\ści\ą bezprzewodow\ą",
+            "Dla imprez powy\żej 10 000 uczestnik\ów \u2014 koordynator medyczny spe\łniaj\ący wymogi ustawowe",
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-white/90">
               <ShieldCheck size={18} className="text-primary-red shrink-0 mt-1" />
@@ -144,20 +144,20 @@ const ZabezpieczeniaMedyczne = () => {
             </li>
           ))}
         </ul>
-        <p className="text-white/60 text-sm">Personel: ratownicy medyczni i piel\u0119gniarki z pe\u0142nymi uprawnieniami do wykonywania medycznych czynno\u015Bci ratunkowych.</p>
+        <p className="text-white/60 text-sm">Personel: ratownicy medyczni i piel\ęgniarki z pe\łnymi uprawnieniami do wykonywania medycznych czynno\ści ratunkowych.</p>
       </motion.div>
 
       {/* Imprezy mniejsze */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-[#f4f7f6] rounded-3xl p-8 md:p-10 mb-8 border-2 border-white">
-        <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Imprezy mniejsze &mdash; sk\u0142ady mieszane dopasowane do potrzeb</h3>
+        <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Imprezy mniejsze &mdash; sk\łady mieszane dopasowane do potrzeb</h3>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Na imprezach niemasowych &mdash; festynach, do\u017Cynkach, zawodach sportowych, eventach firmowych &mdash; stosujemy elastyczne sk\u0142ady mieszane dopasowane do skali i charakteru wydarzenia:
+          Na imprezach niemasowych &mdash; festynach, do\żynkach, zawodach sportowych, eventach firmowych &mdash; stosujemy elastyczne sk\łady mieszane dopasowane do skali i charakteru wydarzenia:
         </p>
         <ul className="space-y-3 mb-6">
           {[
-            "Ratownicy medyczni i/lub piel\u0119gniarki jako wykwalifikowany personel medyczny",
+            "Ratownicy medyczni i/lub piel\ęgniarki jako wykwalifikowany personel medyczny",
             "Ratownicy KPP jako wsparcie patrolowe i przy punkcie pomocy",
-            "Ambulans lub wyposa\u017Cona torba ratownicza \u2014 zale\u017Cnie od potrzeb i lokalizacji",
+            "Ambulans lub wyposa\żona torba ratownicza \u2014 zale\żnie od potrzeb i lokalizacji",
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-gray-700">
               <ShieldCheck size={18} className="text-primary-red shrink-0 mt-1" />
@@ -165,14 +165,14 @@ const ZabezpieczeniaMedyczne = () => {
             </li>
           ))}
         </ul>
-        <p className="text-gray-500 text-sm">Ratownicy KPP mog\u0105 legalnie pe\u0142ni\u0107 funkcj\u0119 patroli ratowniczych, a obecno\u015B\u0107 ratownika medycznego lub piel\u0119gniarki zapewnia w\u0142a\u015Bciwy poziom \u015Bwiadcze\u0144 zdrowotnych.</p>
+        <p className="text-gray-500 text-sm">Ratownicy KPP mog\ą legalnie pe\łni\ć funkcj\ę patroli ratowniczych, a obecno\ś\ć ratownika medycznego lub piel\ęgniarki zapewnia w\ła\ściwy poziom \świadcze\ń zdrowotnych.</p>
       </motion.div>
 
       {/* Małe imprezy */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-[#f4f7f6] rounded-3xl p-8 md:p-10 mb-8 border-2 border-white">
-        <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Ma\u0142e imprezy &mdash; ratownicy bez ambulansu</h3>
+        <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Ma\łe imprezy &mdash; ratownicy bez ambulansu</h3>
         <p className="text-gray-600 leading-relaxed">
-          Na niewielkich imprezach lokalnych, gdzie charakter i liczba uczestnik\u00F3w nie wymaga obecno\u015Bci ambulansu, wysy\u0142amy jednego lub dw\u00F3ch ratownik\u00F3w z wyposa\u017Ceniem ratowniczym. To rozwi\u0105zanie ekonomiczne, kt\u00F3re nadal zapewnia profesjonaln\u0105 opiek\u0119 medyczn\u0105 i szybk\u0105 reakcj\u0119 w razie potrzeby.
+          Na niewielkich imprezach lokalnych, gdzie charakter i liczba uczestnik\ów nie wymaga obecno\ści ambulansu, wysy\łamy jednego lub dw\óch ratownik\ów z wyposa\żeniem ratowniczym. To rozwi\ązanie ekonomiczne, kt\óre nadal zapewnia profesjonaln\ą opiek\ę medyczn\ą i szybk\ą reakcj\ę w razie potrzeby.
         </p>
       </motion.div>
 
@@ -180,17 +180,17 @@ const ZabezpieczeniaMedyczne = () => {
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-primary-red/5 border-2 border-primary-red/20 rounded-3xl p-8 md:p-10 mb-16">
         <div className="flex items-start gap-4 mb-4">
           <Tent className="text-primary-red shrink-0 mt-1" size={28} />
-          <h3 className="text-2xl font-extrabold text-navy-blue">Wyj\u0105tkowa opcja &mdash; zabezpieczenie medyczne i szkolenie z pierwszej pomocy w jednym</h3>
+          <h3 className="text-2xl font-extrabold text-navy-blue">Wyj\ątkowa opcja &mdash; zabezpieczenie medyczne i szkolenie z pierwszej pomocy w jednym</h3>
         </div>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Na piknikach rodzinnych, festynach i do\u017Cynkach oferujemy co\u015B wyj\u0105tkowego &mdash; zabezpieczenie medyczne po\u0142\u0105czone z pokazowym szkoleniem z pierwszej pomocy dla uczestnik\u00F3w imprezy. Rozstawiamy namiot ratowniczy w widocznym miejscu, kt\u00F3ry pe\u0142ni jednocze\u015Bnie funkcj\u0119 punktu pomocy medycznej i strefy edukacyjnej.
+          Na piknikach rodzinnych, festynach i do\żynkach oferujemy co\ś wyj\ątkowego &mdash; zabezpieczenie medyczne po\ł\ączone z pokazowym szkoleniem z pierwszej pomocy dla uczestnik\ów imprezy. Rozstawiamy namiot ratowniczy w widocznym miejscu, kt\óry pe\łni jednocze\śnie funkcj\ę punktu pomocy medycznej i strefy edukacyjnej.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {[
-            "Nauka RKO na fantomie \u2014 ka\u017Cdy mo\u017Ce spr\u00F3bowa\u0107",
-            "Obs\u0142uga defibrylatora AED \u2014 pokazujemy \u017Ce to prostsze ni\u017C my\u015Blisz",
-            "Post\u0119powanie przy zadławieniu \u2014 popularne w\u015Br\u00F3d rodzic\u00F3w ma\u0142ych dzieci",
-            "Pytania i odpowiedzi z ratownikiem medycznym na \u017Cywo",
+            "Nauka RKO na fantomie \u2014 ka\żdy mo\że spr\óbowa\ć",
+            "Obs\ługa defibrylatora AED \u2014 pokazujemy \że to prostsze ni\ż my\ślisz",
+            "Post\ępowanie przy zadławieniu \u2014 popularne w\śr\ód rodzic\ów ma\łych dzieci",
+            "Pytania i odpowiedzi z ratownikiem medycznym na \żywo",
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-3 text-gray-700">
               <Star size={16} className="text-primary-red shrink-0 mt-1" />
@@ -199,16 +199,16 @@ const ZabezpieczeniaMedyczne = () => {
           ))}
         </div>
         <p className="text-gray-500 text-sm leading-relaxed">
-          Dla organizatora to dodatkowa atrakcja imprezy, kt\u00F3ra przyci\u0105ga uczestnik\u00F3w i buduje jej presti\u017C. Namiot ratowniczy pe\u0142ni jednocze\u015Bnie funkcj\u0119 wymaganego przepisami punktu pomocy medycznej &mdash; organizator otrzymuje dwie warto\u015Bci w jednym.
+          Dla organizatora to dodatkowa atrakcja imprezy, kt\óra przyci\ąga uczestnik\ów i buduje jej presti\ż. Namiot ratowniczy pe\łni jednocze\śnie funkcj\ę wymaganego przepisami punktu pomocy medycznej &mdash; organizator otrzymuje dwie warto\ści w jednym.
         </p>
       </motion.div>
 
       {/* === SEKCJA: Nasz personel === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Zesp\u00F3\u0142</span>
+        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Zesp\ó\ł</span>
         <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Kto realizuje zabezpieczenie?</h2>
         <p className="text-gray-600 mb-8 leading-relaxed">
-          Dysponujemy trzema grupami wykwalifikowanego personelu medycznego, kt\u00F3re dobieramy odpowiednio do charakteru i wymog\u00F3w ka\u017Cdej imprezy.
+          Dysponujemy trzema grupami wykwalifikowanego personelu medycznego, kt\óre dobieramy odpowiednio do charakteru i wymog\ów ka\żdej imprezy.
         </p>
       </motion.div>
 
@@ -217,17 +217,17 @@ const ZabezpieczeniaMedyczne = () => {
           {
             icon: <Stethoscope size={24} />,
             title: "Ratownicy medyczni",
-            text: "Zaw\u00F3d medyczny wymagaj\u0105cy uko\u0144czenia studi\u00F3w wy\u017Cszych na kierunku ratownictwo medyczne. Uprawnieni do samodzielnego wykonywania medycznych czynno\u015Bci ratunkowych \u2014 podawania lek\u00F3w, zak\u0142adania wk\u0142u\u0107 do\u017Cylnych, intubacji i kierowania zespo\u0142em ratowniczym. Nasi ratownicy medyczni pracuj\u0105 na co dzie\u0144 w Systemie Pa\u0144stwowego Ratownictwa Medycznego w Raciborzu \u2014 maj\u0105 za sob\u0105 setki realnych interwencji.",
+            text: "Zaw\ód medyczny wymagaj\ący uko\ńczenia studi\ów wy\ższych na kierunku ratownictwo medyczne. Uprawnieni do samodzielnego wykonywania medycznych czynno\ści ratunkowych \u2014 podawania lek\ów, zak\ładania wk\łu\ć do\żylnych, intubacji i kierowania zespo\łem ratowniczym. Nasi ratownicy medyczni pracuj\ą na co dzie\ń w Systemie Pa\ństwowego Ratownictwa Medycznego w Raciborzu \u2014 maj\ą za sob\ą setki realnych interwencji.",
           },
           {
             icon: <Heart size={24} />,
-            title: "Piel\u0119gniarki",
-            text: "Personel medyczny z pe\u0142nymi kwalifikacjami do udzielania \u015Bwiadcze\u0144 zdrowotnych. Niezb\u0119dny element sk\u0142adu przy zabezpieczeniu punktu pomocy medycznej na imprezach masowych. Nasze piel\u0119gniarki posiadaj\u0105 wieloletnie do\u015Bwiadczenie kliniczne.",
+            title: "Piel\ęgniarki",
+            text: "Personel medyczny z pe\łnymi kwalifikacjami do udzielania \świadcze\ń zdrowotnych. Niezb\ędny element sk\ładu przy zabezpieczeniu punktu pomocy medycznej na imprezach masowych. Nasze piel\ęgniarki posiadaj\ą wieloletnie do\świadczenie kliniczne.",
           },
           {
             icon: <GraduationCap size={24} />,
             title: "Ratownicy KPP",
-            text: "Osoby po 66-godzinnym kursie Kwalifikowanej Pierwszej Pomocy z egzaminem pa\u0144stwowym przed komisj\u0105 wojewody. Uprawnieni do udzielania kwalifikowanej pierwszej pomocy. Zgodnie z przepisami mog\u0105 stanowi\u0107 patrole ratownicze na imprezach masowych oraz realizowa\u0107 pe\u0142ne zabezpieczenie na imprezach niemasowych.",
+            text: "Osoby po 66-godzinnym kursie Kwalifikowanej Pierwszej Pomocy z egzaminem pa\ństwowym przed komisj\ą wojewody. Uprawnieni do udzielania kwalifikowanej pierwszej pomocy. Zgodnie z przepisami mog\ą stanowi\ć patrole ratownicze na imprezach masowych oraz realizowa\ć pe\łne zabezpieczenie na imprezach niemasowych.",
           },
         ].map((person, i) => (
           <motion.div
@@ -251,9 +251,9 @@ const ZabezpieczeniaMedyczne = () => {
       {/* === SEKCJA: Co zabezpieczamy === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Rodzaje imprez</span>
-        <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Zabezpieczamy ka\u017Cdy rodzaj imprezy &mdash; od festynu po imprez\u0119 masow\u0105</h2>
+        <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Zabezpieczamy ka\żdy rodzaj imprezy &mdash; od festynu po imprez\ę masow\ą</h2>
         <p className="text-gray-600 mb-10 leading-relaxed">
-          Dysponujemy trzema ambulansami i elastycznym zespo\u0142em, dzi\u0119ki czemu mo\u017Cemy realizowa\u0107 kilka zlece\u0144 jednocze\u015Bnie na terenie ca\u0142ego wojew\u00F3dztwa \u015Bl\u0105skiego.
+          Dysponujemy trzema ambulansami i elastycznym zespo\łem, dzi\ęki czemu mo\żemy realizowa\ć kilka zlece\ń jednocze\śnie na terenie ca\łego wojew\ództwa \śl\ąskiego.
         </p>
       </motion.div>
 
@@ -277,10 +277,10 @@ const ZabezpieczeniaMedyczne = () => {
 
       {/* === SEKCJA: Formalności === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Formalno\u015Bci</span>
-        <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Pomagamy w ca\u0142o\u015Bci &mdash; od formalno\u015Bci po ostatni uczestnik</h2>
+        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Formalno\ści</span>
+        <h2 className="text-3xl font-extrabold text-navy-blue mb-4">Pomagamy w ca\ło\ści &mdash; od formalno\ści po ostatni uczestnik</h2>
         <p className="text-gray-600 mb-10 leading-relaxed">
-          Organizacja imprezy to i tak wystarczaj\u0105co du\u017Co pracy. Dlatego nie zostawiamy Ci\u0119 sam na sam z formalno\u015Bciami &mdash; przeprowadzimy Ci\u0119 przez ca\u0142y proces.
+          Organizacja imprezy to i tak wystarczaj\ąco du\żo pracy. Dlatego nie zostawiamy Ci\ę sam na sam z formalno\ściami &mdash; przeprowadzimy Ci\ę przez ca\ły proces.
         </p>
       </motion.div>
 
@@ -289,17 +289,17 @@ const ZabezpieczeniaMedyczne = () => {
           {
             icon: <FileCheck size={24} />,
             title: "Plan zabezpieczenia medycznego",
-            text: "Przygotowujemy kompletny plan zabezpieczenia medycznego imprezy uwzgl\u0119dniaj\u0105cy jej charakter, miejsce, liczb\u0119 uczestnik\u00F3w, czas trwania i specyficzne zagro\u017Cenia. To dokument wymagany przez dysponenta ZRM i organy wydaj\u0105ce zezwolenie na imprez\u0119 masow\u0105.",
+            text: "Przygotowujemy kompletny plan zabezpieczenia medycznego imprezy uwzgl\ędniaj\ący jej charakter, miejsce, liczb\ę uczestnik\ów, czas trwania i specyficzne zagro\żenia. To dokument wymagany przez dysponenta ZRM i organy wydaj\ące zezwolenie na imprez\ę masow\ą.",
           },
           {
             icon: <Phone size={24} />,
             title: "Kontakt z dysponentem ZRM",
-            text: "Wniosek o opini\u0119 dysponenta Zespo\u0142\u00F3w Ratownictwa Medycznego nale\u017Cy z\u0142o\u017Cy\u0107 co najmniej 44 dni przed imprez\u0105 masow\u0105. Na obszarze wojew\u00F3dztwa \u015Bl\u0105skiego dysponentem jest Wojew\u00F3dzkie Pogotowie Ratunkowe w Katowicach. Pomagamy w przygotowaniu wniosku i kompletnej dokumentacji.",
+            text: "Wniosek o opini\ę dysponenta Zespo\ł\ów Ratownictwa Medycznego nale\ży z\ło\ży\ć co najmniej 44 dni przed imprez\ą masow\ą. Na obszarze wojew\ództwa \śl\ąskiego dysponentem jest Wojew\ódzkie Pogotowie Ratunkowe w Katowicach. Pomagamy w przygotowaniu wniosku i kompletnej dokumentacji.",
           },
           {
             icon: <BadgeCheck size={24} />,
             title: "Dokumentacja poimprezowa",
-            text: "Po zako\u0144czeniu imprezy wystawiamy pe\u0142n\u0105 dokumentacj\u0119 medyczn\u0105 \u2014 raporty z interwencji, ewidencj\u0119 udzielonych \u015Bwiadcze\u0144 i inne dokumenty wymagane przepisami.",
+            text: "Po zako\ńczeniu imprezy wystawiamy pe\łn\ą dokumentacj\ę medyczn\ą \u2014 raporty z interwencji, ewidencj\ę udzielonych \świadcze\ń i inne dokumenty wymagane przepisami.",
           },
         ].map((item, i) => (
           <motion.div
@@ -323,13 +323,13 @@ const ZabezpieczeniaMedyczne = () => {
       {/* Terminy */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-navy-blue text-white rounded-3xl p-8 md:p-10 mb-16">
         <h3 className="text-xl font-extrabold mb-6 flex items-center gap-3">
-          <Clock size={22} className="text-primary-red" /> Terminy, o kt&oacute;rych musisz wiedzie\u0107
+          <Clock size={22} className="text-primary-red" /> Terminy, o kt&oacute;rych musisz wiedzie\ć
         </h3>
         <div className="space-y-4">
           {[
-            { days: "44 dni", text: "przed imprez\u0105 \u2014 z\u0142o\u017Cenie wniosku o opini\u0119 dysponenta ZRM" },
-            { days: "30 dni", text: "przed imprez\u0105 \u2014 z\u0142o\u017Cenie wniosku o zezwolenie na imprez\u0119 masow\u0105 do organu gminy" },
-            { days: "16 dni", text: "przed imprez\u0105 \u2014 dysponent ZRM wydaje opini\u0119 o niezb\u0119dnych si\u0142ach i \u015Brodkach" },
+            { days: "44 dni", text: "przed imprez\ą \u2014 z\ło\żenie wniosku o opini\ę dysponenta ZRM" },
+            { days: "30 dni", text: "przed imprez\ą \u2014 z\ło\żenie wniosku o zezwolenie na imprez\ę masow\ą do organu gminy" },
+            { days: "16 dni", text: "przed imprez\ą \u2014 dysponent ZRM wydaje opini\ę o niezb\ędnych si\łach i \środkach" },
           ].map((t, i) => (
             <div key={i} className="flex items-start gap-4">
               <span className="bg-primary-red text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0 min-w-[70px] text-center">{t.days}</span>
@@ -337,7 +337,7 @@ const ZabezpieczeniaMedyczne = () => {
             </div>
           ))}
         </div>
-        <p className="text-white/60 text-sm mt-6">Skontaktuj si\u0119 z nami jak najwcze\u015Bniej &mdash; najlepiej 2\u20133 miesi\u0105ce przed planowan\u0105 dat\u0105 imprezy.</p>
+        <p className="text-white/60 text-sm mt-6">Skontaktuj si\ę z nami jak najwcze\śniej &mdash; najlepiej 2\u20133 miesi\ące przed planowan\ą dat\ą imprezy.</p>
       </motion.div>
 
       {/* === SEKCJA: Dlaczego my === */}
@@ -348,11 +348,11 @@ const ZabezpieczeniaMedyczne = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
         {[
-          { icon: <BadgeCheck size={24} />, title: "Podmiot leczniczy", text: "Jedyni uprawnieni do pe\u0142nego, legalnego zabezpieczenia medycznego imprezy masowej. Wpisani do rejestru Ministra Zdrowia \u2014 KRS 0000920762." },
-          { icon: <Truck size={24} />, title: "3 w\u0142asne ambulanse", text: "Trzy w pe\u0142ni wyposa\u017Cone ambulanse spe\u0142niaj\u0105ce wymogi Rozporz\u0105dzenia MZ z 2012 r. Mo\u017Cliwo\u015B\u0107 jednoczesnego zabezpieczenia kilku imprez." },
-          { icon: <Users size={24} />, title: "Trzy poziomy personelu", text: "Ratownicy medyczni, piel\u0119gniarki i ratownicy KPP \u2014 dobieramy sk\u0142ad do faktycznych potrzeb i wymog\u00F3w prawnych ka\u017Cdej imprezy." },
-          { icon: <FileCheck size={24} />, title: "Pe\u0142na obs\u0142uga formalno\u015Bci", text: "Pomagamy w przygotowaniu planu zabezpieczenia, wniosku do dysponenta ZRM i ca\u0142ej dokumentacji wymaganej przez prawo." },
-          { icon: <Tent size={24} />, title: "Co\u015B ekstra", text: "Na festynach i piknikach rozstawiamy namiot ratowniczy z pokazowym szkoleniem z pierwszej pomocy \u2014 dodatkowa atrakcja i warto\u015B\u0107 dla organizatora." },
+          { icon: <BadgeCheck size={24} />, title: "Podmiot leczniczy", text: "Jedyni uprawnieni do pe\łnego, legalnego zabezpieczenia medycznego imprezy masowej. Wpisani do rejestru Ministra Zdrowia \u2014 KRS 0000920762." },
+          { icon: <Truck size={24} />, title: "3 w\łasne ambulanse", text: "Trzy w pe\łni wyposa\żone ambulanse spe\łniaj\ące wymogi Rozporz\ądzenia MZ z 2012 r. Mo\żliwo\ś\ć jednoczesnego zabezpieczenia kilku imprez." },
+          { icon: <Users size={24} />, title: "Trzy poziomy personelu", text: "Ratownicy medyczni, piel\ęgniarki i ratownicy KPP \u2014 dobieramy sk\ład do faktycznych potrzeb i wymog\ów prawnych ka\żdej imprezy." },
+          { icon: <FileCheck size={24} />, title: "Pe\łna obs\ługa formalno\ści", text: "Pomagamy w przygotowaniu planu zabezpieczenia, wniosku do dysponenta ZRM i ca\łej dokumentacji wymaganej przez prawo." },
+          { icon: <Tent size={24} />, title: "Co\ś ekstra", text: "Na festynach i piknikach rozstawiamy namiot ratowniczy z pokazowym szkoleniem z pierwszej pomocy \u2014 dodatkowa atrakcja i warto\ś\ć dla organizatora." },
         ].map((item, i) => (
           <motion.div
             key={i}
@@ -372,8 +372,8 @@ const ZabezpieczeniaMedyczne = () => {
 
       {/* === SEKCJA: Jak działamy === */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Wsp\u00F3\u0142praca</span>
-        <h2 className="text-3xl font-extrabold text-navy-blue mb-10">Od kontaktu do realizacji &mdash; jak dzia\u0142amy?</h2>
+        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Wsp\ó\łpraca</span>
+        <h2 className="text-3xl font-extrabold text-navy-blue mb-10">Od kontaktu do realizacji &mdash; jak dzia\łamy?</h2>
       </motion.div>
 
       <div className="space-y-6 mb-16">
@@ -406,7 +406,7 @@ const ZabezpieczeniaMedyczne = () => {
       >
         <h2 className="text-3xl font-black mb-4">Zapytaj o zabezpieczenie swojej imprezy</h2>
         <p className="text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Skontaktuj si\u0119 z nami jak najwcze\u015Bniej &mdash; najlepiej 2\u20133 miesi\u0105ce przed planowan\u0105 dat\u0105 imprezy masowej. Na mniejsze imprezy mo\u017Cemy zorganizowa\u0107 zabezpieczenie w kr\u00F3tszym czasie. Dzia\u0142amy na terenie Raciborza, Rybnika, Wodzis\u0142awia \u015Al\u0105skiego, Jastrz\u0119bia-Zdroju, Gliwic i ca\u0142ego wojew\u00F3dztwa \u015Bl\u0105skiego.
+          Skontaktuj si\ę z nami jak najwcze\śniej &mdash; najlepiej 2\u20133 miesi\ące przed planowan\ą dat\ą imprezy masowej. Na mniejsze imprezy mo\żemy zorganizowa\ć zabezpieczenie w kr\ótszym czasie. Dzia\łamy na terenie Raciborza, Rybnika, Wodzis\ławia \Śl\ąskiego, Jastrz\ębia-Zdroju, Gliwic i ca\łego wojew\ództwa \śl\ąskiego.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="tel:602622840" className="bg-white text-primary-red px-8 py-4 rounded-xl font-black text-lg shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2">
@@ -421,7 +421,7 @@ const ZabezpieczeniaMedyczne = () => {
       {/* SEO Footer Text */}
       <div className="mt-16 pt-10 border-t border-gray-200">
         <p className="text-gray-400 text-sm leading-relaxed">
-          LIFE-Ratownictwo Medyczne i Piel\u0119gniarstwo Sp. z o.o. \u015Bwiadczy us\u0142ugi zabezpieczenia medycznego imprez masowych i niemasowych na terenie wojew\u00F3dztwa \u015Bl\u0105skiego &mdash; Racib\u00F3rz, Rybnik, Wodzis\u0142aw \u015Al\u0105ski, Jastrz\u0119bie-Zdr\u00F3j, Gliwice, Katowice i okolice. Podmiot leczniczy wpisany do rejestru MZ &mdash; NIP 6392023251, KRS 0000920762.
+          LIFE-Ratownictwo Medyczne i Piel\ęgniarstwo Sp. z o.o. \świadczy us\ługi zabezpieczenia medycznego imprez masowych i niemasowych na terenie wojew\ództwa \śl\ąskiego &mdash; Racib\órz, Rybnik, Wodzis\ław \Śl\ąski, Jastrz\ębie-Zdr\ój, Gliwice, Katowice i okolice. Podmiot leczniczy wpisany do rejestru MZ &mdash; NIP 6392023251, KRS 0000920762.
         </p>
       </div>
 
