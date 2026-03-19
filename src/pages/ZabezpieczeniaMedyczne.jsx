@@ -146,6 +146,7 @@ const ZabezpieczeniaMedyczne = () => {
       titleAccent="Medyczne Imprez"
       subtitle={"Organizujesz imprez\u0119 i potrzebujesz zabezpieczenia medycznego? Jako licencjonowany podmiot leczniczy z trzema ambulansami i zespo\u0142em ratownik\u00F3w medycznych zapewniamy pe\u0142ne, zgodne z prawem zabezpieczenie \u2014 od ma\u0142ego festynu po du\u017C\u0105 imprez\u0119 masow\u0105."}
       bgImage="/gallery/zabezpieczenia/punkt-medyczny-impreza-masowa.jpg"
+      bgPosition="70% center"
       tiles={[
         { value: "100+", label: "Zabezpieczonych", sub: "imprez i wydarzeń" },
         { value: "PRM", label: "Ratownicy medyczni", sub: "na każdym evencie" },

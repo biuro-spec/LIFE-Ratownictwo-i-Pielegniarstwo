@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
 
-const ServiceLayout = ({ title, titleAccent, subtitle, bgImage, tiles, children }) => {
+const ServiceLayout = ({ title, titleAccent, subtitle, bgImage, bgPosition, tiles, children }) => {
   return (
     <div>
       {/* Hero — pełny ekran jak strona główna */}
       <section className="relative min-h-screen flex items-center">
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${bgImage})` }}
+          className="absolute inset-0 z-0 bg-cover"
+          style={{ backgroundImage: `url(${bgImage})`, backgroundPosition: bgPosition || 'center' }}
         >
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
         </div>
