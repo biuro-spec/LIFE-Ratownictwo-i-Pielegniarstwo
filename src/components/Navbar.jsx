@@ -69,7 +69,7 @@ const Navbar = () => {
         className={`
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
-            ? 'bg-white/90 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.04),0_12px_24px_rgba(0,0,0,0.08),0_24px_48px_rgba(0,0,0,0.06)] py-3 px-6'
+            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-3 px-6'
             : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-3 px-8'
           }
         `}
@@ -79,7 +79,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center shrink-0 ml-2 relative">
             <span
               className={`font-bold transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                scrolled ? 'text-primary-red text-lg' : 'text-primary-red text-xl'
+                scrolled ? 'text-white text-lg' : 'text-primary-red text-xl'
               }`}
             >
               LIFE
@@ -99,9 +99,9 @@ const Navbar = () => {
                   font-semibold transition-all duration-300 hover:-translate-y-0.5
                   ${scrolled ? 'text-[0.85rem]' : 'text-[0.95rem]'}
                   ${location.pathname === link.path
-                    ? 'text-primary-red font-bold'
+                    ? scrolled ? 'text-white font-bold' : 'text-primary-red font-bold'
                     : scrolled
-                      ? 'text-navy-blue/70 hover:text-navy-blue'
+                      ? 'text-white/80 hover:text-white'
                       : 'text-navy-blue/70 hover:text-navy-blue'
                   }
                 `}
@@ -118,9 +118,9 @@ const Navbar = () => {
                   font-semibold transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-1
                   ${scrolled ? 'text-[0.85rem]' : 'text-[0.95rem]'}
                   ${isServicePage
-                    ? 'text-primary-red font-bold'
+                    ? scrolled ? 'text-white font-bold' : 'text-primary-red font-bold'
                     : scrolled
-                      ? 'text-navy-blue/70 hover:text-navy-blue'
+                      ? 'text-white/80 hover:text-white'
                       : 'text-navy-blue/70 hover:text-navy-blue'
                   }
                 `}
@@ -160,7 +160,7 @@ const Navbar = () => {
                 rounded-full font-bold flex items-center gap-2
                 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
                 ${scrolled
-                  ? 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15 px-4 py-2 text-sm hover:bg-navy-blue/10'
+                  ? 'bg-white/20 text-white border border-white/40 px-4 py-2 text-sm hover:bg-white/30'
                   : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15 px-5 py-2.5 text-sm hover:bg-navy-blue/10'
                 }
               `}
@@ -176,7 +176,7 @@ const Navbar = () => {
                 rounded-full font-bold flex items-center gap-2
                 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
                 ${scrolled
-                  ? 'bg-primary-red text-white px-4 py-2 text-sm shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35'
+                  ? 'bg-white text-primary-red px-4 py-2 text-sm shadow-lg shadow-black/10 hover:shadow-xl'
                   : 'bg-primary-red text-white px-5 py-2.5 text-sm shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35'
                 }
               `}
@@ -194,17 +194,17 @@ const Navbar = () => {
           >
             <span
               className={`block w-7 h-0.5 rounded-full transition-all duration-300 origin-center ${
-                scrolled ? 'bg-navy-blue' : 'bg-navy-blue'
+                scrolled ? 'bg-white' : 'bg-navy-blue'
               } ${isOpen ? 'rotate-45 translate-y-[11px]' : ''}`}
             />
             <span
               className={`block w-5 h-0.5 rounded-full transition-all duration-300 ${
-                scrolled ? 'bg-navy-blue' : 'bg-navy-blue'
+                scrolled ? 'bg-white' : 'bg-navy-blue'
               } ${isOpen ? 'opacity-0 scale-0' : 'opacity-100'}`}
             />
             <span
               className={`block w-7 h-0.5 rounded-full transition-all duration-300 origin-center ${
-                scrolled ? 'bg-navy-blue' : 'bg-navy-blue'
+                scrolled ? 'bg-white' : 'bg-navy-blue'
               } ${isOpen ? '-rotate-45 -translate-y-[11px]' : ''}`}
             />
           </button>
@@ -221,7 +221,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className={`mt-3 backdrop-blur-xl rounded-3xl p-8 lg:hidden flex flex-col gap-4
               ${scrolled
-                ? 'bg-white/90 border-2 border-white shadow-[0_4px_8px_rgba(0,0,0,0.04),0_16px_32px_rgba(0,0,0,0.08),0_32px_64px_rgba(0,0,0,0.06)]'
+                ? 'bg-primary-red/95 border-2 border-white shadow-[0_4px_8px_rgba(218,37,29,0.1),0_16px_32px_rgba(218,37,29,0.2),0_32px_64px_rgba(218,37,29,0.12)]'
                 : 'bg-white/60 border-2 border-white shadow-[0_4px_8px_rgba(0,0,0,0.03),0_16px_32px_rgba(0,0,0,0.06),0_32px_64px_rgba(0,0,0,0.04)]'
               }
             `}
@@ -233,8 +233,8 @@ const Navbar = () => {
                 onClick={closeMenu}
                 className={`text-lg font-semibold transition-colors ${
                   location.pathname === link.path
-                    ? 'text-primary-red font-bold'
-                    : 'text-navy-blue hover:text-primary-red'
+                    ? scrolled ? 'text-white font-bold' : 'text-primary-red font-bold'
+                    : scrolled ? 'text-white/80 hover:text-white' : 'text-navy-blue hover:text-primary-red'
                 }`}
               >
                 {link.name}
@@ -242,7 +242,7 @@ const Navbar = () => {
             ))}
 
             {/* Usługi w mobile */}
-            <div className="text-sm font-bold uppercase tracking-wider mt-2 text-navy-blue/40">
+            <div className={`text-sm font-bold uppercase tracking-wider mt-2 ${scrolled ? 'text-white/50' : 'text-navy-blue/40'}`}>
               Nasze Usługi
             </div>
             {serviceLinks.map((link) => (
@@ -252,8 +252,8 @@ const Navbar = () => {
                 onClick={closeMenu}
                 className={`text-base font-semibold transition-colors pl-3 border-l-2 ${
                   location.pathname === link.path
-                    ? 'text-primary-red border-primary-red font-bold'
-                    : 'text-navy-blue/70 hover:text-primary-red border-primary-red/20'
+                    ? scrolled ? 'text-white font-bold border-white' : 'text-primary-red border-primary-red font-bold'
+                    : scrolled ? 'text-white/70 hover:text-white border-white/20' : 'text-navy-blue/70 hover:text-primary-red border-primary-red/20'
                 }`}
               >
                 {link.name}
@@ -264,14 +264,14 @@ const Navbar = () => {
             <div className="flex flex-col gap-3 mt-4">
               <a
                 href="mailto:biuro@life-ratownictwo.pl"
-                className="p-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all bg-navy-blue/5 text-navy-blue border border-navy-blue/15"
+                className={`p-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white/20 text-white border border-white/30' : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15'}`}
               >
                 <Mail size={18} />
                 Napisz do nas
               </a>
               <a
                 href="tel:602622840"
-                className="p-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all bg-primary-red text-white shadow-lg shadow-primary-red/25"
+                className={`p-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white text-primary-red shadow-lg shadow-black/10' : 'bg-primary-red text-white shadow-lg shadow-primary-red/25'}`}
               >
                 <Phone size={18} />
                 Zadzwo\u0144: 602 622 840
