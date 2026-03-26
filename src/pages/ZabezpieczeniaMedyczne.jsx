@@ -169,8 +169,8 @@ const ZabezpieczeniaMedyczne = () => {
         </p>
 
         {/* Ramka ostrzegawcza */}
-        <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 mb-12 flex gap-4">
-          <AlertTriangle className="text-amber-500 shrink-0 mt-1" size={24} />
+        <div className="bg-primary-red/5 border-2 border-primary-red/20 rounded-2xl p-6 mb-12 flex gap-4">
+          <AlertTriangle className="text-primary-red shrink-0 mt-1" size={24} />
           <div>
             <h4 className="font-bold text-navy-blue mb-2">Uwaga dla organizator&oacute;w</h4>
             <p className="text-gray-600 leading-relaxed text-sm">

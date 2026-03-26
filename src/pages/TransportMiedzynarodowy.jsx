@@ -81,7 +81,7 @@ const TransportMiedzynarodowy = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <span className="bg-blue-100 text-blue-700 font-bold px-4 py-2 rounded-full text-xs sm:text-sm flex items-center gap-2">
+              <span className="bg-navy-blue/10 text-navy-blue font-bold px-4 py-2 rounded-full text-xs sm:text-sm flex items-center gap-2">
                 <Languages size={16} /> PL / DE
               </span>
               <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-2 rounded-full text-xs sm:text-sm">
@@ -251,19 +251,19 @@ const TransportMiedzynarodowy = () => {
                 title: "Prywatne ubezpieczenie",
                 titleDe: "Auslandskrankenversicherung",
                 desc: "Najlepsza opcja. Polisy prywatne (ADAC, Allianz, HanseMerkur, ERV) pokrywaj\u0105 \u201Emedycznie uzasadniony\u201D transport. Pomagamy w kontakcie z ubezpieczycielem.",
-                color: "bg-green-500",
+                color: "bg-primary-red",
               },
               {
                 title: "Kasa chorych (GKV)",
                 titleDe: "Gesetzliche Krankenkasse",
                 desc: "Ustawowe ubezpieczenie zdrowotne NIE pokrywa repatriacji. Wyjątek: strefa przygraniczna — a Racibórz jest 25 km od granicy.",
-                color: "bg-amber-500",
+                color: "bg-primary-red/70",
               },
               {
                 title: "NFZ / Formularz S2",
                 titleDe: "NFZ / S2-Formular",
                 desc: "NFZ mo\u017Ce pokry\u0107 koszty \u201Etransportu ekonomicznego\u201D gdy dalsze leczenie za granic\u0105 jest dro\u017Csze ni\u017C w Polsce + transport. Formularz S2 dla leczenia planowanego.",
-                color: "bg-blue-500",
+                color: "bg-navy-blue",
               },
             ].map((item, i) => (
               <motion.div
