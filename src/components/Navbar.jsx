@@ -53,6 +53,7 @@ const Navbar = () => {
     { name: 'Transport Medyczny', path: '/transport-medyczny' },
     { name: 'Zabezpieczenia Medyczne', path: '/zabezpieczenia-medyczne' },
     { name: 'Szkolenia Pierwszej Pomocy', path: '/szkolenia-pierwsza-pomoc' },
+    { name: 'Usługi Pielęgniarskie', path: '/uslugi-pielegniarskie' },
   ];
 
   const isServicePage = serviceLinks.some(s => location.pathname === s.path);
@@ -160,8 +161,8 @@ const Navbar = () => {
                 rounded-full font-bold flex items-center gap-2
                 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
                 ${scrolled
-                  ? 'bg-white/20 text-white border border-white/40 px-4 py-2 text-sm hover:bg-white/30'
-                  : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15 px-5 py-2.5 text-sm hover:bg-navy-blue/10'
+                  ? 'bg-white/20 text-white border border-white/40 px-3 py-1.5 text-xs hover:bg-white/30'
+                  : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15 px-3.5 py-2 text-xs hover:bg-navy-blue/10'
                 }
               `}
             >
@@ -169,21 +170,37 @@ const Navbar = () => {
               Napisz do nas
             </a>
 
-            {/* Telefon */}
-            <a
-              href="tel:602622840"
-              className={`
-                rounded-full font-bold flex items-center gap-2
-                transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
-                ${scrolled
-                  ? 'bg-white text-primary-red px-4 py-2 text-sm shadow-lg shadow-black/10 hover:shadow-xl'
-                  : 'bg-primary-red text-white px-5 py-2.5 text-sm shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35'
-                }
-              `}
-            >
-              <Phone size={scrolled ? 13 : 14} />
-              602 622 840
-            </a>
+            {/* Telefony */}
+            <div className="flex items-center gap-1.5">
+              <a
+                href="tel:602622840"
+                className={`
+                  rounded-full font-bold flex items-center gap-1.5
+                  transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
+                  ${scrolled
+                    ? 'bg-white text-primary-red px-3 py-1.5 text-xs shadow-lg shadow-black/10 hover:shadow-xl'
+                    : 'bg-primary-red text-white px-3.5 py-2 text-xs shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35'
+                  }
+                `}
+              >
+                <Phone size={12} />
+                602 622 840
+              </a>
+              <a
+                href="tel:505751858"
+                className={`
+                  rounded-full font-bold flex items-center gap-1.5
+                  transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
+                  ${scrolled
+                    ? 'bg-white/20 text-white border border-white/40 px-3 py-1.5 text-xs hover:bg-white/30'
+                    : 'bg-navy-blue text-white px-3.5 py-2 text-xs shadow-lg shadow-navy-blue/25 hover:shadow-xl hover:shadow-navy-blue/35'
+                  }
+                `}
+              >
+                <Phone size={12} />
+                505 751 858
+              </a>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
@@ -271,10 +288,17 @@ const Navbar = () => {
               </a>
               <a
                 href="tel:602622840"
-                className={`p-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white text-primary-red shadow-lg shadow-black/10' : 'bg-primary-red text-white shadow-lg shadow-primary-red/25'}`}
+                className={`p-3.5 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white text-primary-red shadow-lg shadow-black/10' : 'bg-primary-red text-white shadow-lg shadow-primary-red/25'}`}
               >
-                <Phone size={18} />
-                Zadzwo\u0144: 602 622 840
+                <Phone size={16} />
+                602 622 840
+              </a>
+              <a
+                href="tel:505751858"
+                className={`p-3.5 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white/20 text-white border border-white/30' : 'bg-navy-blue text-white shadow-lg shadow-navy-blue/25'}`}
+              >
+                <Phone size={16} />
+                505 751 858
               </a>
             </div>
           </motion.div>
