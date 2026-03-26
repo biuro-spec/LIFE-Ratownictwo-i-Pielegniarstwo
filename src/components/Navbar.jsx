@@ -70,8 +70,8 @@ const Navbar = () => {
         className={`
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
-            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-5 px-10'
-            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-4 px-10'
+            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-2 px-10'
+            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-2 px-10'
           }
         `}
       >

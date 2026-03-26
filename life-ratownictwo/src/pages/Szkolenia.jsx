@@ -138,7 +138,7 @@ const Szkolenia = () => {
       title="Szkolenia z"
       titleAccent="Pierwszej Pomocy"
       subtitle="Ucz się od tych, którzy robią to na co dzień"
-      bgImage="/assets/images/szkolenia/szkolenia-1.webp"
+      bgImage="/gallery/Szkolenia/Szkolenie z pierwszej pomocy na imprezach.webp"
       tiles={[
         { value: "Firmy", label: "Zakłady pracy", sub: "obowiązek BHP" },
         { value: "Szkoły", label: "Podstawowe i średnie", sub: "programy wg wieku" },
@@ -538,6 +538,24 @@ const Szkolenia = () => {
             <Link to="/blog/jak-udzielac-pierwszej-pomocy-kompletny-poradnik" className="flex items-center gap-3 bg-[#f4f7f6] p-5 rounded-2xl font-semibold text-navy-blue hover:text-primary-red hover:shadow-md transition-all">
               <ChevronRight className="text-primary-red shrink-0" size={18} /> Jak udzielać pierwszej pomocy &mdash; poradnik
             </Link>
+          </div>
+
+          <h3 className="text-2xl font-bold text-navy-blue mb-6">Nasze szkolenia w obrazach</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 not-prose">
+            {[
+              "/gallery/Szkolenia/Szkolenia z pierwszej pomocy dla dzieci.webp",
+              "/gallery/Szkolenia/Szkolenia z pierwszej pomocy dla pracowników.webp",
+              "/gallery/Szkolenia/Szkolenia z pierwszej pomocy na piknikach rodzinnych.webp",
+              "/gallery/Szkolenia/Szkolenia z resuscytacji krążeniowo oddechowej.webp",
+              "/gallery/Szkolenia/pierwsza pomoc (10).webp",
+              "/gallery/Szkolenia/Pozycja bezpieczna.webp",
+              "/gallery/Szkolenia/Szkolenia z pierwszej pomocy dla motocyklistów.webp",
+              "/gallery/Szkolenia/DSC_0007.webp",
+            ].map((src, i) => (
+              <div key={i} className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
+                <img src={src} alt={`Szkolenie pierwsza pomoc ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            ))}
           </div>
 
           <h3 className="text-2xl font-bold text-navy-blue mb-6">Zobacz też nasze usługi</h3>

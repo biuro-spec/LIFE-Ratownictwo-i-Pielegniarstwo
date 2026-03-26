@@ -12,7 +12,7 @@ const TransportMedyczny = () => {
       title="Transport"
       titleAccent="Medyczny"
       subtitle="Zapewniamy bezpieczny i profesjonalny przewóz pacjentów ambulansami przystosowanymi do ich potrzeb."
-      bgImage="/assets/images/Wypadki-komunikacyjne-1.webp"
+      bgImage="/gallery/transport/Bezpieczny i wygodny transport medyczny na Śląsku.webp"
       tiles={[
         { value: "24/7", label: "Dostępność", sub: "weekendy i święta" },
         { value: "3", label: "Ambulanse", sub: "w gotowości" },
@@ -101,6 +101,24 @@ const TransportMedyczny = () => {
             <Link to="/blog/transport-medyczny-nfz-vs-prywatnie-roznice" className="flex items-center gap-3 bg-[#f4f7f6] p-5 rounded-2xl font-semibold text-navy-blue hover:text-primary-red hover:shadow-md transition-all">
               <ChevronRight className="text-primary-red shrink-0" size={18} /> Transport na NFZ vs prywatnie — różnice
             </Link>
+          </div>
+
+          <h3 className="text-2xl font-bold text-navy-blue mb-6">Nasze ambulanse w akcji</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+            {[
+              "/gallery/transport/Ambulanse Life-RMiP.webp",
+              "/gallery/transport/Transport medyczny Katowice.webp",
+              "/gallery/transport/IMG_20221004_142311.webp",
+              "/gallery/transport/IMG_20221004_142724.webp",
+              "/gallery/transport/Transport medyczny Śląsk.webp",
+              "/gallery/transport/Transport osób chorych.webp",
+              "/gallery/transport/IMG_20221004_142504.webp",
+              "/gallery/transport/Transport sanitarny Racibórz.webp",
+            ].map((src, i) => (
+              <div key={i} className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
+                <img src={src} alt={`Transport medyczny ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            ))}
           </div>
 
           <h3 className="text-2xl font-bold text-navy-blue mb-6">Zobacz też nasze usługi</h3>

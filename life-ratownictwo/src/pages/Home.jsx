@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft, Stethoscope, Droplets, Search } from 'lucide-react';
+import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft, Stethoscope, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { blogArticles } from '../data/blogArticles';
@@ -217,7 +217,7 @@ const Home = () => {
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0.25) 85%, rgba(255,255,255,0.15) 100%)' }}></div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 sm:pt-40 pb-10 sm:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -229,7 +229,7 @@ const Home = () => {
                 <MapPin size={14} />
                 Racib&oacute;rz &bull; Rybnik &bull; całe woj. śląskie
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">
                 Profesjonalne <span className="text-primary-red">Ratownictwo</span> i Transport
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
@@ -334,31 +334,78 @@ const Home = () => {
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-red-400 to-primary-red bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
                 <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-primary-red/6 to-transparent rounded-bl-full pointer-events-none"></div>
                 <div className="p-8 lg:p-10 relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-red to-red-800 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-red/30 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-xl group-hover:shadow-primary-red/40 transition-all duration-500">
-                    <Truck size={30} />
+                  <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-8 lg:gap-0">
+
+                    {/* Lewa kolumna - Transport */}
+                    <div className="flex flex-col lg:pr-10">
+                      <div className="w-14 h-14 bg-gradient-to-br from-primary-red to-red-800 text-white rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-primary-red/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <Truck size={26} />
+                      </div>
+                      <h3 className="text-2xl font-extrabold text-navy-blue mb-3 group-hover:text-primary-red transition-colors duration-500">Transport Medyczny i Sanitarny</h3>
+                      <p className="text-gray-500 mb-5 leading-relaxed text-sm">
+                        Profesjonalny transport pacjentów ambulansem z wykwalifikowanym personelem medycznym &mdash; ratownikiem lub pielęgniarką. Dostępny całą dobę, 7 dni w tygodniu.
+                      </p>
+                      <ul className="space-y-2.5 mb-6 flex-1">
+                        {[
+                          "Transport do szpitala, poradni, na rehabilitacj\u0119",
+                          "Przew\u00F3z pacjent\u00F3w le\u017C\u0105cych i siedz\u0105cych",
+                          "Transport krajowy i zagraniczny",
+                          "Wizyty domowe i opieka piel\u0119gniarska",
+                          "Dost\u0119pno\u015B\u0107 24/7 \u2014 ca\u0142\u0105 dob\u0119",
+                          "3 ambulanse w gotowo\u015Bci",
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600 list-none">
+                            <CheckCircle2 size={15} className="text-primary-red/70 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link to="/transport-medyczny" className="inline-flex items-center gap-2 bg-primary-red text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35 hover:scale-105 hover:gap-3 transition-all duration-300 self-start">
+                        Dowiedz się więcej <ChevronRight size={15} />
+                      </Link>
+                    </div>
+
+                    {/* Pionowa linia */}
+                    <div className="hidden lg:block bg-gray-100 self-stretch" />
+
+                    {/* Prawa kolumna - Badania krwi */}
+                    <div className="flex flex-col lg:pl-10 border-t border-gray-100 pt-8 lg:border-t-0 lg:pt-0">
+                      <div className="w-14 h-14 bg-gradient-to-br from-navy-blue to-[#0a1e33] text-white rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-navy-blue/30 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                        <Droplets size={26} />
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <h3 className="text-2xl font-extrabold text-navy-blue">Badania laboratoryjne</h3>
+                        <span className="bg-navy-blue/8 text-navy-blue/70 font-semibold px-3 py-1 rounded-full text-[10px] uppercase tracking-wider border border-navy-blue/10">Life-Centrum Racibórz</span>
+                      </div>
+                      <p className="text-gray-500 mb-5 leading-relaxed text-sm">
+                        Profesjonalne pobieranie krwi i szeroki panel badań laboratoryjnych w naszym centrum medycznym. Morfologia, biochemia, hormony, markery nowotworowe, alergologia i wiele więcej &mdash; wyniki szybko i rzetelnie.
+                      </p>
+                      <ul className="space-y-2.5 mb-6 flex-1">
+                        {[
+                          "Morfologia i uk\u0142ad krzepni\u0119cia",
+                          "Biochemia \u2014 w\u0105troba, nerki, lipidogram",
+                          "Hormony tarczycy (TSH, fT3, fT4)",
+                          "Markery nowotworowe (PSA, CEA, CA125)",
+                          "Panel alergologiczny i immunologia",
+                          "Wirusologia \u2014 HBs, HCV, HIV",
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600 list-none">
+                            <CheckCircle2 size={15} className="text-navy-blue/50 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <a
+                        href="https://life-centrum.pl/cennik-badan-krwi/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-navy-blue text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg shadow-navy-blue/25 hover:shadow-xl hover:shadow-navy-blue/35 hover:scale-105 hover:gap-3 transition-all duration-300 self-start"
+                      >
+                        Sprawdź cennik badań <ChevronRight size={15} />
+                      </a>
+                    </div>
+
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-extrabold text-navy-blue mb-4 group-hover:text-primary-red transition-colors duration-500">Transport Medyczny i Sanitarny</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed text-base lg:text-lg">
-                    Profesjonalny, bezpieczny transport pacjent&oacute;w ambulansem z wykwalifikowanym personelem medycznym &mdash; ratownikiem lub pielęgniarką. Docieramy do pacjenta o każdej porze dnia i nocy.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    {[
-                      "Transport do szpitala, poradni, na rehabilitacj\u0119",
-                      "Przew\u00F3z pacjent\u00F3w le\u017C\u0105cych i siedz\u0105cych",
-                      "Transport krajowy i zagraniczny",
-                      "Wizyty domowe i opieka piel\u0119gniarska",
-                      "Dost\u0119pno\u015B\u0107 24/7 \u2014 ca\u0142\u0105 dob\u0119",
-                      "3 ambulanse w gotowo\u015Bci",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600 list-none">
-                        <CheckCircle2 size={16} className="text-primary-red/70 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </div>
-                  <Link to="/transport-medyczny" className="inline-flex items-center gap-2 bg-primary-red text-white px-7 py-3.5 rounded-full font-bold shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35 hover:scale-105 hover:gap-3 transition-all duration-300">
-                    Dowiedz się więcej <ChevronRight size={16} />
-                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -509,65 +556,6 @@ const Home = () => {
                           <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                         </motion.div>
                       ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 5 - Pobieranie krwi / Life-Centrum */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true }}
-              className="lg:col-span-12 group relative"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-navy-blue/20 via-primary-red/10 to-navy-blue/20 rounded-[36px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-              <div className="relative bg-navy-blue rounded-[32px] shadow-[0_4px_24px_rgba(13,27,42,0.15)] hover:shadow-[0_32px_80px_rgba(13,27,42,0.25)] transition-all duration-700 overflow-hidden group-hover:-translate-y-3">
-                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-white/30 to-primary-red bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
-                <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-primary-red/10 to-transparent rounded-bl-full pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/3 rounded-tr-full pointer-events-none"></div>
-
-                <div className="p-8 lg:p-12 relative z-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center">
-                    <div>
-                      <div className="flex items-center gap-3 mb-5">
-                        <div className="w-14 h-14 bg-white/10 backdrop-blur text-primary-red rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary-red group-hover:text-white transition-all duration-500">
-                          <Droplets size={26} />
-                        </div>
-                        <span className="bg-primary-red/20 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">Life-Centrum</span>
-                      </div>
-                      <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-4">Pobieranie krwi &mdash; Cennik badań laboratoryjnych</h3>
-                      <p className="text-white/60 mb-4 leading-relaxed text-base lg:text-lg max-w-3xl">
-                        Wykonujemy <strong className="text-white/80">profesjonalne pobieranie krwi</strong> w ramach naszego centrum medycznego <strong className="text-white/80">Life-Centrum w Raciborzu</strong>. Sprawdź dostępne badania i ich ceny w naszej wyszukiwarce &mdash; szybko znajdziesz interesujący Cię test laboratoryjny.
-                      </p>
-                      <ul className="flex flex-wrap gap-3 mb-6">
-                        {[
-                          "Morfologia i badania hematologiczne",
-                          "Badania biochemiczne",
-                          "Markery nowotworowe",
-                          "Hormony i badania tarczycowe",
-                          "Panel alergologiczny",
-                        ].map((item, i) => (
-                          <li key={i} className="flex items-center gap-1.5 text-sm text-white/50 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            <CheckCircle2 size={12} className="text-primary-red shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-col items-center lg:items-end gap-3">
-                      <a
-                        href="https://life-centrum.pl/cennik-badan-krwi/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-primary-red text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35 hover:scale-105 hover:gap-3 transition-all duration-300"
-                      >
-                        <Search size={18} />
-                        Sprawdź cennik badań
-                      </a>
-                      <span className="text-white/30 text-xs">life-centrum.pl</span>
                     </div>
                   </div>
                 </div>

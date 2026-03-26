@@ -21,7 +21,7 @@ const UslugiPielegniarskie = () => {
       title="Usługi"
       titleAccent="Pielęgniarskie"
       subtitle="Profesjonalna opieka pielęgniarska w domu pacjenta oraz podczas transportu medycznego. Wykwalifikowany zespół z wieloletnim doświadczeniem."
-      bgImage="/assets/images/Wypadki-komunikacyjne-1.webp"
+      bgImage="/gallery/pielęgniarstwo/pielęgniarka w domu.webp"
       tiles={[
         { value: "24/7", label: "Dostępność", sub: "również w święta" },
         { value: "2-os.", label: "Zespół", sub: "pielęgniarski" },
@@ -255,6 +255,20 @@ const UslugiPielegniarskie = () => {
 
         {/* Cross-sell */}
         <div className="mt-16 pt-12 border-t border-gray-200">
+          <h3 className="text-2xl font-bold text-navy-blue mb-6">Opieka pielęgniarska w praktyce</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+            {[
+              "/gallery/pielęgniarstwo/pielęgniarka Racibórz.webp",
+              "/gallery/pielęgniarstwo/pielęgniarka w domu.webp",
+              "/gallery/pielęgniarstwo/shutterstock_1038162091.webp",
+              "/gallery/pielęgniarstwo/shutterstock_1691188564.webp",
+            ].map((src, i) => (
+              <div key={i} className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
+                <img src={src} alt={`Opieka pielęgniarska ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            ))}
+          </div>
+
           <h3 className="text-2xl font-bold text-navy-blue mb-6">Powiązane usługi</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             <Link to="/transport-medyczny" className="group bg-red-50 border-2 border-red-100 p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
