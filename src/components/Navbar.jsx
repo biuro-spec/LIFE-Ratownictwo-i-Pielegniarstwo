@@ -63,15 +63,15 @@ const Navbar = () => {
       className="fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
       style={{
         top: scrolled ? '12px' : '24px',
-        width: scrolled ? 'min(90%, 960px)' : 'min(92%, 1200px)',
+        width: scrolled ? 'min(94%, 1100px)' : 'min(96%, 1400px)',
       }}
     >
       <nav
         className={`
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
-            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-3 px-6'
-            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-3 px-8'
+            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-4 px-8'
+            : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-4 px-10'
           }
         `}
       >
@@ -80,7 +80,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center shrink-0 ml-2 relative">
             <span
               className={`font-bold transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                scrolled ? 'text-white text-lg' : 'text-primary-red text-xl'
+                scrolled ? 'text-white text-xl' : 'text-primary-red text-2xl'
               }`}
             >
               LIFE
@@ -104,14 +104,14 @@ const Navbar = () => {
           <div className={`hidden lg:block transition-all duration-500 ${scrolled ? 'flex-grow-0 w-0' : 'flex-grow'}`} />
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-6 shrink-0">
+          <div className="hidden lg:flex items-center gap-7 shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`
                   font-semibold transition-all duration-300 hover:-translate-y-0.5
-                  ${scrolled ? 'text-[0.85rem]' : 'text-[0.95rem]'}
+                  ${scrolled ? 'text-sm' : 'text-[0.95rem]'}
                   ${location.pathname === link.path
                     ? scrolled ? 'text-white font-bold' : 'text-primary-red font-bold'
                     : scrolled
@@ -130,7 +130,7 @@ const Navbar = () => {
                 onClick={() => setServicesOpen(prev => !prev)}
                 className={`
                   font-semibold transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-1
-                  ${scrolled ? 'text-[0.85rem]' : 'text-[0.95rem]'}
+                  ${scrolled ? 'text-sm' : 'text-[0.95rem]'}
                   ${isServicePage
                     ? scrolled ? 'text-white font-bold' : 'text-primary-red font-bold'
                     : scrolled
@@ -174,43 +174,43 @@ const Navbar = () => {
                 rounded-full font-bold flex items-center gap-2
                 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
                 ${scrolled
-                  ? 'bg-white/20 text-white border border-white/40 px-3 py-1.5 text-xs hover:bg-white/30'
-                  : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15 px-3.5 py-2 text-xs hover:bg-navy-blue/10'
+                  ? 'bg-white/20 text-white border border-white/40 px-4 py-2 text-sm hover:bg-white/30'
+                  : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15 px-5 py-2.5 text-sm hover:bg-navy-blue/10'
                 }
               `}
             >
-              <Mail size={scrolled ? 13 : 14} />
+              <Mail size={scrolled ? 14 : 16} />
               Napisz do nas
             </a>
 
             {/* Telefony */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <a
                 href="tel:602622840"
                 className={`
-                  rounded-full font-bold flex items-center gap-1.5
+                  rounded-full font-bold flex items-center gap-2
                   transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
                   ${scrolled
-                    ? 'bg-white text-primary-red px-3 py-1.5 text-xs shadow-lg shadow-black/10 hover:shadow-xl'
-                    : 'bg-primary-red text-white px-3.5 py-2 text-xs shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35'
+                    ? 'bg-white text-primary-red px-4 py-2 text-sm shadow-lg shadow-black/10 hover:shadow-xl'
+                    : 'bg-primary-red text-white px-5 py-2.5 text-sm shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35'
                   }
                 `}
               >
-                <Phone size={12} />
+                <Phone size={14} />
                 602 622 840
               </a>
               <a
                 href="tel:505751858"
                 className={`
-                  rounded-full font-bold flex items-center gap-1.5
+                  rounded-full font-bold flex items-center gap-2
                   transition-all duration-300 hover:scale-105 hover:-translate-y-0.5
                   ${scrolled
-                    ? 'bg-white/20 text-white border border-white/40 px-3 py-1.5 text-xs hover:bg-white/30'
-                    : 'bg-navy-blue text-white px-3.5 py-2 text-xs shadow-lg shadow-navy-blue/25 hover:shadow-xl hover:shadow-navy-blue/35'
+                    ? 'bg-white/20 text-white border border-white/40 px-4 py-2 text-sm hover:bg-white/30'
+                    : 'bg-navy-blue text-white px-5 py-2.5 text-sm shadow-lg shadow-navy-blue/25 hover:shadow-xl hover:shadow-navy-blue/35'
                   }
                 `}
               >
-                <Phone size={12} />
+                <Phone size={14} />
                 505 751 858
               </a>
             </div>
