@@ -56,7 +56,7 @@ const TransportMedyczny = () => {
             "Transport osób leżących i niepełnosprawnych"
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-3 bg-white border border-gray-100 p-4 rounded-xl shadow-sm">
-                <CheckCircle2 className="text-green-500 shrink-0" size={20} />
+                <CheckCircle2 className="text-primary-red/70 shrink-0" size={20} />
                 <span className="font-semibold text-gray-700">{item}</span>
             </div>
           ))}
@@ -73,23 +73,23 @@ const TransportMedyczny = () => {
         <div className="mt-16 pt-12 border-t border-gray-200">
           <h3 className="text-2xl font-bold text-navy-blue mb-6">Szczegóły naszych usług transportowych</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-            <Link to="/transport-nfz" className="group bg-green-50 border-2 border-green-100 p-6 rounded-2xl hover:shadow-xl transition-all">
-              <div className="text-green-600 font-black text-sm uppercase tracking-wider mb-2">NFZ / POZ</div>
+            <Link to="/transport-nfz" className="group bg-[#f4f7f6] border-2 border-white p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="text-primary-red font-black text-sm uppercase tracking-wider mb-2">NFZ / POZ</div>
               <h4 className="font-extrabold text-navy-blue text-lg mb-2 group-hover:text-primary-red transition-colors">Transport Sanitarny NFZ</h4>
               <p className="text-gray-500 text-sm mb-3">Bezpłatny transport na zlecenie lekarza POZ. Dializy, rehabilitacja, chemioterapia.</p>
-              <span className="text-primary-red font-bold text-sm flex items-center gap-1">Sprawdź szczegóły <ChevronRight size={14} /></span>
+              <span className="text-primary-red font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Sprawdź szczegóły <ChevronRight size={14} /></span>
             </Link>
-            <Link to="/transport-prywatny" className="group bg-red-50 border-2 border-red-100 p-6 rounded-2xl hover:shadow-xl transition-all">
+            <Link to="/transport-prywatny" className="group bg-red-50 border-2 border-red-100 p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="text-primary-red font-black text-sm uppercase tracking-wider mb-2">Prywatny</div>
               <h4 className="font-extrabold text-navy-blue text-lg mb-2 group-hover:text-primary-red transition-colors">Transport Prywatny</h4>
               <p className="text-gray-500 text-sm mb-3">Bez skierowania, bez kolejek. Ambulans z ratownikiem 24/7. Cennik od 4 zł/km.</p>
-              <span className="text-primary-red font-bold text-sm flex items-center gap-1">Sprawdź szczegóły <ChevronRight size={14} /></span>
+              <span className="text-primary-red font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Sprawdź szczegóły <ChevronRight size={14} /></span>
             </Link>
-            <Link to="/transport-miedzynarodowy" className="group bg-blue-50 border-2 border-blue-100 p-6 rounded-2xl hover:shadow-xl transition-all">
-              <div className="text-blue-600 font-black text-sm uppercase tracking-wider mb-2">Międzynarodowy</div>
-              <h4 className="font-extrabold text-navy-blue text-lg mb-2 group-hover:text-primary-red transition-colors">Polska–Niemcy</h4>
-              <p className="text-gray-500 text-sm mb-3">Repatriacja medyczna, współpraca z Krankenkassen. 25 km od granicy.</p>
-              <span className="text-primary-red font-bold text-sm flex items-center gap-1">Sprawdź szczegóły <ChevronRight size={14} /></span>
+            <Link to="/transport-miedzynarodowy" className="group bg-navy-blue p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="text-primary-red font-black text-sm uppercase tracking-wider mb-2">Międzynarodowy</div>
+              <h4 className="font-extrabold text-white text-lg mb-2">Polska–Niemcy</h4>
+              <p className="text-white/60 text-sm mb-3">Repatriacja medyczna, współpraca z Krankenkassen. 25 km od granicy.</p>
+              <span className="text-primary-red font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Sprawdź szczegóły <ChevronRight size={14} /></span>
             </Link>
           </div>
 

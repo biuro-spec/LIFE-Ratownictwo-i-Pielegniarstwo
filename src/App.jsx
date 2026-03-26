@@ -119,6 +119,12 @@ function App() {
                 <div className="pt-10 text-center text-xs opacity-50 border-t border-white/5">
                     &copy; 2025 LIFE-Ratownictwo Medyczne i Piel&eogon;gniarstwo Sp. z o.o. | NIP: 6392023251 | KRS: 0000920762 | REGON: 389900423 &middot; Podmiot leczniczy wpisany do rejestru MZ
                 </div>
+                <div className="mt-6 flex items-center justify-center gap-2 opacity-40 hover:opacity-70 transition-opacity">
+                    <span className="text-[10px] text-white/50">Stronę wykonał</span>
+                    <a href="https://webstudio47.pl" target="_blank" rel="noopener noreferrer">
+                        <img src="/webstudio47-logo.png" alt="WebStudio47" className="h-6" />
+                    </a>
+                </div>
             </div>
         </footer>
       </div>

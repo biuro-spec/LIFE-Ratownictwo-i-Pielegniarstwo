@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft, Stethoscope } from 'lucide-react';
+import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft, Stethoscope, Droplets, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { blogArticles } from '../data/blogArticles';
@@ -509,6 +509,65 @@ const Home = () => {
                           <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                         </motion.div>
                       ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 5 - Pobieranie krwi / Life-Centrum */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
+              className="lg:col-span-12 group relative"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-navy-blue/20 via-primary-red/10 to-navy-blue/20 rounded-[36px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+              <div className="relative bg-navy-blue rounded-[32px] shadow-[0_4px_24px_rgba(13,27,42,0.15)] hover:shadow-[0_32px_80px_rgba(13,27,42,0.25)] transition-all duration-700 overflow-hidden group-hover:-translate-y-3">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-white/30 to-primary-red bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-primary-red/10 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/3 rounded-tr-full pointer-events-none"></div>
+
+                <div className="p-8 lg:p-12 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center">
+                    <div>
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="w-14 h-14 bg-white/10 backdrop-blur text-primary-red rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary-red group-hover:text-white transition-all duration-500">
+                          <Droplets size={26} />
+                        </div>
+                        <span className="bg-primary-red/20 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">Life-Centrum</span>
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-4">Pobieranie krwi &mdash; Cennik badań laboratoryjnych</h3>
+                      <p className="text-white/60 mb-4 leading-relaxed text-base lg:text-lg max-w-3xl">
+                        Wykonujemy <strong className="text-white/80">profesjonalne pobieranie krwi</strong> w ramach naszego centrum medycznego <strong className="text-white/80">Life-Centrum w Raciborzu</strong>. Sprawdź dostępne badania i ich ceny w naszej wyszukiwarce &mdash; szybko znajdziesz interesujący Cię test laboratoryjny.
+                      </p>
+                      <ul className="flex flex-wrap gap-3 mb-6">
+                        {[
+                          "Morfologia i badania hematologiczne",
+                          "Badania biochemiczne",
+                          "Markery nowotworowe",
+                          "Hormony i badania tarczycowe",
+                          "Panel alergologiczny",
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-center gap-1.5 text-sm text-white/50 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+                            <CheckCircle2 size={12} className="text-primary-red shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="flex flex-col items-center lg:items-end gap-3">
+                      <a
+                        href="https://life-centrum.pl/cennik-badan-krwi/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-primary-red text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35 hover:scale-105 hover:gap-3 transition-all duration-300"
+                      >
+                        <Search size={18} />
+                        Sprawdź cennik badań
+                      </a>
+                      <span className="text-white/30 text-xs">life-centrum.pl</span>
                     </div>
                   </div>
                 </div>

@@ -201,7 +201,7 @@ const TransportPrywatny = () => {
                 viewport={{ once: true }}
                 className="flex items-center gap-4 bg-[#f4f7f6] p-5 rounded-2xl border-2 border-white shadow-sm"
               >
-                <CheckCircle2 className="text-green-500 shrink-0" size={20} />
+                <CheckCircle2 className="text-primary-red/70 shrink-0" size={20} />
                 <span className="font-semibold text-gray-700">{item}</span>
               </motion.div>
             ))}

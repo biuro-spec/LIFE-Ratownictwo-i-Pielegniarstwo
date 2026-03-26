@@ -63,14 +63,14 @@ const Navbar = () => {
       className="fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
       style={{
         top: scrolled ? '12px' : '24px',
-        width: scrolled ? 'min(94%, 1100px)' : 'min(96%, 1400px)',
+        width: scrolled ? 'min(96%, 1200px)' : 'min(96%, 1400px)',
       }}
     >
       <nav
         className={`
           rounded-[50px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
           ${scrolled
-            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-4 px-8'
+            ? 'bg-primary-red backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(218,37,29,0.15),0_12px_24px_rgba(218,37,29,0.2),0_24px_48px_rgba(218,37,29,0.15)] py-5 px-10'
             : 'bg-white/60 backdrop-blur-xl border-2 border-white shadow-[0_4px_6px_rgba(0,0,0,0.03),0_10px_24px_rgba(0,0,0,0.06),0_20px_48px_rgba(0,0,0,0.04)] py-4 px-10'
           }
         `}
@@ -78,27 +78,14 @@ const Navbar = () => {
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0 ml-2 relative">
-            <span
-              className={`font-bold transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                scrolled ? 'text-white text-xl' : 'text-primary-red text-2xl'
+            <img
+              src={scrolled ? '/logo-white.png' : '/logo-red.png'}
+              alt="Life Ratownictwo"
+              className={`transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                scrolled ? 'h-[52px]' : 'h-[68px]'
               }`}
-            >
-              LIFE
-            </span>
+            />
           </Link>
-
-          {/* Mobile: quick phone button next to hamburger */}
-          <a
-            href="tel:602622840"
-            className={`lg:hidden flex items-center justify-center w-10 h-10 rounded-full ml-auto mr-2 transition-all duration-300 ${
-              scrolled
-                ? 'bg-white/20 text-white'
-                : 'bg-primary-red text-white shadow-md shadow-primary-red/20'
-            }`}
-            aria-label="Zadzwoń"
-          >
-            <Phone size={18} />
-          </a>
 
           {/* Spacer */}
           <div className={`hidden lg:block transition-all duration-500 ${scrolled ? 'flex-grow-0 w-0' : 'flex-grow'}`} />

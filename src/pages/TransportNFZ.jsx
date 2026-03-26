@@ -16,27 +16,27 @@ const TransportNFZ = () => {
       subtitle: "Art. 41 ust. 1",
       desc: "Konieczność podjęcia natychmiastowego leczenia lub zachowania ciągłości leczenia szpitalnego.",
       examples: "Dializy, chemioterapia, radioterapia, rehabilitacja, kontrole pooperacyjne",
-      color: "bg-green-500",
-      textColor: "text-green-600",
-      bgColor: "bg-green-50",
+      color: "bg-primary-red",
+      textColor: "text-primary-red",
+      bgColor: "bg-red-50",
     },
     {
       title: "Bezpłatny \u2014 dysfunkcja ruchu",
       subtitle: "Art. 41 ust. 2",
       desc: "Dysfunkcja narządu ruchu uniemożliwiająca korzystanie ze środków transportu publicznego.",
       examples: "Osoby leżące, na wózkach inwalidzkich, po udarach, z porażeniami",
-      color: "bg-blue-500",
-      textColor: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "bg-navy-blue",
+      textColor: "text-navy-blue",
+      bgColor: "bg-[#f4f7f6]",
     },
     {
       title: "Częściowo odpłatny",
       subtitle: "Art. 41 ust. 3 \u2014 NFZ 40%, pacjent 60%",
       desc: "Pacjent wymaga pomocy innej osoby przy korzystaniu z transportu publicznego i cierpi na schorzenie z listy NFZ.",
       examples: "Choroby nowotworowe, krążenia, nerwowe, metaboliczne, psychiczne i inne",
-      color: "bg-amber-500",
-      textColor: "text-amber-600",
-      bgColor: "bg-amber-50",
+      color: "bg-primary-red/70",
+      textColor: "text-primary-red",
+      bgColor: "bg-red-50/50",
     },
   ];
 
@@ -78,8 +78,8 @@ const TransportNFZ = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-28 sm:pt-32 pb-10 sm:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
-              <span className="bg-green-100 text-green-700 font-bold px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm inline-flex items-center gap-2 mb-4 sm:mb-6">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span className="bg-primary-red/10 text-primary-red font-bold px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm inline-flex items-center gap-2 mb-4 sm:mb-6">
+                <span className="w-2 h-2 bg-primary-red rounded-full animate-pulse"></span>
                 Finansowany przez NFZ
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-blue leading-[1.1] mb-4 sm:mb-6">

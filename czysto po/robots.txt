@@ -1,0 +1,20 @@
+# robots.txt dla czysto-po.pl
+# Profesjonalne sprzątanie po zgonach i dezynfekcja
+
+User-agent: *
+Allow: /
+
+# Blokuj dostęp do plików systemowych
+Disallow: /cgi-bin/
+Disallow: /.well-known/
+Disallow: /cdn-cgi/
+
+# Blokuj pliki konfiguracyjne
+Disallow: /*.php$
+Disallow: /*.log$
+
+# Sitemap
+Sitemap: https://czysto-po.pl/sitemap.xml
+
+# Crawl-delay (opcjonalnie - niektóre boty to respektują)
+Crawl-delay: 1
