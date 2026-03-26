@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft } from 'lucide-react';
+import { Truck, ShieldCheck, HeartPulse, ChevronRight, CheckCircle2, Clock, Star, Quote, MapPin, Phone, Mail, Users, FileCheck, BadgeCheck, ChevronLeft, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 import { blogArticles } from '../data/blogArticles';
@@ -53,22 +53,22 @@ const ReviewsCarousel = ({ reviews }) => {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          {/* Navigation arrows */}
+          {/* Navigation arrows - hidden on mobile */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 bg-white rounded-full shadow-lg shadow-navy-blue/10 flex items-center justify-center text-navy-blue hover:bg-primary-red hover:text-white transition-all hover:scale-110"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 bg-white rounded-full shadow-lg shadow-navy-blue/10 items-center justify-center text-navy-blue hover:bg-primary-red hover:text-white transition-all hover:scale-110"
           >
             <ChevronLeft size={22} />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 bg-white rounded-full shadow-lg shadow-navy-blue/10 flex items-center justify-center text-navy-blue hover:bg-primary-red hover:text-white transition-all hover:scale-110"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 bg-white rounded-full shadow-lg shadow-navy-blue/10 items-center justify-center text-navy-blue hover:bg-primary-red hover:text-white transition-all hover:scale-110"
           >
             <ChevronRight size={22} />
           </button>
 
           {/* Cards container */}
-          <div className="mx-8 md:mx-14">
+          <div className="mx-2 md:mx-14">
             {/* Mobile: single card */}
             <div className="md:hidden">
               <motion.div
@@ -131,7 +131,7 @@ const ReviewsCarousel = ({ reviews }) => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`rounded-full transition-all ${i === active ? 'w-8 h-3 bg-primary-red' : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'}`}
+                className={`rounded-full transition-all ${i === active ? 'w-8 h-3.5 md:h-3 bg-primary-red' : 'w-3.5 h-3.5 md:w-3 md:h-3 bg-gray-300 hover:bg-gray-400'}`}
               />
             ))}
           </div>
@@ -254,7 +254,7 @@ const Home = () => {
                 ].map((stat, i) => (
                   <div key={i} className="bg-white/70 backdrop-blur-sm border border-white/80 rounded-2xl p-4 text-center shadow-md">
                     <div className="text-2xl font-black text-primary-red">{stat.value}</div>
-                    <div className="text-navy-blue font-semibold text-xs">{stat.label}</div>
+                    <div className="text-navy-blue font-semibold text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -304,8 +304,12 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section id="uslugi" className="py-24 bg-white">
-        <div className="container mx-auto px-4">
+      <section id="uslugi" className="py-24 bg-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-red/3 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/3 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Nasze usługi</span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy-blue mb-6">Kompleksowa opieka medyczna &mdash; tam, gdzie jest potrzebna</h2>
@@ -313,114 +317,204 @@ const Home = () => {
             <p className="text-gray-500 text-lg">Jako podmiot leczniczy oferujemy pełen zakres usług ratownictwa medycznego i pielęgniarstwa na terenie Śląska i całej Polski.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Card 1 - Transport */}
+          {/* Bento grid layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-auto">
+
+            {/* Card 1 - Transport - HERO CARD */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 50, rotateX: 8 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="bg-[#f4f7f6] rounded-3xl border-2 border-white shadow-sm hover:shadow-xl transition-all overflow-hidden group"
+              className="lg:col-span-7 lg:row-span-2 group relative perspective-[1200px]"
             >
-              <div className="p-8">
-                <div className="w-14 h-14 bg-primary-red/10 text-primary-red rounded-2xl flex items-center justify-center mb-6">
-                  <Truck size={28} />
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary-red/30 via-primary-red/10 to-transparent rounded-[36px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+              <div className="relative bg-white rounded-[32px] border border-gray-100/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_32px_80px_rgba(183,28,28,0.15)] transition-all duration-700 overflow-hidden h-full group-hover:-translate-y-3">
+                {/* Animated accent line */}
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-red-400 to-primary-red bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-primary-red/6 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div className="p-8 lg:p-10 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-red to-red-800 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-red/30 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-xl group-hover:shadow-primary-red/40 transition-all duration-500">
+                    <Truck size={30} />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-extrabold text-navy-blue mb-4 group-hover:text-primary-red transition-colors duration-500">Transport Medyczny i Sanitarny</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-base lg:text-lg">
+                    Profesjonalny, bezpieczny transport pacjent&oacute;w ambulansem z wykwalifikowanym personelem medycznym &mdash; ratownikiem lub pielęgniarką. Docieramy do pacjenta o każdej porze dnia i nocy.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                    {[
+                      "Transport do szpitala, poradni, na rehabilitacj\u0119",
+                      "Przew\u00F3z pacjent\u00F3w le\u017C\u0105cych i siedz\u0105cych",
+                      "Transport krajowy i zagraniczny",
+                      "Wizyty domowe i opieka piel\u0119gniarska",
+                      "Dost\u0119pno\u015B\u0107 24/7 \u2014 ca\u0142\u0105 dob\u0119",
+                      "3 ambulanse w gotowo\u015Bci",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600 list-none">
+                        <CheckCircle2 size={16} className="text-primary-red/70 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </div>
+                  <Link to="/transport-medyczny" className="inline-flex items-center gap-2 bg-primary-red text-white px-7 py-3.5 rounded-full font-bold shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35 hover:scale-105 hover:gap-3 transition-all duration-300">
+                    Dowiedz się więcej <ChevronRight size={16} />
+                  </Link>
                 </div>
-                <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Transport Medyczny i Sanitarny</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Profesjonalny, bezpieczny transport pacjent&oacute;w ambulansem z wykwalifikowanym personelem medycznym &mdash; ratownikiem lub pielęgniarką. Docieramy do pacjenta o każdej porze dnia i nocy.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Transport do szpitala, poradni, na rehabilitacj\u0119 i badania",
-                    "Przew\u00F3z pacjent\u00F3w le\u017C\u0105cych i siedz\u0105cych",
-                    "Transport krajowy i zagraniczny",
-                    "Wizyty domowe i opieka piel\u0119gniarska",
-                    "Dost\u0119pno\u015B\u0107 24/7 \u2014 ca\u0142\u0105 dob\u0119",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                      <CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/transport-medyczny" className="text-primary-red font-bold flex items-center gap-1 group-hover:gap-3 transition-all">
-                  Dowiedz się więcej <ChevronRight size={16} />
-                </Link>
               </div>
             </motion.div>
 
             {/* Card 2 - Zabezpieczenia */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="bg-[#f4f7f6] rounded-3xl border-2 border-white shadow-sm hover:shadow-xl transition-all overflow-hidden group"
+              className="lg:col-span-5 group relative"
             >
-              <div className="p-8">
-                <div className="w-14 h-14 bg-primary-red/10 text-primary-red rounded-2xl flex items-center justify-center mb-6">
-                  <ShieldCheck size={28} />
+              <div className="absolute -inset-1 bg-gradient-to-br from-navy-blue/20 to-transparent rounded-[36px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+              <div className="relative bg-navy-blue rounded-[32px] shadow-[0_4px_24px_rgba(13,27,42,0.15)] hover:shadow-[0_32px_80px_rgba(13,27,42,0.3)] transition-all duration-700 overflow-hidden h-full group-hover:-translate-y-3">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-white/30 to-primary-red bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-primary-red/10 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/3 rounded-tr-full pointer-events-none"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur text-primary-red rounded-2xl flex items-center justify-center mb-5 border border-white/10 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary-red group-hover:text-white transition-all duration-500">
+                    <ShieldCheck size={26} />
+                  </div>
+                  <h3 className="text-xl font-extrabold text-white mb-3">Zabezpieczenie Medyczne Imprez</h3>
+                  <p className="text-white/60 mb-5 leading-relaxed text-sm">
+                    Kompleksowe zabezpieczenie medyczne &mdash; od małych wydarzeń po duże imprezy masowe.
+                  </p>
+                  <ul className="space-y-2.5 mb-6">
+                    {[
+                      "Imprezy masowe (500\u201365 000+ os\u00F3b)",
+                      "Festyny, pikniki, eventy firmowe",
+                      "Ambulans, patrole, punkt medyczny",
+                      "Pe\u0142na dokumentacja i plan zabezpiecze\u0144",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-white/50">
+                        <CheckCircle2 size={14} className="text-primary-red shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/zabezpieczenia-medyczne" className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white px-6 py-3 rounded-full font-bold border border-white/15 hover:bg-primary-red hover:border-primary-red hover:scale-105 hover:gap-3 transition-all duration-300">
+                    Dowiedz się więcej <ChevronRight size={14} />
+                  </Link>
                 </div>
-                <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Zabezpieczenie Medyczne Imprez</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Kompleksowe zabezpieczenie medyczne &mdash; od małych wydarzeń po duże imprezy masowe. Jako podmiot leczniczy działamy w pełnej zgodności z rozporządzeniem Ministra Zdrowia z dnia 6 lutego 2012 r.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Imprezy masowe artystyczne i sportowe (500\u201365 000+ os\u00F3b)",
-                    "Festyny, pikniki, do\u017Cynki, eventy firmowe",
-                    "Ambulans wyjazdowy, patrole piesze, punkt medyczny",
-                    "Ratownicy medyczni z uprawnieniami KPP i PRM",
-                    "Pe\u0142na dokumentacja i plan zabezpiecze\u0144",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                      <CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/zabezpieczenia-medyczne" className="text-primary-red font-bold flex items-center gap-1 group-hover:gap-3 transition-all">
-                  Dowiedz się więcej <ChevronRight size={16} />
-                </Link>
               </div>
             </motion.div>
 
             {/* Card 3 - Szkolenia */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="bg-[#f4f7f6] rounded-3xl border-2 border-white shadow-sm hover:shadow-xl transition-all overflow-hidden group"
+              className="lg:col-span-5 group relative"
             >
-              <div className="p-8">
-                <div className="w-14 h-14 bg-primary-red/10 text-primary-red rounded-2xl flex items-center justify-center mb-6">
-                  <HeartPulse size={28} />
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary-red/20 to-transparent rounded-[36px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+              <div className="relative bg-white rounded-[32px] border border-gray-100/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_32px_80px_rgba(183,28,28,0.1)] transition-all duration-700 overflow-hidden h-full group-hover:-translate-y-3">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-red-300 to-primary-red bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-primary-red/5 to-transparent rounded-tl-full pointer-events-none"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-14 h-14 bg-primary-red/10 text-primary-red rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-primary-red group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-red/30 group-hover:-rotate-6 transition-all duration-500">
+                    <HeartPulse size={26} />
+                  </div>
+                  <h3 className="text-xl font-extrabold text-navy-blue mb-3 group-hover:text-primary-red transition-colors duration-500">Szkolenia z Pierwszej Pomocy</h3>
+                  <p className="text-gray-600 mb-5 leading-relaxed text-sm">
+                    Praktyczne, angażujące szkolenia prowadzone przez ratownik&oacute;w medycznych z wieloletnim stażem w Systemie PRM.
+                  </p>
+                  <ul className="space-y-2.5 mb-6">
+                    {[
+                      "Szkolenia BHP z pierwszej pomocy dla firm",
+                      "Kursy dla szk\u00F3\u0142, przedszkoli i uczelni",
+                      "Kwalifikowana Pierwsza Pomoc (KPP)",
+                      "Certyfikaty i za\u015Bwiadczenia uko\u0144czenia",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <CheckCircle2 size={14} className="text-primary-red/70 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/szkolenia-pierwsza-pomoc" className="inline-flex items-center gap-2 bg-primary-red text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-primary-red/20 hover:shadow-xl hover:shadow-primary-red/30 hover:scale-105 hover:gap-3 transition-all duration-300">
+                    Dowiedz się więcej <ChevronRight size={14} />
+                  </Link>
                 </div>
-                <h3 className="text-2xl font-extrabold text-navy-blue mb-4">Szkolenia z Pierwszej Pomocy</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Praktyczne, angażujące szkolenia z pierwszej pomocy prowadzone przez ratownik&oacute;w medycznych z wieloletnim stażem w Systemie Państwowego Ratownictwa Medycznego.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Szkolenia BHP z pierwszej pomocy dla firm",
-                    "Kursy dla szk\u00F3\u0142, przedszkoli i uczelni",
-                    "Kwalifikowana Pierwsza Pomoc (KPP)",
-                    "Szkolenia u klienta lub w naszej siedzibie",
-                    "Certyfikaty i za\u015Bwiadczenia uko\u0144czenia",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                      <CheckCircle2 size={16} className="text-green-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/szkolenia-pierwsza-pomoc" className="text-primary-red font-bold flex items-center gap-1 group-hover:gap-3 transition-all">
-                  Dowiedz się więcej <ChevronRight size={16} />
-                </Link>
               </div>
             </motion.div>
+
+            {/* Card 4 - Pielęgniarstwo - FULL WIDTH FEATURE */}
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
+              className="lg:col-span-12 group relative"
+            >
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary-red/25 via-primary-red/10 to-navy-blue/20 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+              <div className="relative overflow-hidden rounded-[32px] shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_32px_80px_rgba(183,28,28,0.12)] transition-all duration-700 group-hover:-translate-y-3"
+                style={{ background: 'linear-gradient(135deg, #ffffff 0%, #fff5f5 40%, #fef2f2 100%)' }}
+              >
+                {/* Accent top bar */}
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-red via-red-400 to-navy-blue bg-[length:200%_100%] group-hover:animate-[shimmer_2s_ease-in-out_infinite]"></div>
+                {/* Decorative shapes */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary-red/5 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-navy-blue/4 to-transparent rounded-tr-full pointer-events-none"></div>
+                {/* Floating circles */}
+                <div className="absolute top-20 right-20 w-3 h-3 bg-primary-red/20 rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
+                <div className="absolute top-40 right-40 w-2 h-2 bg-primary-red/15 rounded-full group-hover:scale-200 transition-transform duration-1000 delay-200"></div>
+                <div className="absolute bottom-20 left-1/3 w-4 h-4 bg-primary-red/10 rounded-full group-hover:scale-150 transition-transform duration-1000 delay-300"></div>
+
+                <div className="p-8 lg:p-12 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    {/* Left side */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary-red to-red-800 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-primary-red/30 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-xl group-hover:shadow-primary-red/40 transition-all duration-500">
+                          <Stethoscope size={30} />
+                        </div>
+                        <span className="bg-primary-red/10 text-primary-red font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">Nowość w ofercie</span>
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-extrabold text-navy-blue mb-4 group-hover:text-primary-red transition-colors duration-500">Usługi Pielęgniarskie</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed text-base lg:text-lg">
+                        Profesjonalna opieka pielęgniarska w domu pacjenta. Specjalizujemy się w <strong>toalecie pacjenta</strong> wykonywanej zawsze przez <strong>dwuosobowy zespół</strong> z pełną profilaktyką przeciwodleżynową.
+                      </p>
+                      <p className="text-gray-500 mb-8 leading-relaxed">
+                        Nasze pielęgniarki towarzyszą również pacjentom podczas <strong>długich transportów medycznych</strong>, w tym <strong>międzynarodowych</strong> &mdash; zapewniając ciągłą opiekę na trasach liczących setki kilometrów.
+                      </p>
+                      <Link to="/uslugi-pielegniarskie" className="inline-flex items-center gap-2 bg-primary-red text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary-red/25 hover:shadow-xl hover:shadow-primary-red/35 hover:scale-105 hover:gap-3 transition-all duration-300">
+                        Dowiedz się więcej <ChevronRight size={18} />
+                      </Link>
+                    </div>
+                    {/* Right side - feature grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[
+                        { title: "Toaleta pacjenta", desc: "Dwuosobowy zesp\u00F3\u0142 piel\u0119gniarski zapewnia bezpiecze\u0144stwo i godno\u015B\u0107" },
+                        { title: "Profilaktyka odle\u017Cyn", desc: "Ocena ryzyka, zmiana pozycji, specjalistyczne materace" },
+                        { title: "Opieka w transporcie", desc: "Piel\u0119gniarka w ambulansie na d\u0142ugich trasach krajowych i mi\u0119dzynarodowych" },
+                        { title: "Opieka domowa", desc: "Podawanie lek\u00F3w, piel\u0119gnacja ran, opatrunki, kontrola stanu zdrowia" },
+                        { title: "Opieka paliatywna", desc: "Wsparcie piel\u0119gniarskie, \u0142agodzenie dolegliwo\u015Bci, piel\u0119gnacja stomii" },
+                        { title: "Wsparcie rodzin", desc: "Szkolenie bliskich z zasad opieki nad pacjentem le\u017C\u0105cym" },
+                      ].map((item, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 + i * 0.08 }}
+                          viewport={{ once: true }}
+                          className="bg-white/80 backdrop-blur-sm p-5 rounded-2xl border border-white shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                        >
+                          <h4 className="font-bold text-navy-blue text-sm mb-1.5">{item.title}</h4>
+                          <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>

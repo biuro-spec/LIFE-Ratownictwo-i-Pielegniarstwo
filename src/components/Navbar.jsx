@@ -76,7 +76,7 @@ const Navbar = () => {
         `}
       >
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'justify-center gap-8' : 'justify-between'}`}>
-          {/* Logo - overflows navbar when at top */}
+          {/* Logo */}
           <Link to="/" className="flex items-center shrink-0 ml-2 relative">
             <span
               className={`font-bold transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
@@ -86,6 +86,19 @@ const Navbar = () => {
               LIFE
             </span>
           </Link>
+
+          {/* Mobile: quick phone button next to hamburger */}
+          <a
+            href="tel:602622840"
+            className={`lg:hidden flex items-center justify-center w-10 h-10 rounded-full ml-auto mr-2 transition-all duration-300 ${
+              scrolled
+                ? 'bg-white/20 text-white'
+                : 'bg-primary-red text-white shadow-md shadow-primary-red/20'
+            }`}
+            aria-label="Zadzwoń"
+          >
+            <Phone size={18} />
+          </a>
 
           {/* Spacer */}
           <div className={`hidden lg:block transition-all duration-500 ${scrolled ? 'flex-grow-0 w-0' : 'flex-grow'}`} />
@@ -205,7 +218,7 @@ const Navbar = () => {
 
           {/* Mobile Toggle */}
           <button
-            className="lg:hidden relative w-8 h-6 flex flex-col justify-between items-center"
+            className="lg:hidden relative w-11 h-11 flex flex-col justify-center items-center gap-[7px]"
             onClick={toggleMenu}
             aria-label="Menu nawigacyjne"
           >
@@ -279,26 +292,29 @@ const Navbar = () => {
 
             {/* CTA buttons */}
             <div className="flex flex-col gap-3 mt-4">
+              {/* Telefony obok siebie */}
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="tel:602622840"
+                  className={`p-4 rounded-2xl font-bold flex flex-col items-center gap-1 transition-all text-center ${scrolled ? 'bg-white text-primary-red shadow-lg shadow-black/10' : 'bg-primary-red text-white shadow-lg shadow-primary-red/25'}`}
+                >
+                  <Phone size={20} />
+                  <span className="text-sm">602 622 840</span>
+                </a>
+                <a
+                  href="tel:505751858"
+                  className={`p-4 rounded-2xl font-bold flex flex-col items-center gap-1 transition-all text-center ${scrolled ? 'bg-white/20 text-white border border-white/30' : 'bg-navy-blue text-white shadow-lg shadow-navy-blue/25'}`}
+                >
+                  <Phone size={20} />
+                  <span className="text-sm">505 751 858</span>
+                </a>
+              </div>
               <a
                 href="mailto:biuro@life-ratownictwo.pl"
                 className={`p-4 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white/20 text-white border border-white/30' : 'bg-navy-blue/5 text-navy-blue border border-navy-blue/15'}`}
               >
                 <Mail size={18} />
                 Napisz do nas
-              </a>
-              <a
-                href="tel:602622840"
-                className={`p-3.5 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white text-primary-red shadow-lg shadow-black/10' : 'bg-primary-red text-white shadow-lg shadow-primary-red/25'}`}
-              >
-                <Phone size={16} />
-                602 622 840
-              </a>
-              <a
-                href="tel:505751858"
-                className={`p-3.5 rounded-2xl font-bold flex justify-center items-center gap-2 transition-all ${scrolled ? 'bg-white/20 text-white border border-white/30' : 'bg-navy-blue text-white shadow-lg shadow-navy-blue/25'}`}
-              >
-                <Phone size={16} />
-                505 751 858
               </a>
             </div>
           </motion.div>

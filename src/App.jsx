@@ -15,6 +15,7 @@ const Szkolenia = lazy(() => import('./pages/Szkolenia'));
 const TransportNFZ = lazy(() => import('./pages/TransportNFZ'));
 const TransportPrywatny = lazy(() => import('./pages/TransportPrywatny'));
 const TransportMiedzynarodowy = lazy(() => import('./pages/TransportMiedzynarodowy'));
+const UslugiPielegniarskie = lazy(() => import('./pages/UslugiPielegniarskie'));
 
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -48,6 +49,7 @@ function App() {
               <Route path="/transport-nfz" element={<TransportNFZ />} />
               <Route path="/transport-prywatny" element={<TransportPrywatny />} />
               <Route path="/transport-miedzynarodowy" element={<TransportMiedzynarodowy />} />
+              <Route path="/uslugi-pielegniarskie" element={<UslugiPielegniarskie />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -65,7 +67,7 @@ function App() {
                             Profesjonalna opieka medyczna i transport sanitarny. Działamy z misją i pasją od 2012 roku.
                         </p>
                         <div className="flex gap-4">
-                             <a href="https://facebook.com" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary-red transition-colors text-white">FB</a>
+                             <a href="https://facebook.com" className="w-11 h-11 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary-red transition-colors text-white">FB</a>
                         </div>
                     </div>
 
@@ -75,6 +77,7 @@ function App() {
                             <li><Link to="/transport-medyczny" className="hover:text-primary-red transition-colors text-sm">Transport Medyczny</Link></li>
                             <li><Link to="/zabezpieczenia-medyczne" className="hover:text-primary-red transition-colors text-sm">Zabezpieczenia Imprez</Link></li>
                             <li><Link to="/szkolenia-pierwsza-pomoc" className="hover:text-primary-red transition-colors text-sm">Szkolenia Pierwszej Pomocy</Link></li>
+                            <li><Link to="/uslugi-pielegniarskie" className="hover:text-primary-red transition-colors text-sm">Usługi Pielęgniarskie</Link></li>
                         </ul>
                     </div>
 
@@ -89,16 +92,26 @@ function App() {
 
                     <div>
                         <h4 className="text-white font-bold text-lg mb-6">Kontakt</h4>
-                        <ul className="space-y-4">
-                            <li className="flex items-center gap-3 text-sm">
-                                <Phone size={16} className="text-primary-red" /> 
-                                <span className="font-bold text-white">+48 602 622 840</span>
+                        <ul className="space-y-3">
+                            <li>
+                                <a href="tel:602622840" className="flex items-center gap-3 text-sm py-1.5 hover:text-primary-red transition-colors">
+                                    <Phone size={16} className="text-primary-red shrink-0" />
+                                    <span className="font-bold text-white">+48 602 622 840</span>
+                                </a>
                             </li>
-                            <li className="flex items-center gap-3 text-sm">
-                                <Mail size={16} className="text-primary-red" /> biuro@life-ratownictwo.pl
+                            <li>
+                                <a href="tel:505751858" className="flex items-center gap-3 text-sm py-1.5 hover:text-primary-red transition-colors">
+                                    <Phone size={16} className="text-primary-red shrink-0" />
+                                    <span className="font-bold text-white">+48 505 751 858</span>
+                                </a>
                             </li>
-                            <li className="flex items-center gap-3 text-sm">
-                                <MapPin size={16} className="text-primary-red" /> ul. Rudzka 14, Racibórz
+                            <li>
+                                <a href="mailto:biuro@life-ratownictwo.pl" className="flex items-center gap-3 text-sm py-1.5 hover:text-primary-red transition-colors">
+                                    <Mail size={16} className="text-primary-red shrink-0" /> biuro@life-ratownictwo.pl
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-3 text-sm py-1.5">
+                                <MapPin size={16} className="text-primary-red shrink-0" /> ul. Rudzka 14, Racibórz
                             </li>
                         </ul>
                     </div>

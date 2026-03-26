@@ -49,7 +49,7 @@ const CookieConsent = () => {
               </button>
               <button
                 onClick={() => setVisible(false)}
-                className="p-2.5 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+                className="p-3 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
                 aria-label="Zamknij"
               >
                 <X size={18} />

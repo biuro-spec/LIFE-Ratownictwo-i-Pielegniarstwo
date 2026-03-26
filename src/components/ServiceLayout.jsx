@@ -29,6 +29,18 @@ const ServiceLayout = ({ title, titleAccent, subtitle, bgImage, bgPosition, tile
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
                 {subtitle}
               </p>
+
+              {/* Mobile tiles */}
+              {tiles && tiles.length > 0 && (
+                <div className="grid grid-cols-2 gap-3 mt-8 lg:hidden">
+                  {tiles.map((tile, i) => (
+                    <div key={i} className="bg-white/70 backdrop-blur-sm border border-white/80 rounded-2xl p-4 text-center shadow-md">
+                      <div className="text-2xl font-black text-primary-red">{tile.value}</div>
+                      <div className="text-navy-blue font-semibold text-sm">{tile.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </motion.div>
 
             {tiles && tiles.length > 0 && (
